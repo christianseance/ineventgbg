@@ -5,13 +5,13 @@ import { CATEGORIES, GROUPS, type Group } from "@/data/gallery";
 export const Route = createFileRoute("/tjanster")({
   head: () => ({
     meta: [
-      { title: "Tjänster — Inevent" },
+      { title: "Tjänster · Inevent" },
       {
         name: "description",
         content:
-          "Uthyrning, eventproduktion och team — vi har människorna och utrustningen för ditt event.",
+          "Uthyrning, eventproduktion och team. Vi har människorna och utrustningen för ditt event.",
       },
-      { property: "og:title", content: "Tjänster — Inevent" },
+      { property: "og:title", content: "Tjänster · Inevent" },
       { property: "og:description", content: "Tre sätt att jobba med oss: uthyrning, event och funktioner." },
     ],
   }),
@@ -31,7 +31,7 @@ function Tjanster() {
         <div className="lg:col-span-5 self-end">
           <p className="text-muted-foreground text-lg">
             Vi hyr ut delar, lägger upp ett komplett event eller tar in en av våra experter i ditt team.
-            Tre tydliga vägar — alla fullt skalbara.
+            Tre tydliga vägar, alla fullt skalbara.
           </p>
         </div>
       </header>

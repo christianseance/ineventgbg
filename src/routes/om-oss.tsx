@@ -4,14 +4,14 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/om-oss")({
   head: () => ({
     meta: [
-      { title: "Om oss — Inevent" },
+      { title: "Om oss · Inevent" },
       {
         name: "description",
         content:
-          "Inevent har producerat event och hyrt ut tält, podium och teknik sedan 2001. Utgår från Göteborg — finns där du behöver oss.",
+          "Inevent har producerat event och hyrt ut tält, podium och teknik sedan 2001. Utgår från Göteborg, finns där du behöver oss.",
       },
       { property: "og:title", content: "Om Inevent" },
-      { property: "og:description", content: "Människorna bakom tälten — Inevent sedan 2001." },
+      { property: "og:description", content: "Människorna bakom tälten. Inevent sedan 2001." },
     ],
   }),
   component: OmOss,
@@ -32,7 +32,7 @@ function OmOss() {
             <p>
               Inevent startades 2001 i Göteborg av Mathias, och 2026 fick han sällskap av några eventveteraner till som
               tröttnat på halvdana produktioner. Sedan i år har vi ett av Sveriges största lager av cirkustält,
-              eventtält, podium, ljus och teknik — och, lika viktigt, ett team som vet exakt hur allt riggas.
+              eventtält, podium, ljus och teknik. Och, lika viktigt, ett team som vet exakt hur allt riggas.
             </p>
             <p>
               Vi tar projekt från en enda dag till veckolånga festivaler. Från ett podium på en gata, via ett bröllop

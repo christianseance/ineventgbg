@@ -29,7 +29,7 @@ export function SiteFooter() {
           <ul className="space-y-2 text-sm">
             <li className="flex items-start gap-2">
               <MapPin size={14} className="mt-1 text-primary shrink-0" />
-              <span>Bas: Göteborg — vi tar oss dit vi behövs</span>
+              <span>Bas: Göteborg. Vi tar oss dit vi behövs</span>
             </li>
             <li className="flex items-start gap-2">
               <Mail size={14} className="mt-1 text-primary shrink-0" />
@@ -50,8 +50,8 @@ export function SiteFooter() {
               href="https://paralello.se"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Paralello — cirkustält"
-              title="Paralello — cirkustält"
+              aria-label="Paralello: cirkustält"
+              title="Paralello: cirkustält"
               className="inline-flex h-9 w-9 items-center justify-center border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
             >
               <Tent size={14} />
@@ -60,8 +60,8 @@ export function SiteFooter() {
               href="https://christianseance.com"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Christian Seance — DJ"
-              title="Christian Seance — DJ"
+              aria-label="Christian Seance: DJ"
+              title="Christian Seance: DJ"
               className="inline-flex h-9 w-9 items-center justify-center border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
             >
               <Headphones size={14} />
