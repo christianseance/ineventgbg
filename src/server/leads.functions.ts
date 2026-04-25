@@ -3,6 +3,39 @@ import { getRequestHeader, getRequestIP } from "@tanstack/react-start/server";
 import { z } from "zod";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
 
+// Blocked file extensions — executables, scripts, installers
+const BLOCKED_EXTENSIONS = [
+  "exe", "bat", "cmd", "com", "msi", "scr", "pif", "vbs", "vbe", "js", "jse",
+  "wsf", "wsh", "ps1", "psm1", "sh", "bash", "zsh", "app", "dmg", "deb", "rpm",
+  "apk", "jar", "war", "ear", "dll", "so", "dylib", "lnk", "reg", "hta",
+];
+
+// Allowed MIME types — common docs, images, archives
+const ALLOWED_MIME_PREFIXES = [
+  "image/",
+  "application/pdf",
+  "application/msword",
+  "application/vnd.openxmlformats-officedocument",
+  "application/vnd.ms-excel",
+  "application/vnd.ms-powerpoint",
+  "text/plain",
+  "text/csv",
+  "application/zip",
+  "application/x-zip-compressed",
+];
+
+const MAX_FILE_BYTES = 10 * 1024 * 1024; // 10 MB
+
+const attachmentSchema = z
+  .object({
+    name: z.string().min(1).max(255),
+    mime: z.string().min(1).max(150),
+    size: z.number().int().min(1).max(MAX_FILE_BYTES),
+    base64: z.string().min(1).max(Math.ceil((MAX_FILE_BYTES * 4) / 3) + 1024),
+  })
+  .nullable()
+  .optional();
+
 // Server-side schema (mirrors client + extra hardening)
 const leadSchema = z.object({
   name: z.string().trim().min(2).max(100),
@@ -16,7 +49,25 @@ const leadSchema = z.object({
   newsletter_opt_in: z.boolean(),
   // Honeypot — must stay empty
   website: z.string().max(0).optional().or(z.literal("")),
+  attachment: attachmentSchema,
 });
+
+function isBlockedFilename(name: string): boolean {
+  const lower = name.toLowerCase();
+  // Check all extensions in case of double-extension tricks like "file.pdf.exe"
+  const parts = lower.split(".");
+  if (parts.length < 2) return false;
+  return parts.slice(1).some((ext) => BLOCKED_EXTENSIONS.includes(ext));
+}
+
+function isAllowedMime(mime: string): boolean {
+  const lower = mime.toLowerCase();
+  return ALLOWED_MIME_PREFIXES.some((p) => lower.startsWith(p));
+}
+
+function sanitizeFilename(name: string): string {
+  return name.replace(/[^a-zA-Z0-9._-]/g, "_").slice(0, 200);
+}
 
 // Simple in-memory rate limiter (per worker instance)
 // 5 submissions per IP per 10 min — good enough as a first line; CAPTCHA can be added later.
