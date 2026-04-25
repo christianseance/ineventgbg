@@ -9,6 +9,7 @@ import sport from "@/assets/cat-sport.jpg";
 import dj from "@/assets/cat-dj.jpg";
 import arkitekt from "@/assets/cat-arkitekt.jpg";
 import produktion from "@/assets/cat-produktion.jpg";
+import installation from "@/assets/cat-installation.jpg";
 
 export type Group = "uthyrning" | "event" | "funktioner";
 
@@ -45,6 +46,8 @@ export const CATEGORIES: Category[] = [
     blurb: "Modulära scener, riser och podium i alla höjder och format." },
   { slug: "teknik", name: "Ljud, Ljus & Lasrar", group: "uthyrning", cover: teknik,
     blurb: "Moving heads, lasrar, rökmaskiner och PA — riggat och kört av proffs." },
+  { slug: "installation-konst", name: "Installation & Konst", group: "uthyrning", cover: installation,
+    blurb: "Skulpturala tygformationer, ljussatta installationer och konstnärliga rum som blir samtalsämnet." },
   // Event
   { slug: "brollop", name: "Bröllop", group: "event", cover: brollop,
     blurb: "Romantiska kvällar under stjärnhimmel — vi bygger drömscenografin." },
