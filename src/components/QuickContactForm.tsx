@@ -104,7 +104,7 @@ const INITIAL: State = {
 };
 
 export function QuickContactForm({ initialSubject }: { initialSubject?: string }) {
-  const [step, setStep] = useState<1 | 2 | 3>(1);
+  const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
   const [data, setData] = useState<State>({
     ...INITIAL,
     event_type: initialSubject && EVENT_OPTIONS.some((o) => o.value === initialSubject) ? initialSubject : "",
