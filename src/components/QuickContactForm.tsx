@@ -13,6 +13,7 @@ import {
   Users,
   Tent,
   Sparkles,
+  AlertCircle,
 } from "lucide-react";
 import { submitLead } from "@/server/leads.functions";
 import { PrivacyDisclosure } from "@/components/PrivacyDisclosure";
@@ -105,6 +106,48 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
     if (errors[k as string]) setErrors((e) => ({ ...e, [k as string]: "" }));
   };
 
+  // Validera ett enskilt fält vid blur så användaren ser fel direkt
+  const validateField = (field: keyof State) => {
+    const schemaMap: Partial<Record<keyof State, z.ZodSchema>> = {
+      event_type: stepOneSchema.shape.event_type,
+      event_date: stepTwoSchema.shape.event_date,
+      guest_count: stepTwoSchema.shape.guest_count,
+      location: stepTwoSchema.shape.location,
+      name: stepThreeSchema.shape.name,
+      email: stepThreeSchema.shape.email,
+      phone: stepThreeSchema.shape.phone,
+      message: stepThreeSchema.shape.message,
+    };
+    const s = schemaMap[field];
+    if (!s) return;
+    const r = s.safeParse(data[field]);
+    setErrors((e) => ({
+      ...e,
+      [field]: r.success ? "" : r.error.issues[0]?.message ?? "Ogiltigt värde",
+    }));
+  };
+
+  // Klassnamn för input — röd kant + ring vid fel
+  const inputClass = (field: keyof State) =>
+    `w-full bg-input border px-3 py-2 text-sm focus:outline-none transition-colors ${
+      errors[field]
+        ? "border-destructive focus:border-destructive ring-1 ring-destructive/40"
+        : "border-border focus:border-primary"
+    }`;
+
+  // Liten inline-felrad med ikon
+  const FieldError = ({ id, msg }: { id: string; msg?: string }) =>
+    msg ? (
+      <p
+        id={id}
+        role="alert"
+        className="mt-1 flex items-center gap-1.5 text-xs text-destructive"
+      >
+        <AlertCircle size={12} className="shrink-0" />
+        <span>{msg}</span>
+      </p>
+    ) : null;
+
   const selectEventType = (value: string) => {
     setData((d) => ({ ...d, event_type: value }));
     setErrors((e) => ({ ...e, event_type: "" }));
@@ -117,6 +160,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
       const r = stepOneSchema.safeParse(data);
       if (!r.success) {
         setErrors({ event_type: r.error.issues[0]?.message ?? "Välj ett alternativ" });
+        toast.error("Välj en eventtyp för att gå vidare.");
         return;
       }
       setStep(2);
@@ -128,6 +172,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
           errs[String(i.path[0])] = i.message;
         });
         setErrors(errs);
+        toast.error("Kolla de markerade fälten och prova igen.");
         return;
       }
       setErrors({});
@@ -150,6 +195,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
         errs[String(i.path[0])] = i.message;
       });
       setErrors(errs);
+      toast.error("Kolla de markerade fälten och prova igen.");
       return;
     }
     setErrors({});
@@ -261,9 +307,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               );
             })}
           </div>
-          {errors.event_type && (
-            <p className="mt-3 text-xs text-destructive">{errors.event_type}</p>
-          )}
+          <FieldError id="err-event-type" msg={errors.event_type} />
         </div>
       )}
 
@@ -285,11 +329,12 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
                 value={data.event_date}
                 min={new Date().toISOString().split("T")[0]}
                 onChange={(e) => update("event_date", e.target.value)}
-                className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary"
+                onBlur={() => validateField("event_date")}
+                aria-invalid={!!errors.event_date}
+                aria-describedby={errors.event_date ? "err-event-date" : undefined}
+                className={inputClass("event_date")}
               />
-              {errors.event_date && (
-                <p className="mt-1 text-xs text-destructive">{errors.event_date}</p>
-              )}
+              <FieldError id="err-event-date" msg={errors.event_date} />
             </div>
             <div>
               <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
@@ -300,11 +345,12 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
                 min="0"
                 value={data.guest_count}
                 onChange={(e) => update("guest_count", e.target.value)}
-                className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary"
+                onBlur={() => validateField("guest_count")}
+                aria-invalid={!!errors.guest_count}
+                aria-describedby={errors.guest_count ? "err-guest-count" : undefined}
+                className={inputClass("guest_count")}
               />
-              {errors.guest_count && (
-                <p className="mt-1 text-xs text-destructive">{errors.guest_count}</p>
-              )}
+              <FieldError id="err-guest-count" msg={errors.guest_count} />
             </div>
           </div>
           <div>
@@ -315,8 +361,11 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               type="text"
               value={data.location}
               onChange={(e) => update("location", e.target.value)}
-              className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary"
+              onBlur={() => validateField("location")}
+              aria-invalid={!!errors.location}
+              className={inputClass("location")}
             />
+            <FieldError id="err-location" msg={errors.location} />
           </div>
         </div>
       )}
@@ -338,9 +387,12 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
                 type="text"
                 value={data.name}
                 onChange={(e) => update("name", e.target.value)}
-                className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary"
+                onBlur={() => validateField("name")}
+                aria-invalid={!!errors.name}
+                aria-describedby={errors.name ? "err-name" : undefined}
+                className={inputClass("name")}
               />
-              {errors.name && <p className="mt-1 text-xs text-destructive">{errors.name}</p>}
+              <FieldError id="err-name" msg={errors.name} />
             </div>
             <div>
               <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
@@ -351,9 +403,12 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
                 required
                 value={data.email}
                 onChange={(e) => update("email", e.target.value)}
-                className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary"
+                onBlur={() => validateField("email")}
+                aria-invalid={!!errors.email}
+                aria-describedby={errors.email ? "err-email" : undefined}
+                className={inputClass("email")}
               />
-              {errors.email && <p className="mt-1 text-xs text-destructive">{errors.email}</p>}
+              <FieldError id="err-email" msg={errors.email} />
             </div>
           </div>
           <div>
@@ -364,8 +419,11 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               type="tel"
               value={data.phone}
               onChange={(e) => update("phone", e.target.value)}
-              className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary"
+              onBlur={() => validateField("phone")}
+              aria-invalid={!!errors.phone}
+              className={inputClass("phone")}
             />
+            <FieldError id="err-phone" msg={errors.phone} />
           </div>
           <div>
             <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
@@ -375,9 +433,12 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               rows={3}
               value={data.message}
               onChange={(e) => update("message", e.target.value)}
+              onBlur={() => validateField("message")}
+              aria-invalid={!!errors.message}
               placeholder="Vision, behov, önskemål..."
-              className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary resize-none"
+              className={`${inputClass("message")} resize-none`}
             />
+            <FieldError id="err-message" msg={errors.message} />
           </div>
           
         </div>
