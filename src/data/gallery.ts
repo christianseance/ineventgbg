@@ -100,7 +100,7 @@ export const CATEGORIES: Category[] = [
     name: "Sportevent",
     group: "event",
     cover: sport,
-    blurb: "Arena-rigg, prisutdelning och underhållning för stora publikevent.",
+    blurb: "Kiosker, prisutdelning och tak.",
   },
   // Funktioner
   {
