@@ -93,7 +93,7 @@ export const CATEGORIES: Category[] = [
     name: "Konferenser",
     group: "event",
     cover: konferens,
-    blurb: "Tekniskt vattentäta produktioner med scener och LED-väggar.",
+    blurb: "Tekniskt vattentäta produktioner med scener.",
   },
   {
     slug: "sportevent",
