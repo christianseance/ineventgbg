@@ -16,6 +16,10 @@ export type Database = {
     Tables: {
       leads: {
         Row: {
+          attachment_mime: string | null
+          attachment_name: string | null
+          attachment_path: string | null
+          attachment_size: number | null
           created_at: string
           email: string
           event_date: string | null
@@ -29,6 +33,10 @@ export type Database = {
           phone: string | null
         }
         Insert: {
+          attachment_mime?: string | null
+          attachment_name?: string | null
+          attachment_path?: string | null
+          attachment_size?: number | null
           created_at?: string
           email: string
           event_date?: string | null
@@ -42,6 +50,10 @@ export type Database = {
           phone?: string | null
         }
         Update: {
+          attachment_mime?: string | null
+          attachment_name?: string | null
+          attachment_path?: string | null
+          attachment_size?: number | null
           created_at?: string
           email?: string
           event_date?: string | null
