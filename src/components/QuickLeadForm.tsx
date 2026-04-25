@@ -3,6 +3,7 @@ import { ArrowRight, Download, FileText } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 import { submitLead } from "@/server/leads.functions";
+import { PrivacyDisclosure } from "@/components/PrivacyDisclosure";
 
 const GUIDE_URL = "/inevent-guide.pdf";
 
