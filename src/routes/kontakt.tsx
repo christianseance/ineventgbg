@@ -116,7 +116,9 @@ function Kontakt() {
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [optIn, setOptIn] = useState(true);
+  // Soft opt-in (ePrivacy art. 13.2): den som begär offert kan få mejl om liknande tjänster
+  // tills de tackar nej. Ingen aktiv checkbox krävs.
+  const optIn = true;
   const [file, setFile] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -413,18 +415,10 @@ function Kontakt() {
             </p>
           </div>
 
-          <label className="flex items-start gap-3 cursor-pointer text-sm text-muted-foreground">
-            <input
-              type="checkbox"
-              checked={optIn}
-              onChange={(e) => setOptIn(e.target.checked)}
-              className="mt-1 h-4 w-4 accent-primary"
-            />
-            <span>
-              Lägg till mig på e-postlistan. Vi mejlar några gånger per år om nya tält, projekt och
-              säsongs-erbjudanden.
-            </span>
-          </label>
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            Vi kan komma att mejla dig om liknande tjänster (några gånger per år — nya tält, projekt,
+            säsongs-erbjudanden). Avregistrera när du vill via länken i utskicket.
+          </p>
 
           <PrivacyDisclosure />
 
