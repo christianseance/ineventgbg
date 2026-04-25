@@ -258,7 +258,7 @@ function Index() {
                 <li className="flex gap-4">
                   <span className="text-muted-foreground mt-1">—</span>
                   <span>
-                    Allt-inkluderat lyxlösningar för annat än tält. Vi gör det vi har utrustning för.
+                    Allt-inkluderat lyxlösningar för annat än tält.
                   </span>
                 </li>
               </ul>
