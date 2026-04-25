@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { ArrowRight, ArrowUpRight, Sparkles, Tent, Music, Lightbulb } from "lucide-react";
 import heroImg from "@/assets/hero-tent.jpg";
+import heroImgAlt from "@/assets/hero-tent-alt.jpg";
 import { CATEGORIES, GROUPS } from "@/data/gallery";
 
 export const Route = createFileRoute("/")({
@@ -24,6 +26,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const featured = CATEGORIES.slice(0, 6);
+  const [currentHero] = useState(() => (Math.random() < 0.5 ? heroImg : heroImgAlt));
 
   return (
     <>
@@ -31,7 +34,7 @@ function Index() {
       <section className="relative min-h-[92vh] overflow-hidden grain">
         <div className="absolute inset-0">
           <img
-            src={heroImg}
+            src={currentHero}
             alt="Cirkustält upplyst i rött med scenljus och rök"
             width={1920}
             height={1080}
