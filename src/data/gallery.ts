@@ -1,4 +1,4 @@
-import circustalt from "@/assets/cat-circustalt-beach.jpg";
+import circustalt from "@/assets/cat-circustalt.jpg";
 import eventtalt from "@/assets/cat-eventtalt.jpg";
 import scen from "@/assets/cat-scen.jpg";
 import teknik from "@/assets/cat-teknik.jpg";

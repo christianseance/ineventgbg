@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { CATEGORIES, GROUPS, type Group } from "@/data/gallery";
-import circustaltOriginal from "@/assets/cat-circustalt.jpg";
 
 export const Route = createFileRoute("/tjanster")({
   head: () => ({
@@ -68,7 +67,7 @@ function Tjanster() {
                   className="group relative aspect-[4/3] overflow-hidden bg-card border border-border"
                 >
                   <img
-                    src={isCirkus ? circustaltOriginal : c.cover}
+                    src={c.cover}
                     alt={c.name}
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"

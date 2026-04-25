@@ -4,6 +4,7 @@ import { zodValidator } from "@tanstack/zod-adapter";
 import { useMemo, useRef, useState } from "react";
 import { ArrowUpRight, Search, X } from "lucide-react";
 import { CATEGORIES, GROUPS, type Group } from "@/data/gallery";
+import circustaltBeach from "@/assets/cat-circustalt-beach.jpg";
 
 const searchSchema = z.object({
   group: z.enum(["uthyrning", "event", "funktioner"]).optional(),
@@ -199,7 +200,7 @@ function Galleri() {
               >
                 <div className={`relative ${i % 5 === 0 ? "aspect-[3/4]" : "aspect-[4/3]"} overflow-hidden`}>
                   <img
-                    src={cat.cover}
+                    src={isCirkus ? circustaltBeach : cat.cover}
                     alt={cat.name}
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
