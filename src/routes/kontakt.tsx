@@ -15,7 +15,20 @@ const formSchema = z.object({
   email: z.string().trim().email("Ogiltig e-postadress").max(255),
   phone: z.string().trim().max(30).optional().or(z.literal("")),
   event_type: z.string().trim().max(100).optional().or(z.literal("")),
-  event_date: z.string().optional().or(z.literal("")),
+  event_date: z
+    .string()
+    .optional()
+    .or(z.literal(""))
+    .refine(
+      (v) => {
+        if (!v) return true;
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const d = new Date(v);
+        return !isNaN(d.getTime()) && d >= today;
+      },
+      { message: "Datumet kan inte vara passerat" }
+    ),
   guest_count: z.string().optional().or(z.literal("")),
   location: z.string().trim().max(150).optional().or(z.literal("")),
   message: z.string().trim().min(10, "Berätta lite mer (minst 10 tecken)").max(2000),
