@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ArrowRight, ArrowUpRight, Sparkles, Tent, Music, Lightbulb } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Sparkles, Tent, Music } from "lucide-react";
 import heroImg from "@/assets/hero-tent.jpg";
 import heroCanopy from "@/assets/hero-canopy.webp";
 import { CATEGORIES, GROUPS } from "@/data/gallery";
