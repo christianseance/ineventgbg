@@ -41,7 +41,7 @@ function Index() {
           <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/30" />
         </div>
 
-        <div className="relative mx-auto max-w-[1400px] px-5 lg:px-10 pt-24 lg:pt-32 pb-16">
+        <div className="relative mx-auto max-w-[1400px] px-5 lg:px-10 pt-24 lg:pt-32 pb-40 lg:pb-48">
           <div className="grid lg:grid-cols-12 gap-8 items-end min-h-[70vh]">
             {/* Left — main headline */}
             <div className="lg:col-span-8 fade-up">
