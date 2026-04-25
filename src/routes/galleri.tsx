@@ -18,7 +18,7 @@ export const Route = createFileRoute("/galleri")({
       {
         name: "description",
         content:
-          "Bläddra bland våra kategorier: cirkustält, eventtält, scen, podium, ljus & lasrar, bröllop, företagsevent, konferenser, sport, DJ och mer.",
+          "Bläddra bland våra kategorier: cirkustält, eventtält, podium, ljus & lasrar, bröllop, företagsevent, konferenser, sport, DJ och mer.",
       },
       { property: "og:title", content: "Galleri — Inevent" },
       { property: "og:description", content: "Filtrera, sök och utforska allt vi hyr ut och producerar." },

@@ -6,16 +6,16 @@ import { CATEGORIES, GROUPS } from "@/data/gallery";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Inevent — Tält, scener & komplett eventproduktion" },
+      { title: "Inevent — Cirkustält, podium, ljus & komplett eventproduktion" },
       {
         name: "description",
         content:
-          "Från cirkustält och scen till bröllop och DJ — vi gör hela ditt event. Utgår från Göteborg — finns där du behöver oss.",
+          "Cirkustält, podium, ljus, DJ och allt event-pyssel — vi gör hela ditt event. Utgår från Göteborg — finns där du behöver oss.",
       },
       { property: "og:title", content: "Inevent — Vi löser allt inom event" },
       {
         property: "og:description",
-        content: "Cirkustält, scen, ljud & ljus, DJ, bröllop, företagsfest. Begär offert idag.",
+        content: "Cirkustält, podium, ljus, DJ, bröllop, företagsfest. Begär offert idag.",
       },
     ],
   }),
@@ -55,7 +55,7 @@ function Index() {
                 <span className="text-stroke">Du gör showen.</span>
               </h1>
               <p className="mt-8 text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                Cirkustält, scener, ljus, lasrar, DJ:s, bröllop, företagsfester — du namnger det,
+                Cirkustält, podier, ljus, lasrar, DJ:s, bröllop, företagsfester — du namnger det,
                 vi bygger det. Utgår från Göteborg — finns där du behöver oss.
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
@@ -108,7 +108,7 @@ function Index() {
             {Array.from({ length: 2 }).map((_, i) => (
               <div key={i} className="flex gap-12 shrink-0">
                 <span>★ Cirkustält</span>
-                <span>★ Scen & podium</span>
+                <span>★ Podium & scen</span>
                 <span>★ Ljus & lasrar</span>
                 <span>★ DJ</span>
                 <span>★ Bröllop</span>

@@ -8,7 +8,7 @@ export const Route = createFileRoute("/om-oss")({
       {
         name: "description",
         content:
-          "Inevent har producerat event och hyrt ut tält, scener och teknik sedan 2001. Utgår från Göteborg — finns där du behöver oss.",
+          "Inevent har producerat event och hyrt ut tält, podium och teknik sedan 2001. Utgår från Göteborg — finns där du behöver oss.",
       },
       { property: "og:title", content: "Om Inevent" },
       { property: "og:description", content: "Människorna bakom tälten — Inevent sedan 2001." },
@@ -31,7 +31,7 @@ function OmOss() {
           <div className="mt-10 space-y-6 text-muted-foreground text-lg leading-relaxed max-w-2xl">
             <p>
               Inevent startades 2001 i Göteborg av människor som tröttnade på halvdana eventproduktioner.
-              Idag äger vi en av Sveriges största lager av cirkustält, eventtält, scener och teknik —
+              Idag äger vi en av Sveriges största lager av cirkustält, eventtält, podium, ljus och teknik —
               och, lika viktigt, ett team som vet exakt hur allt riggas.
             </p>
             <p>
