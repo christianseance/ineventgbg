@@ -400,13 +400,22 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
           <span />
         )}
 
-        {step === 2 && (
+        {step === 1 && (
           <button
             type="button"
             onClick={goNext}
             className="inline-flex items-center gap-3 bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors"
           >
             Nästa <ArrowRight size={16} />
+          </button>
+        )}
+        {step === 2 && (
+          <button
+            type="button"
+            onClick={goNext}
+            className="inline-flex items-center gap-3 bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors"
+          >
+            Nästa / hoppa över <ArrowRight size={16} />
           </button>
         )}
         {step === 3 && (
@@ -419,7 +428,6 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
             {submitting ? "Skickar..." : "Skicka förfrågan"}
           </button>
         )}
-        {step === 1 && <span />}
       </div>
     </form>
   );
