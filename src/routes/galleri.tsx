@@ -61,8 +61,10 @@ function Galleri() {
     navigate({ search: (s: z.infer<typeof searchSchema>) => ({ ...s, category: slug }) });
     scrollToResults();
   };
-  const applySearch = () =>
+  const applySearch = () => {
     navigate({ search: (s: z.infer<typeof searchSchema>) => ({ ...s, q: localQ || undefined }) });
+    if (localQ) scrollToResults();
+  };
   const clearAll = () => {
     setLocalQ("");
     navigate({ search: {} });
