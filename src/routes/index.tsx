@@ -239,6 +239,10 @@ function Index() {
                   <span className="text-primary mt-1">—</span>
                   <span>Musikkunskap — vi vet vem och vad som passar din stund.</span>
                 </li>
+                <li className="flex gap-4">
+                  <span className="text-primary mt-1">—</span>
+                  <span>Webdesign, grafik, social media — vi paketerar eventet digitalt också.</span>
+                </li>
               </ul>
             </div>
 
