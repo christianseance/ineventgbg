@@ -154,8 +154,8 @@ function Index() {
             </div>
             <div className="lg:col-span-7 lg:col-start-6 self-end">
               <p className="text-lg text-muted-foreground">
-                Hyr direkt från lagret, boka komplett event eller lägg till en av våra människor i ditt team. Allt
-                skalbart — från ett ensamt podium till en full festivalproduktion.
+                Hyr direkt från lagret, boka komplett mindre/mellanstort event eller lägg till en av våra människor i ditt team. Allt
+                skalbart — från ett ensamt podium till en mindre festivalproduktion.
               </p>
             </div>
           </div>
