@@ -128,13 +128,13 @@ function Index() {
               <div key={i} className="flex gap-12 shrink-0">
                 <span>★ Cirkustält</span>
                 <span>★ Podium & scen</span>
-                <span>★ Ljus & lasrar</span>
+                <span>★ Belysning</span>
                 <span>★ DJ</span>
                 <span>★ Bröllop</span>
                 <span>★ Företagsevent</span>
                 <span>★ Konferens</span>
                 <span>★ Festival</span>
-                <span>★ Ljudteknik</span>
+                <span>★ Teknik</span>
                 <span>★ Eventarkitekt</span>
               </div>
             ))}

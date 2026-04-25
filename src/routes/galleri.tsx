@@ -18,7 +18,7 @@ export const Route = createFileRoute("/galleri")({
       {
         name: "description",
         content:
-          "Bläddra bland våra kategorier: cirkustält, eventtält, podium, ljus & lasrar, bröllop, företagsevent, konferenser, sport, DJ och mer.",
+          "Bläddra bland våra kategorier: cirkustält, eventtält, podium, belysning, bar-bord/stolar, bröllop, företagsevent, konferenser, sport, DJs och mer.",
       },
       { property: "og:title", content: "Galleri — Inevent" },
       { property: "og:description", content: "Filtrera, sök och utforska allt vi hyr ut och producerar." },
@@ -53,9 +53,7 @@ function Galleri() {
     navigate({ search: {} });
   };
 
-  const visibleCategories = group
-    ? CATEGORIES.filter((c) => c.group === group)
-    : CATEGORIES;
+  const visibleCategories = group ? CATEGORIES.filter((c) => c.group === group) : CATEGORIES;
 
   return (
     <div className="mx-auto max-w-[1400px] px-5 lg:px-10 py-12 lg:py-20">
@@ -64,7 +62,8 @@ function Galleri() {
         <div className="lg:col-span-7">
           <span className="text-xs uppercase tracking-[0.3em] text-primary">Galleri</span>
           <h1 className="text-display text-6xl lg:text-8xl mt-3">
-            Allt vi <span className="text-primary">hyr</span> & <br />allt vi <span className="text-stroke">bygger</span>.
+            Allt vi <span className="text-primary">hyr</span> & <br />
+            allt vi <span className="text-stroke">bygger</span>.
           </h1>
         </div>
         <div className="lg:col-span-5 lg:self-end">
