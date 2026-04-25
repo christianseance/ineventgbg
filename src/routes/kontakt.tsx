@@ -360,6 +360,48 @@ function Kontakt() {
             {errors.message && <p className="mt-1 text-xs text-destructive">{errors.message}</p>}
           </div>
 
+          <div>
+            <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
+              Bifoga fil (valfritt)
+            </label>
+            {!file ? (
+              <label className="flex items-center justify-center gap-3 border border-dashed border-border bg-input/50 px-4 py-6 cursor-pointer hover:border-primary hover:bg-input transition-colors">
+                <Paperclip size={18} className="text-muted-foreground" />
+                <span className="text-sm text-muted-foreground">
+                  Klicka för att välja en fil <span className="text-xs">(max 10 MB)</span>
+                </span>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  className="sr-only"
+                  onChange={handleFileChange}
+                  accept=".jpg,.jpeg,.png,.webp,.gif,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.zip"
+                />
+              </label>
+            ) : (
+              <div className="flex items-center justify-between gap-3 border border-border bg-input px-4 py-3">
+                <div className="flex items-center gap-3 min-w-0">
+                  <Paperclip size={16} className="text-primary shrink-0" />
+                  <div className="min-w-0">
+                    <div className="text-sm text-foreground truncate">{file.name}</div>
+                    <div className="text-xs text-muted-foreground">{formatBytes(file.size)}</div>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={clearFile}
+                  className="text-muted-foreground hover:text-destructive transition-colors shrink-0"
+                  aria-label="Ta bort fil"
+                >
+                  <X size={18} />
+                </button>
+              </div>
+            )}
+            <p className="mt-2 text-xs text-muted-foreground">
+              Tillåtna: bilder, PDF, Word, Excel, PowerPoint, text, CSV, ZIP. Körbara filer (.exe, .bat m.fl.) blockeras.
+            </p>
+          </div>
+
           <label className="flex items-start gap-3 cursor-pointer text-sm text-muted-foreground">
             <input
               type="checkbox"
