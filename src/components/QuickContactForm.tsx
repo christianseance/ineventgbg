@@ -236,10 +236,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
 
       {step === 1 && (
         <div>
-          <h3 className="text-display text-2xl lg:text-3xl mb-2">Vilken typ av event?</h3>
-          <p className="text-sm text-muted-foreground mb-6">
-            Välj det som passar bäst — du kan precisera senare.
-          </p>
+          <h3 className="text-display text-2xl lg:text-3xl mb-6">Vilken typ av event?</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {EVENT_OPTIONS.map((opt) => {
               const Icon = opt.icon;
