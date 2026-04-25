@@ -18,6 +18,7 @@ export function QuickLeadForm() {
   const [website, setWebsite] = useState(""); // honeypot
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
+  const [newsletter, setNewsletter] = useState(false);
   const [errors, setErrors] = useState<{ email?: string; name?: string }>({});
 
   const onSubmit = async (e: React.FormEvent) => {
