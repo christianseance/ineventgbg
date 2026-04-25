@@ -10,7 +10,7 @@ export function PrivacyDisclosure() {
         uppgifter för att besvara din förfrågan (rättslig grund: avtal/förfrågan, art. 6.1.b GDPR) och, om du anmäler
         dig, skicka nyhetsbrev (samtycke, art. 6.1.a — återkalla när du vill). Uppgifter lagras hos Lovable Cloud (EU)
         i max 24 månader efter senaste kontakt. Du har rätt till åtkomst, rättelse, radering, dataportabilitet och att
-        klaga hos IMY. Kontakt:{" "}
+        klaga hos IMY. Frågor om personuppgifter:{" "}
         <a href="mailto:seance@inevent.se" className="text-primary hover:underline">
           seance@inevent.se
         </a>
