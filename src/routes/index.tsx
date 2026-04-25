@@ -29,7 +29,10 @@ export const Route = createFileRoute("/")({
       { property: "og:image:alt", content: "Cirkustält upplyst i rött med scenljus" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Inevent — Vi löser allt inom event" },
-      { name: "twitter:description", content: "Cirkustält, podium, ljus, DJ, bröllop, företagsfest. Begär offert idag." },
+      {
+        name: "twitter:description",
+        content: "Cirkustält, podium, ljus, DJ, bröllop, företagsfest. Begär offert idag.",
+      },
       { name: "twitter:image", content: "https://inevent.se/og-hero.jpg" },
     ],
   }),
@@ -69,8 +72,8 @@ function Index() {
                 <span className="text-stroke">Du gör showen.</span>
               </h1>
               <p className="mt-8 text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                Cirkustält, podier, ljus, lasrar, DJ:s, bröllop, företagsfester — du namnger det, vi bygger det. Utgår
-                från Göteborg — finns där du behöver oss.
+                Cirkustält, podier, belysning, bar-bord/stolar, DJ:s, bröllop, företagsfester — nämn det och vi bygger
+                det. Vi utgår från Göteborg — men dyker upp där du behöver oss.
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link
