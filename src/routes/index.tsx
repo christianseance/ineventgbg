@@ -1,9 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
 import { ArrowRight, ArrowUpRight, Sparkles, Tent, Music, Lightbulb } from "lucide-react";
 import heroImg from "@/assets/hero-tent.jpg";
-import heroImgAlt from "@/assets/hero-tent-alt.jpg";
-import heroImgOriginal from "@/assets/hero-tent-original.jpg";
 import { CATEGORIES, GROUPS } from "@/data/gallery";
 
 export const Route = createFileRoute("/")({
@@ -27,10 +24,6 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const featured = CATEGORIES.slice(0, 6);
-  const [currentHero] = useState(() => {
-    const heroes = [heroImg, heroImgAlt, heroImgOriginal];
-    return heroes[Math.floor(Math.random() * heroes.length)];
-  });
 
   return (
     <>
@@ -38,7 +31,7 @@ function Index() {
       <section className="relative min-h-[92vh] overflow-hidden grain">
         <div className="absolute inset-0">
           <img
-            src={currentHero}
+            src={heroImg}
             alt="Cirkustält upplyst i rött med scenljus och rök"
             width={1920}
             height={1080}
@@ -91,7 +84,7 @@ function Index() {
                   <span className="text-xs uppercase tracking-widest">Tillgänglig nu</span>
                 </div>
                 <div>
-                  <div className="text-display text-5xl text-foreground">500+</div>
+                  <div className="text-display text-5xl text-foreground">300+</div>
                   <div className="text-xs uppercase tracking-widest text-muted-foreground mt-1">Genomförda event</div>
                 </div>
                 <div className="h-px bg-border" />
