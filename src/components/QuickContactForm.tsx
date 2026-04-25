@@ -318,7 +318,6 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               type="text"
               value={data.location}
               onChange={(e) => update("location", e.target.value)}
-              placeholder="t.ex. Göteborg"
               className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary"
             />
           </div>
