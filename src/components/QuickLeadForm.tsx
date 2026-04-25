@@ -87,7 +87,7 @@ export function QuickLeadForm() {
             </p>
             <ul className="mt-6 space-y-2 text-sm text-foreground/80">
               <li className="flex gap-2"><span className="text-primary">›</span> Vad vi behöver veta för att kunna offerera</li>
-              <li className="flex gap-2"><span className="text-primary">›</span> Checklista per eventtyp</li>
+              <li className="flex gap-2"><span className="text-primary">›</span> Hur vi planerar kring väder och datum</li>
               <li className="flex gap-2"><span className="text-primary">›</span> Vanliga misstag att undvika</li>
             </ul>
           </div>
