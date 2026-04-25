@@ -472,6 +472,7 @@ function Field({
           if (el.validity.valueMissing) el.setCustomValidity("Vänligen fyll i det här fältet");
           else if (el.validity.typeMismatch && type === "email") el.setCustomValidity("Ange en giltig e-postadress");
           else if (el.validity.rangeUnderflow && type === "date") el.setCustomValidity("Datumet kan inte vara passerat");
+          else if (el.validity.rangeUnderflow && type === "number") el.setCustomValidity("Värdet kan inte vara negativt");
           else if (el.validity.badInput && type === "number") el.setCustomValidity("Ange ett giltigt nummer");
           else el.setCustomValidity("Ogiltigt värde");
         }}
