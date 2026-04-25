@@ -277,8 +277,7 @@ function Kontakt() {
             </span>
           </label>
 
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-border">
-            <p className="text-xs text-muted-foreground">Vi återkommer inom 24-36 timmar.</p>
+          <div className="flex flex-wrap items-center justify-end gap-4 pt-4 border-t border-border">
             <button
               type="submit"
               disabled={submitting}
