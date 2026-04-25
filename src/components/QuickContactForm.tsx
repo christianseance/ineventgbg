@@ -192,7 +192,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
     return (
       <div className="bg-card border border-border p-8 lg:p-12 text-center">
         <CheckCircle2 size={56} className="mx-auto text-primary mb-5" />
-        <h3 className="text-display text-3xl lg:text-4xl">Tack {data.name.split(" ")[0]}!</h3>
+        <h3 className="text-display text-3xl lg:text-4xl">Tack{data.name.trim() ? ` ${data.name.split(" ")[0]}` : ""}!</h3>
         <p className="mt-4 text-muted-foreground">
           Vi har tagit emot din förfrågan och hör av oss inom kort — oftast samma dag på vardagar.
         </p>
