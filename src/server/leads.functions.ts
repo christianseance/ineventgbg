@@ -12,7 +12,7 @@ const leadSchema = z.object({
   event_date: z.string().trim().max(20).optional().or(z.literal("")),
   guest_count: z.string().trim().max(10).optional().or(z.literal("")),
   location: z.string().trim().max(150).optional().or(z.literal("")),
-  message: z.string().trim().min(10).max(2000),
+  message: z.string().trim().min(10).max(5000),
   newsletter_opt_in: z.boolean(),
   // Honeypot — must stay empty
   website: z.string().max(0).optional().or(z.literal("")),

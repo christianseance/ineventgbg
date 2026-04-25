@@ -31,7 +31,7 @@ const formSchema = z.object({
     ),
   guest_count: z.string().optional().or(z.literal("")),
   location: z.string().trim().max(150).optional().or(z.literal("")),
-  message: z.string().trim().min(10, "Berätta lite mer (minst 10 tecken)").max(2000),
+  message: z.string().trim().min(10, "Berätta lite mer (minst 10 tecken)").max(5000),
   newsletter_opt_in: z.boolean(),
 });
 
