@@ -195,6 +195,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
         errs[String(i.path[0])] = i.message;
       });
       setErrors(errs);
+      toast.error("Kolla de markerade fälten och prova igen.");
       return;
     }
     setErrors({});
