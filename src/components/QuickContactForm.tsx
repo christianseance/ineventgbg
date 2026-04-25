@@ -58,7 +58,7 @@ const stepTwoSchema = z.object({
   location: z.string().trim().max(150).optional().or(z.literal("")),
 });
 const stepThreeSchema = z.object({
-  name: z.string().trim().min(2, "Ange ditt namn").max(100),
+  name: z.string().trim().max(100).optional().or(z.literal("")),
   email: z.string().trim().email("Ogiltig e-postadress").max(255),
   phone: z.string().trim().max(30).optional().or(z.literal("")),
   message: z.string().trim().max(2000).optional().or(z.literal("")),
@@ -161,7 +161,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
 
       const res = await submitLead({
         data: {
-          name: data.name,
+          name: data.name.trim() || "Anonym",
           email: data.email,
           phone: data.phone || "",
           event_type: data.event_type || "",
@@ -192,7 +192,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
     return (
       <div className="bg-card border border-border p-8 lg:p-12 text-center">
         <CheckCircle2 size={56} className="mx-auto text-primary mb-5" />
-        <h3 className="text-display text-3xl lg:text-4xl">Tack {data.name.split(" ")[0]}!</h3>
+        <h3 className="text-display text-3xl lg:text-4xl">Tack{data.name.trim() ? ` ${data.name.split(" ")[0]}` : ""}!</h3>
         <p className="mt-4 text-muted-foreground">
           Vi har tagit emot din förfrågan och hör av oss inom kort — oftast samma dag på vardagar.
         </p>
@@ -332,11 +332,10 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
               <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
-                Namn *
+                Namn
               </label>
               <input
                 type="text"
-                required
                 value={data.name}
                 onChange={(e) => update("name", e.target.value)}
                 className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary"
