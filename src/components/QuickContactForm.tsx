@@ -383,7 +383,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary resize-none"
             />
           </div>
-          <PrivacyDisclosure />
+          
         </div>
       )}
 
