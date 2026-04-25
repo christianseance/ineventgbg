@@ -122,32 +122,32 @@ function Cirkustalt() {
             </figure>
             <figure className="relative overflow-hidden bg-card border border-border">
               <img
-                src={cirkustalt3}
-                alt="Cirkustält med folksamling utanför"
-                loading="lazy"
-                className="h-full w-full object-cover aspect-[4/3]"
-              />
-            </figure>
-            <figure className="relative overflow-hidden bg-card border border-border">
-              <img
                 src={cirkustalt4}
                 alt="Cirkustält vid stranden"
                 loading="lazy"
                 className="h-full w-full object-cover aspect-[4/3]"
               />
             </figure>
-            <figure className="relative overflow-hidden bg-card border border-border sm:col-span-2">
+            <figure className="relative overflow-hidden bg-card border border-border">
               <img
-                src={cirkustalt5}
-                alt="Insidan av ett cirkustält med rigg och belysning"
+                src={cirkustalt3}
+                alt="Cirkustält med folksamling utanför"
                 loading="lazy"
-                className="h-full w-full object-cover aspect-[16/9]"
+                className="h-full w-full object-cover aspect-[4/3]"
               />
             </figure>
             <figure className="relative overflow-hidden bg-card border border-border sm:col-span-2 lg:col-span-3">
               <img
                 src={cirkustalt6}
                 alt="Cirkustält uppställt på torg i stadsmiljö"
+                loading="lazy"
+                className="h-full w-full object-cover aspect-[21/9]"
+              />
+            </figure>
+            <figure className="relative overflow-hidden bg-card border border-border sm:col-span-2 lg:col-span-3">
+              <img
+                src={cirkustalt5}
+                alt="Insidan av ett cirkustält med rigg och belysning"
                 loading="lazy"
                 className="h-full w-full object-cover aspect-[21/9]"
               />
