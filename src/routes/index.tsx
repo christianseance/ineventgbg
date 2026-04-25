@@ -89,7 +89,7 @@ function Index() {
                 </div>
                 <div className="h-px bg-border" />
                 <div>
-                  <div className="text-display text-5xl text-foreground">15<span className="text-primary">år</span></div>
+                  <div className="text-display text-5xl text-foreground">25<span className="text-primary">år</span></div>
                   <div className="text-xs uppercase tracking-widest text-muted-foreground mt-1">I branschen</div>
                 </div>
                 <div className="h-px bg-border" />
