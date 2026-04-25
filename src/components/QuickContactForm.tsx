@@ -104,7 +104,7 @@ const INITIAL: State = {
 };
 
 export function QuickContactForm({ initialSubject }: { initialSubject?: string }) {
-  const [step, setStep] = useState<1 | 2 | 3>(1);
+  const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
   const [data, setData] = useState<State>({
     ...INITIAL,
     event_type: initialSubject && EVENT_OPTIONS.some((o) => o.value === initialSubject) ? initialSubject : "",
@@ -195,6 +195,19 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
       }
       setErrors({});
       setStep(3);
+    } else if (step === 3) {
+      const r = stepThreeSchema.safeParse(data);
+      if (!r.success) {
+        const errs: Record<string, string> = {};
+        r.error.issues.forEach((i) => {
+          errs[String(i.path[0])] = i.message;
+        });
+        setErrors(errs);
+        toast.error("Kolla de markerade fälten och prova igen.");
+        return;
+      }
+      setErrors({});
+      setStep(4);
     }
   };
 
@@ -202,6 +215,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
     setErrors({});
     if (step === 2) setStep(1);
     if (step === 3) setStep(2);
+    if (step === 4) setStep(3);
   };
 
   const onSubmit = async (e: React.FormEvent) => {
@@ -287,18 +301,19 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
       <div className="mb-5 sm:mb-7 lg:mb-8">
         <div className="flex items-center justify-between mb-3">
           <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-            Steg {step} av 3
+            Steg {step} av 4
           </span>
           <span className="text-xs text-muted-foreground">
             {step === 1 && "Vad gäller det?"}
             {step === 2 && "När och var?"}
             {step === 3 && "Dina uppgifter"}
+            {step === 4 && "Granska & skicka"}
           </span>
         </div>
         <div className="h-1 bg-border overflow-hidden">
           <div
             className="h-full bg-primary transition-all duration-300"
-            style={{ width: `${(step / 3) * 100}%` }}
+            style={{ width: `${(step / 4) * 100}%` }}
           />
         </div>
       </div>
@@ -498,8 +513,14 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
             />
             <FieldError id="err-message" msg={errors.message} />
           </div>
-          
         </div>
+      )}
+
+      {step === 4 && (
+        <ReviewStep
+          data={data}
+          onEdit={(target) => setStep(target)}
+        />
       )}
 
       <div className="mt-6 sm:mt-8 flex flex-nowrap items-center gap-2 sm:gap-3 pt-4 sm:pt-5 border-t border-border">
@@ -521,7 +542,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
           </div>
         )}
 
-        {step === 3 && (
+        {step === 4 && (
           <div className="flex-1 min-w-0 overflow-hidden text-xs">
             <PrivacyDisclosure />
           </div>
@@ -550,17 +571,139 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
           )}
           {step === 3 && (
             <button
+              type="button"
+              onClick={goNext}
+              className="inline-flex items-center gap-2 sm:gap-3 bg-primary px-5 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors whitespace-nowrap"
+            >
+              <span className="sm:hidden">Granska</span>
+              <span className="hidden sm:inline">Granska & skicka</span>
+              <ArrowRight size={16} />
+            </button>
+          )}
+          {step === 4 && (
+            <button
               type="submit"
               disabled={submitting}
               className="inline-flex items-center gap-2 sm:gap-3 bg-primary px-5 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors disabled:opacity-60 shadow-stage whitespace-nowrap"
             >
               {submitting ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
-              <span>{submitting ? "Skickar..." : "Skicka"}</span>
-              <span className="hidden sm:inline">{submitting ? "" : "förfrågan"}</span>
+              <span>{submitting ? "Skickar..." : "Bekräfta"}</span>
+              <span className="hidden sm:inline">{submitting ? "" : "& skicka"}</span>
             </button>
           )}
         </div>
       </div>
     </form>
+  );
+}
+
+// Granskningssteg — visar all inmatad data och låter användaren hoppa tillbaka för att redigera
+function ReviewStep({
+  data,
+  onEdit,
+}: {
+  data: State;
+  onEdit: (target: 1 | 2 | 3) => void;
+}) {
+  const sections: {
+    title: string;
+    step: 1 | 2 | 3;
+    items: { label: string; value: string }[];
+  }[] = [
+    {
+      title: "Event",
+      step: 1,
+      items: [
+        { label: "Eventtyp", value: data.event_type || "—" },
+        { label: "Datum", value: data.event_date || "Ej angivet" },
+        { label: "Antal gäster", value: data.guest_count || "Ej angivet" },
+        { label: "Plats", value: data.location || "Ej angivet" },
+      ],
+    },
+    {
+      title: "Kontakt",
+      step: 3,
+      items: [
+        { label: "Ärendetyp", value: data.inquiry_type || "—" },
+        { label: "Företag / organisation", value: data.company || "Ej angivet" },
+        { label: "Namn", value: data.name || "Anonym" },
+        { label: "E-post", value: data.email || "—" },
+        { label: "Telefon", value: data.phone || "Ej angivet" },
+      ],
+    },
+  ];
+
+  return (
+    <div className="space-y-4 sm:space-y-5">
+      <div>
+        <h3 className="text-display text-xl sm:text-2xl lg:text-3xl mb-1.5 sm:mb-2">
+          Granska din förfrågan
+        </h3>
+        <p className="text-sm text-muted-foreground">
+          Ser allt rätt ut? Tryck <span className="text-foreground">Bekräfta &amp; skicka</span> nedan — eller redigera valfri sektion.
+        </p>
+      </div>
+
+      <div className="grid gap-4 sm:gap-5">
+        {sections.map((section) => (
+          <div key={section.title} className="border border-border bg-background/40">
+            <div className="flex items-center justify-between gap-3 px-4 sm:px-5 py-2.5 sm:py-3 border-b border-border">
+              <span className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                {section.title}
+              </span>
+              <button
+                type="button"
+                onClick={() => onEdit(section.step)}
+                className="text-xs text-primary hover:underline"
+              >
+                Redigera
+              </button>
+            </div>
+            <dl className="divide-y divide-border">
+              {section.items.map((item) => {
+                const empty = item.value === "Ej angivet" || item.value === "—";
+                return (
+                  <div
+                    key={item.label}
+                    className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 px-4 sm:px-5 py-2.5 sm:py-3"
+                  >
+                    <dt className="text-[11px] uppercase tracking-widest text-muted-foreground sm:w-44 shrink-0">
+                      {item.label}
+                    </dt>
+                    <dd
+                      className={`text-sm break-words ${
+                        empty ? "text-muted-foreground italic" : "text-foreground"
+                      }`}
+                    >
+                      {item.value}
+                    </dd>
+                  </div>
+                );
+              })}
+            </dl>
+          </div>
+        ))}
+
+        {data.message?.trim() && (
+          <div className="border border-border bg-background/40">
+            <div className="flex items-center justify-between gap-3 px-4 sm:px-5 py-2.5 sm:py-3 border-b border-border">
+              <span className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                Meddelande
+              </span>
+              <button
+                type="button"
+                onClick={() => onEdit(3)}
+                className="text-xs text-primary hover:underline"
+              >
+                Redigera
+              </button>
+            </div>
+            <p className="px-4 sm:px-5 py-3 text-sm whitespace-pre-wrap text-foreground">
+              {data.message.trim()}
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
