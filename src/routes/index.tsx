@@ -253,7 +253,7 @@ function Index() {
                 </li>
                 <li className="flex gap-4">
                   <span className="text-muted-foreground mt-1">—</span>
-                  <span>Stora produktioner som kräver väldigt mycket personal — vi är få, som styr!</span>
+                  <span>Enorma produktioner som kräver väldigt mycket personal — vi är få, som styr!</span>
                 </li>
                 <li className="flex gap-4">
                   <span className="text-muted-foreground mt-1">—</span>
