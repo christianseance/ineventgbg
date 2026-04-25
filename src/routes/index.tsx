@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Från cirkustält och scen till bröllop och DJ — vi gör hela ditt event. Utgår från Göteborg, levererar i hela Sverige och Norden.",
+          "Från cirkustält och scen till bröllop och DJ — vi gör hela ditt event. Utgår från Göteborg — finns där du behöver oss.",
       },
       { property: "og:title", content: "Inevent — Vi löser allt inom event" },
       {
@@ -56,7 +56,7 @@ function Index() {
               </h1>
               <p className="mt-8 text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
                 Cirkustält, scener, ljus, lasrar, DJ:s, bröllop, företagsfester — du namnger det,
-                vi bygger det. Från Göteborg till hela Norden.
+                vi bygger det. Utgår från Göteborg — finns där du behöver oss.
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link
