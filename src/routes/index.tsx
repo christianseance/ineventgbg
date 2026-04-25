@@ -270,3 +270,24 @@ function Index() {
 
       {/* QUICK LEAD: lead magnet — förberedelseguide */}
       <QuickLeadForm />
+
+      {/* FINAL CTA */}
+      <section className="relative py-24 border-t border-border bg-gradient-to-b from-background to-card/50">
+        <div className="mx-auto max-w-4xl px-5 lg:px-10 text-center">
+          <h2 className="text-display text-5xl lg:text-8xl">
+            Redo att <span className="text-primary">bygga</span> ditt event?
+          </h2>
+          <p className="mt-6 text-lg text-muted-foreground">
+            Berätta om visionen. Vi återkommer med första steget till en plan snarast!
+          </p>
+          <Link
+            to="/kontakt"
+            className="mt-10 inline-flex items-center gap-3 bg-primary px-10 py-5 text-base font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors shadow-stage"
+          >
+            Begär offert <ArrowRight size={18} />
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}
