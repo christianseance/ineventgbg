@@ -65,7 +65,7 @@ function Tjanster() {
                   key={c.slug}
                   {...linkProps}
                   className="group relative aspect-[4/3] overflow-hidden bg-card border border-border"
-                >);
+                >
                   <img
                     src={c.cover}
                     alt={c.name}
@@ -78,7 +78,8 @@ function Tjanster() {
                     <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{c.blurb}</p>
                   </div>
                 </Link>
-              ))}
+                );
+              })}
             </div>
           </section>
         );
