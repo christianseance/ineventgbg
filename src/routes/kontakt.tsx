@@ -4,7 +4,7 @@ import { zodValidator } from "@tanstack/zod-adapter";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { submitLead } from "@/server/leads.functions";
 
 const searchSchema = z.object({
   subject: z.string().optional(),
