@@ -168,7 +168,7 @@ function Galleri() {
       </div>
 
       {/* Results count */}
-      <div className="flex justify-between items-center mb-6 text-xs uppercase tracking-widest text-muted-foreground">
+      <div ref={resultsRef} className="flex justify-between items-center mb-6 text-xs uppercase tracking-widest text-muted-foreground">
         <span>
           Visar <span className="text-foreground">{filtered.length}</span> av {CATEGORIES.length} kategorier
         </span>
