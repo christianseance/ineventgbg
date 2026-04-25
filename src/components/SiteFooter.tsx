@@ -5,10 +5,23 @@ import { Mail, Phone, MapPin, Tent, Headphones, Instagram, Facebook } from "luci
 export function SiteFooter() {
   return (
     <footer className="relative border-t border-border bg-card/40 mt-32">
-      <div className="mx-auto max-w-[1400px] px-5 py-16 lg:px-10 grid gap-12 lg:grid-cols-4">
-        <div className="lg:col-span-2 space-y-5" />
+      <div className="mx-auto max-w-[1400px] px-5 py-16 lg:px-10 grid gap-12 lg:grid-cols-12">
+        {/* Brand */}
+        <div className="lg:col-span-4 space-y-5">
+          <Logo />
+          <p className="text-sm text-muted-foreground max-w-sm">
+            Vi löser nästan allt inom event — från cirkustält och scen till bröllop, företagsfester och festivaler.
+          </p>
+          <div className="inline-flex items-center gap-2 border border-border px-3 py-2">
+            <span className="pulse-dot h-2 w-2 rounded-full bg-primary" />
+            <span className="text-[11px] uppercase tracking-widest text-muted-foreground">
+              Svar oftast inom <span className="text-foreground">någon timma</span>
+            </span>
+          </div>
+        </div>
 
-        <div className="space-y-3">
+        {/* Navigate */}
+        <div className="lg:col-span-3 space-y-3">
           <h4 className="text-sm tracking-widest text-muted-foreground">Navigera</h4>
           <ul className="space-y-2 text-sm">
             <li><Link to="/" className="hover:text-primary">Start</Link></li>
@@ -20,24 +33,36 @@ export function SiteFooter() {
           </ul>
         </div>
 
-        <div className="space-y-3">
+        {/* Contact */}
+        <div className="lg:col-span-5 space-y-5">
           <h4 className="text-sm tracking-widest text-muted-foreground">Kontakt</h4>
-          <ul className="space-y-2 text-sm">
-            <li className="flex items-start gap-2">
-              <MapPin size={14} className="mt-1 text-primary shrink-0" />
-              <span>Bas: Göteborg. Vi tar oss dit vi behövs</span>
-            </li>
-            <li className="flex items-start gap-2">
+
+          <div className="grid sm:grid-cols-2 gap-5 text-sm">
+            <div className="flex items-start gap-3">
               <Mail size={14} className="mt-1 text-primary shrink-0" />
-              <a href="mailto:mathias@inevent.se" className="hover:text-primary">mathias@inevent.se</a>
-            </li>
-            <li className="flex items-start gap-2">
+              <div className="space-y-1">
+                <div className="text-[11px] uppercase tracking-widest text-muted-foreground">E-post</div>
+                <a href="mailto:mathias@inevent.se" className="block hover:text-primary">mathias@inevent.se</a>
+                <a href="mailto:seance@inevent.se" className="block hover:text-primary">seance@inevent.se</a>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
               <Phone size={14} className="mt-1 text-primary shrink-0" />
-              <a href="tel:+46708837997" className="hover:text-primary">+46 708 83 79 97</a>
-            </li>
-          </ul>
-          <div className="pt-4">
-            <Logo />
+              <div className="space-y-1">
+                <div className="text-[11px] uppercase tracking-widest text-muted-foreground">Telefon</div>
+                <a href="tel:+46708837997" className="block hover:text-primary">+46 708 83 79 97</a>
+                <a href="tel:+46708967690" className="block hover:text-primary">+46 708 96 76 90</a>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 sm:col-span-2">
+              <MapPin size={14} className="mt-1 text-primary shrink-0" />
+              <div className="space-y-1">
+                <div className="text-[11px] uppercase tracking-widest text-muted-foreground">Bas</div>
+                <div>Göteborg — vi tar oss dit vi behövs.</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
