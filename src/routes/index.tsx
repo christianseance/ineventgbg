@@ -284,7 +284,7 @@ function Index() {
           <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
             <div>
               <span className="text-xs uppercase tracking-[0.3em] text-primary">Galleri</span>
-              <h2 className="text-display text-5xl lg:text-7xl mt-3">Ett urval ur vårt arsenal</h2>
+              <h2 className="text-display text-5xl lg:text-7xl mt-3">Ett urval ur vår arsenal</h2>
             </div>
             <Link
               to="/galleri"
