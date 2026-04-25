@@ -271,6 +271,8 @@ function Kontakt() {
               required
               defaultValue={subject ? `Jag är intresserad av: ${subject}\n\n` : ""}
               placeholder="Vad är visionen? Vad behöver du hjälp med — tält, podium, ljus, DJ, helt event?"
+              onInvalid={(e) => e.currentTarget.setCustomValidity("Vänligen fyll i det här fältet")}
+              onInput={(e) => e.currentTarget.setCustomValidity("")}
               className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary resize-none"
             />
             {errors.message && <p className="mt-1 text-xs text-destructive">{errors.message}</p>}
