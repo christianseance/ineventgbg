@@ -60,10 +60,22 @@ const stepTwoSchema = z.object({
 });
 const stepThreeSchema = z.object({
   name: z.string().trim().max(100).optional().or(z.literal("")),
+  company: z.string().trim().max(120).optional().or(z.literal("")),
+  inquiry_type: z.string().trim().max(60).optional().or(z.literal("")),
   email: z.string().trim().email("Ogiltig e-postadress").max(255),
   phone: z.string().trim().max(30).optional().or(z.literal("")),
   message: z.string().trim().max(2000).optional().or(z.literal("")),
 });
+
+const INQUIRY_TYPES = [
+  "Offertförfrågan",
+  "Allmän fråga",
+  "Tillgänglighet / datum",
+  "Prisindikation",
+  "Samarbete / partner",
+  "Press / media",
+  "Annat",
+] as const;
 
 type State = {
   event_type: string;
@@ -71,6 +83,8 @@ type State = {
   guest_count: string;
   location: string;
   name: string;
+  company: string;
+  inquiry_type: string;
   email: string;
   phone: string;
   message: string;
@@ -82,6 +96,8 @@ const INITIAL: State = {
   guest_count: "",
   location: "",
   name: "",
+  company: "",
+  inquiry_type: "Offertförfrågan",
   email: "",
   phone: "",
   message: "",
@@ -114,6 +130,8 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
       guest_count: stepTwoSchema.shape.guest_count,
       location: stepTwoSchema.shape.location,
       name: stepThreeSchema.shape.name,
+      company: stepThreeSchema.shape.company,
+      inquiry_type: stepThreeSchema.shape.inquiry_type,
       email: stepThreeSchema.shape.email,
       phone: stepThreeSchema.shape.phone,
       message: stepThreeSchema.shape.message,
@@ -201,9 +219,14 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
     setErrors({});
     setSubmitting(true);
     try {
-      const message =
-        data.message?.trim() ||
-        `Förfrågan via formulär: ${data.event_type}${data.event_date ? `, ${data.event_date}` : ""}${data.location ? `, ${data.location}` : ""}${data.guest_count ? `, ca ${data.guest_count} gäster` : ""}.`;
+      const userMessage = data.message?.trim();
+      const summaryParts = [
+        data.inquiry_type && `Ärendetyp: ${data.inquiry_type}`,
+        data.company && `Företag/Organisation: ${data.company}`,
+      ].filter(Boolean);
+      const summaryHeader = summaryParts.length ? `${summaryParts.join("\n")}\n\n` : "";
+      const fallback = `Förfrågan via formulär: ${data.event_type}${data.event_date ? `, ${data.event_date}` : ""}${data.location ? `, ${data.location}` : ""}${data.guest_count ? `, ca ${data.guest_count} gäster` : ""}.`;
+      const message = `${summaryHeader}${userMessage || fallback}`;
 
       const res = await submitLead({
         data: {
@@ -378,6 +401,25 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               Vi återkommer med en personlig dialog — oftast samma dag.
             </p>
           </div>
+          <div>
+            <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
+              Ärendetyp
+            </label>
+            <select
+              value={data.inquiry_type}
+              onChange={(e) => update("inquiry_type", e.target.value)}
+              onBlur={() => validateField("inquiry_type")}
+              aria-invalid={!!errors.inquiry_type}
+              className={inputClass("inquiry_type")}
+            >
+              {INQUIRY_TYPES.map((t) => (
+                <option key={t} value={t}>
+                  {t}
+                </option>
+              ))}
+            </select>
+            <FieldError id="err-inquiry-type" msg={errors.inquiry_type} />
+          </div>
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
               <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
@@ -411,19 +453,35 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               <FieldError id="err-email" msg={errors.email} />
             </div>
           </div>
-          <div>
-            <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
-              Telefon (valfritt)
-            </label>
-            <input
-              type="tel"
-              value={data.phone}
-              onChange={(e) => update("phone", e.target.value)}
-              onBlur={() => validateField("phone")}
-              aria-invalid={!!errors.phone}
-              className={inputClass("phone")}
-            />
-            <FieldError id="err-phone" msg={errors.phone} />
+          <div className="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
+                Telefon (valfritt)
+              </label>
+              <input
+                type="tel"
+                value={data.phone}
+                onChange={(e) => update("phone", e.target.value)}
+                onBlur={() => validateField("phone")}
+                aria-invalid={!!errors.phone}
+                className={inputClass("phone")}
+              />
+              <FieldError id="err-phone" msg={errors.phone} />
+            </div>
+            <div>
+              <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
+                Företag / organisation (valfritt)
+              </label>
+              <input
+                type="text"
+                value={data.company}
+                onChange={(e) => update("company", e.target.value)}
+                onBlur={() => validateField("company")}
+                aria-invalid={!!errors.company}
+                className={inputClass("company")}
+              />
+              <FieldError id="err-company" msg={errors.company} />
+            </div>
           </div>
           <div>
             <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
