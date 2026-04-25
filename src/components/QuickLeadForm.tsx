@@ -172,15 +172,33 @@ export function QuickLeadForm() {
                   </div>
                 </div>
 
-                <label className="flex items-start gap-3 cursor-pointer text-xs text-muted-foreground leading-relaxed">
+                <label
+                  className={`flex items-start gap-3 cursor-pointer rounded-sm border p-3.5 transition-all ${
+                    newsletter
+                      ? "border-primary/60 bg-primary/5"
+                      : "border-border hover:border-primary/40 hover:bg-card"
+                  }`}
+                >
                   <input
                     type="checkbox"
                     checked={newsletter}
                     onChange={(e) => setNewsletter(e.target.checked)}
-                    className="mt-0.5 h-4 w-4 accent-primary shrink-0"
+                    className="sr-only"
                   />
-                  <span>
-                    Lägg till mig på e-postlistan. Vi mejlar då och då — avregistrera när du vill.
+                  <span
+                    className={`mt-0.5 h-5 w-5 shrink-0 rounded-sm border flex items-center justify-center transition-colors ${
+                      newsletter ? "bg-primary border-primary" : "border-muted-foreground/40 bg-background"
+                    }`}
+                    aria-hidden="true"
+                  >
+                    {newsletter && <Check size={14} className="text-primary-foreground" strokeWidth={3} />}
+                  </span>
+                  <span className="flex-1 text-sm text-foreground/90 leading-snug">
+                    <span className="inline-flex items-center gap-1.5 font-medium">
+                      <Mail size={13} className="text-primary" />
+                      Ja tack
+                    </span>{" "}
+                    — skicka mig också tips, nya tält och säsongs-erbjudanden då och då.
                   </span>
                 </label>
 
