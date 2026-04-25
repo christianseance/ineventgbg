@@ -116,7 +116,9 @@ function Kontakt() {
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [optIn, setOptIn] = useState(true);
+  // Soft opt-in (ePrivacy art. 13.2): den som begär offert kan få mejl om liknande tjänster
+  // tills de tackar nej. Ingen aktiv checkbox krävs.
+  const optIn = true;
   const [file, setFile] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
