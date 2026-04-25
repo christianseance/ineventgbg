@@ -303,7 +303,6 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
                 min="0"
                 value={data.guest_count}
                 onChange={(e) => update("guest_count", e.target.value)}
-                placeholder="t.ex. 150"
                 className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary"
               />
               {errors.guest_count && (
