@@ -161,7 +161,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
 
       const res = await submitLead({
         data: {
-          name: data.name,
+          name: data.name.trim() || "Anonym",
           email: data.email,
           phone: data.phone || "",
           event_type: data.event_type || "",
