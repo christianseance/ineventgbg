@@ -270,7 +270,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
   }
 
   return (
-    <form onSubmit={onSubmit} className="bg-card border border-border px-6 lg:px-10 py-5 lg:py-7">
+    <form onSubmit={onSubmit} className="bg-card border border-border px-4 sm:px-6 lg:px-10 py-4 sm:py-5 lg:py-7">
       {/* Honeypot */}
       <input
         type="text"
@@ -284,7 +284,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
       />
 
       {/* Progress */}
-      <div className="mb-8">
+      <div className="mb-5 sm:mb-7 lg:mb-8">
         <div className="flex items-center justify-between mb-3">
           <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
             Steg {step} av 3
@@ -305,7 +305,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
 
       {step === 1 && (
         <div>
-          <h3 className="text-display text-2xl lg:text-3xl mb-6">Vilken typ av event?</h3>
+          <h3 className="text-display text-xl sm:text-2xl lg:text-3xl mb-4 sm:mb-6">Vilken typ av event?</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {EVENT_OPTIONS.map((opt) => {
               const Icon = opt.icon;
@@ -315,7 +315,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
                   key={opt.value}
                   type="button"
                   onClick={() => selectEventType(opt.value)}
-                  className={`group flex flex-col items-center justify-center gap-2 border p-5 transition-all ${
+                  className={`group flex flex-col items-center justify-center gap-2 border p-3 sm:p-5 transition-all ${
                     active
                       ? "border-primary bg-primary/10 text-foreground"
                       : "border-border bg-background hover:border-primary/50 text-foreground/80"
@@ -335,14 +335,14 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
       )}
 
       {step === 2 && (
-        <div className="space-y-5">
+        <div className="space-y-4 sm:space-y-5">
           <div>
-            <h3 className="text-display text-2xl lg:text-3xl mb-2">När och var?</h3>
+            <h3 className="text-display text-xl sm:text-2xl lg:text-3xl mb-1.5 sm:mb-2">När och var?</h3>
             <p className="text-sm text-muted-foreground mb-2">
               Allt här är valfritt — fyll i det du vet.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 gap-5">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
             <div>
               <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
                 Datum (om känt)
@@ -394,9 +394,9 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
       )}
 
       {step === 3 && (
-        <div className="space-y-5">
+        <div className="space-y-4 sm:space-y-5">
           <div>
-            <h3 className="text-display text-2xl lg:text-3xl mb-2">Vart får vi höra av oss?</h3>
+            <h3 className="text-display text-xl sm:text-2xl lg:text-3xl mb-1.5 sm:mb-2">Vart får vi höra av oss?</h3>
             <p className="text-sm text-muted-foreground">
               Vi återkommer med en personlig dialog — oftast samma dag.
             </p>
@@ -420,7 +420,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
             </select>
             <FieldError id="err-inquiry-type" msg={errors.inquiry_type} />
           </div>
-          <div className="grid sm:grid-cols-2 gap-5">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
             <div>
               <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
                 Namn
@@ -453,7 +453,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               <FieldError id="err-email" msg={errors.email} />
             </div>
           </div>
-          <div className="grid sm:grid-cols-2 gap-5">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
             <div>
               <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
                 Telefon (valfritt)
@@ -502,7 +502,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
         </div>
       )}
 
-      <div className="mt-8 flex flex-nowrap items-center gap-2 sm:gap-3 pt-5 border-t border-border">
+      <div className="mt-6 sm:mt-8 flex flex-nowrap items-center gap-2 sm:gap-3 pt-4 sm:pt-5 border-t border-border">
         {step > 1 && (
           <button
             type="button"
