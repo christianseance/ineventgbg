@@ -13,6 +13,7 @@ import {
   Users,
   Tent,
   Sparkles,
+  AlertCircle,
 } from "lucide-react";
 import { submitLead } from "@/server/leads.functions";
 import { PrivacyDisclosure } from "@/components/PrivacyDisclosure";
