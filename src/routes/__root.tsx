@@ -37,7 +37,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Vi löser allt inom event. Cirkustält, eventtält, scener, podium, ljus, lasrar, DJ, bröllop och företagsevent. Utgår från Göteborg — finns i hela Sverige och Norden.",
+          "Vi löser allt inom event. Cirkustält, eventtält, scener, podium, ljus, lasrar, DJ, bröllop och företagsevent. Utgår från Göteborg — finns där du behöver oss.",
       },
       { name: "author", content: "Inevent" },
       { property: "og:title", content: "Inevent — Eventproduktion & uthyrning" },
