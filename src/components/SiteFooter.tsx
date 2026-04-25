@@ -40,6 +40,9 @@ export function SiteFooter() {
               <a href="tel:+46708837997" className="hover:text-primary">+46 708 83 79 97</a>
             </li>
           </ul>
+          <div className="pt-4 flex justify-end">
+            <Logo />
+          </div>
         </div>
       </div>
       <div className="border-t border-border">
