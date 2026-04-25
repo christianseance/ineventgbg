@@ -8,10 +8,10 @@ export const Route = createFileRoute("/om-oss")({
       {
         name: "description",
         content:
-          "Inevent har producerat event och hyrt ut tält, scener och teknik sedan 2009. Bas i Göteborg, projekt över hela Norden.",
+          "Inevent har producerat event och hyrt ut tält, scener och teknik sedan 2001. Bas i Göteborg, projekt över hela Norden.",
       },
       { property: "og:title", content: "Om Inevent" },
-      { property: "og:description", content: "Människorna bakom tälten — Inevent sedan 2009." },
+      { property: "og:description", content: "Människorna bakom tälten — Inevent sedan 2001." },
     ],
   }),
   component: OmOss,
@@ -30,7 +30,7 @@ function OmOss() {
           </h1>
           <div className="mt-10 space-y-6 text-muted-foreground text-lg leading-relaxed max-w-2xl">
             <p>
-              Inevent startades 2009 i Göteborg av människor som tröttnade på halvdana eventproduktioner.
+              Inevent startades 2001 i Göteborg av människor som tröttnade på halvdana eventproduktioner.
               Idag äger vi en av Sveriges största lager av cirkustält, eventtält, scener och teknik —
               och, lika viktigt, ett team som vet exakt hur allt riggas.
             </p>
@@ -48,7 +48,7 @@ function OmOss() {
 
         <div className="lg:col-span-5 space-y-px bg-border">
           {[
-            { k: "2009", v: "Året vi startade" },
+            { k: "2001", v: "Året vi startade" },
             { k: "500+", v: "Genomförda event" },
             { k: "Norden", v: "Geografisk räckvidd" },
             { k: "24h", v: "Svar på offerter" },

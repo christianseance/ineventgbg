@@ -47,7 +47,7 @@ function Index() {
             <div className="lg:col-span-8 fade-up">
               <div className="flex items-center gap-3 mb-6">
                 <span className="h-px w-10 bg-primary" />
-                <span className="text-xs uppercase tracking-[0.3em] text-primary">Eventproduktion sedan 2009</span>
+                <span className="text-xs uppercase tracking-[0.3em] text-primary">Eventproduktion sedan 2001</span>
               </div>
               <h1 className="text-display text-[clamp(3.5rem,11vw,11rem)] text-foreground">
                 Vi reser <br />
