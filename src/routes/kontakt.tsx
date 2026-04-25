@@ -106,6 +106,32 @@ function Kontakt() {
   const [done, setDone] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [optIn, setOptIn] = useState(true);
+  const [file, setFile] = useState<File | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const f = e.target.files?.[0];
+    if (!f) {
+      setFile(null);
+      return;
+    }
+    if (hasBlockedExtension(f.name)) {
+      toast.error("Filtypen är inte tillåten av säkerhetsskäl.");
+      e.target.value = "";
+      return;
+    }
+    if (f.size > MAX_FILE_BYTES) {
+      toast.error("Filen är för stor (max 10 MB).");
+      e.target.value = "";
+      return;
+    }
+    setFile(f);
+  }
+
+  function clearFile() {
+    setFile(null);
+    if (fileInputRef.current) fileInputRef.current.value = "";
+  }
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -137,6 +163,24 @@ function Kontakt() {
     setSubmitting(true);
     try {
       const v = parsed.data;
+
+      let attachment: { name: string; mime: string; size: number; base64: string } | null = null;
+      if (file) {
+        try {
+          const base64 = await fileToBase64(file);
+          attachment = {
+            name: file.name,
+            mime: file.type || "application/octet-stream",
+            size: file.size,
+            base64,
+          };
+        } catch {
+          toast.error("Kunde inte läsa filen. Prova en annan.");
+          setSubmitting(false);
+          return;
+        }
+      }
+
       const result = await submitLead({
         data: {
           name: v.name,
@@ -149,6 +193,7 @@ function Kontakt() {
           message: v.message,
           newsletter_opt_in: v.newsletter_opt_in,
           website: String(fd.get("website") ?? ""),
+          attachment,
         },
       });
 
