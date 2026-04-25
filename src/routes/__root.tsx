@@ -33,15 +33,15 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Inevent — Eventproduktion & uthyrning av tält, scen och teknik" },
+      { title: "Inevent — Eventproduktion & uthyrning av tält, podium och teknik" },
       {
         name: "description",
         content:
-          "Vi löser allt inom event. Cirkustält, eventtält, scener, podium, ljus, lasrar, DJ, bröllop och företagsevent. Utgår från Göteborg — finns där du behöver oss.",
+          "Vi löser allt inom event. Cirkustält, eventtält, podium, ljus, lasrar, DJ, bröllop och företagsevent. Utgår från Göteborg — finns där du behöver oss.",
       },
       { name: "author", content: "Inevent" },
       { property: "og:title", content: "Inevent — Eventproduktion & uthyrning" },
-      { property: "og:description", content: "Tält, scener, teknik och kompletta produktioner. Begär offert idag." },
+      { property: "og:description", content: "Tält, podium, ljus, DJ och kompletta produktioner. Begär offert idag." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
