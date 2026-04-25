@@ -426,6 +426,8 @@ function Kontakt() {
             </span>
           </label>
 
+          <PrivacyDisclosure />
+
           <div className="flex flex-wrap items-center justify-end gap-4 pt-4 border-t border-border">
             <button
               type="submit"
