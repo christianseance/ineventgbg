@@ -62,7 +62,17 @@ const formSchema = z.object({
       },
       { message: "Datumet kan inte vara passerat" }
     ),
-  guest_count: z.string().optional().or(z.literal("")),
+  guest_count: z
+    .string()
+    .optional()
+    .refine(
+      (v) => {
+        if (!v) return true;
+        const n = Number(v);
+        return Number.isFinite(n) && Number.isInteger(n) && n >= 0 && n <= 100000;
+      },
+      { message: "Antal gäster måste vara ett positivt heltal" }
+    ),
   location: z.string().trim().max(150).optional().or(z.literal("")),
   message: z
     .string()
@@ -340,7 +350,7 @@ function Kontakt() {
               </select>
             </div>
             <Field label="Datum (om känt)" name="event_date" type="date" min={new Date().toISOString().split("T")[0]} error={errors.event_date} />
-            <Field label="Antal gäster" name="guest_count" type="number" placeholder="t.ex. 150" />
+            <Field label="Antal gäster" name="guest_count" type="number" placeholder="t.ex. 150" min="0" error={errors.guest_count} />
           </div>
 
           <div>
@@ -462,6 +472,7 @@ function Field({
           if (el.validity.valueMissing) el.setCustomValidity("Vänligen fyll i det här fältet");
           else if (el.validity.typeMismatch && type === "email") el.setCustomValidity("Ange en giltig e-postadress");
           else if (el.validity.rangeUnderflow && type === "date") el.setCustomValidity("Datumet kan inte vara passerat");
+          else if (el.validity.rangeUnderflow && type === "number") el.setCustomValidity("Värdet kan inte vara negativt");
           else if (el.validity.badInput && type === "number") el.setCustomValidity("Ange ett giltigt nummer");
           else el.setCustomValidity("Ogiltigt värde");
         }}
