@@ -1,7 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { z } from "zod";
 import { zodValidator } from "@tanstack/zod-adapter";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { ArrowUpRight, Search, X } from "lucide-react";
 import { CATEGORIES, GROUPS, type Group } from "@/data/gallery";
 
@@ -32,6 +32,17 @@ function Galleri() {
   const { group, category, q } = Route.useSearch();
   const navigate = useNavigate({ from: "/galleri" });
   const [localQ, setLocalQ] = useState(q ?? "");
+  const resultsRef = useRef<HTMLDivElement>(null);
+
+  const scrollToResults = () => {
+    requestAnimationFrame(() => {
+      const el = resultsRef.current;
+      if (!el) return;
+      const headerOffset = 80;
+      const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
+      window.scrollTo({ top, behavior: "smooth" });
+    });
+  };
 
   const filtered = useMemo(() => {
     return CATEGORIES.filter((c) => {
@@ -42,10 +53,14 @@ function Galleri() {
     });
   }, [group, category, q]);
 
-  const setGroup = (g?: Group) =>
+  const setGroup = (g?: Group) => {
     navigate({ search: (s: z.infer<typeof searchSchema>) => ({ ...s, group: g, category: undefined }) });
-  const setCategory = (slug?: string) =>
+    scrollToResults();
+  };
+  const setCategory = (slug?: string) => {
     navigate({ search: (s: z.infer<typeof searchSchema>) => ({ ...s, category: slug }) });
+    scrollToResults();
+  };
   const applySearch = () =>
     navigate({ search: (s: z.infer<typeof searchSchema>) => ({ ...s, q: localQ || undefined }) });
   const clearAll = () => {
@@ -153,7 +168,7 @@ function Galleri() {
       </div>
 
       {/* Results count */}
-      <div className="flex justify-between items-center mb-6 text-xs uppercase tracking-widest text-muted-foreground">
+      <div ref={resultsRef} className="flex justify-between items-center mb-6 text-xs uppercase tracking-widest text-muted-foreground">
         <span>
           Visar <span className="text-foreground">{filtered.length}</span> av {CATEGORIES.length} kategorier
         </span>
