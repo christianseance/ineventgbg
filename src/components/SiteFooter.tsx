@@ -10,7 +10,7 @@ export function SiteFooter() {
           <Logo />
           <p className="text-muted-foreground text-sm max-w-md">
             Vi löser allt inom event. Från cirkustält och podium till bröllop, företagsfester och festivaler.
-            Utgår från Göteborg — finns där du behöver oss.
+            Utgår från Göteborg.
           </p>
         </div>
 
