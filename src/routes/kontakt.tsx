@@ -4,7 +4,7 @@ import { zodValidator } from "@tanstack/zod-adapter";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { submitLead } from "@/server/leads.functions";
 
 const searchSchema = z.object({
   subject: z.string().optional(),
@@ -87,22 +87,24 @@ function Kontakt() {
     setSubmitting(true);
     try {
       const v = parsed.data;
-      const { error } = await supabase.from("leads").insert({
-        name: v.name,
-        email: v.email,
-        phone: v.phone || null,
-        event_type: v.event_type || null,
-        event_date: v.event_date || null,
-        guest_count: v.guest_count ? Number(v.guest_count) : null,
-        location: v.location || null,
-        message: v.message,
-        newsletter_opt_in: v.newsletter_opt_in,
+      const result = await submitLead({
+        data: {
+          name: v.name,
+          email: v.email,
+          phone: v.phone || "",
+          event_type: v.event_type || "",
+          event_date: v.event_date || "",
+          guest_count: v.guest_count || "",
+          location: v.location || "",
+          message: v.message,
+          newsletter_opt_in: v.newsletter_opt_in,
+          website: String(fd.get("website") ?? ""),
+        },
       });
 
-      if (error) throw error;
-
-      if (v.newsletter_opt_in) {
-        await supabase.from("newsletter_subscribers").insert({ email: v.email, source: "contact_form" });
+      if (!result.ok) {
+        toast.error(result.error ?? "Något gick fel. Prova igen eller mejla oss direkt.");
+        return;
       }
 
       setDone(true);
@@ -210,6 +212,15 @@ function Kontakt() {
 
         {/* Right — form */}
         <form onSubmit={onSubmit} className="lg:col-span-8 bg-card border border-border p-6 lg:p-10 space-y-5">
+          {/* Honeypot — hidden from users, bots will fill it */}
+          <input
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="absolute left-[-9999px] h-0 w-0 opacity-0"
+          />
           <div className="grid sm:grid-cols-2 gap-5">
             <Field label="Namn *" name="name" error={errors.name} required />
             <Field label="E-post *" name="email" type="email" error={errors.email} required />
