@@ -329,11 +329,12 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
                 value={data.event_date}
                 min={new Date().toISOString().split("T")[0]}
                 onChange={(e) => update("event_date", e.target.value)}
-                className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary"
+                onBlur={() => validateField("event_date")}
+                aria-invalid={!!errors.event_date}
+                aria-describedby={errors.event_date ? "err-event-date" : undefined}
+                className={inputClass("event_date")}
               />
-              {errors.event_date && (
-                <p className="mt-1 text-xs text-destructive">{errors.event_date}</p>
-              )}
+              <FieldError id="err-event-date" msg={errors.event_date} />
             </div>
             <div>
               <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
@@ -344,11 +345,12 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
                 min="0"
                 value={data.guest_count}
                 onChange={(e) => update("guest_count", e.target.value)}
-                className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary"
+                onBlur={() => validateField("guest_count")}
+                aria-invalid={!!errors.guest_count}
+                aria-describedby={errors.guest_count ? "err-guest-count" : undefined}
+                className={inputClass("guest_count")}
               />
-              {errors.guest_count && (
-                <p className="mt-1 text-xs text-destructive">{errors.guest_count}</p>
-              )}
+              <FieldError id="err-guest-count" msg={errors.guest_count} />
             </div>
           </div>
           <div>
@@ -359,8 +361,11 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               type="text"
               value={data.location}
               onChange={(e) => update("location", e.target.value)}
-              className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary"
+              onBlur={() => validateField("location")}
+              aria-invalid={!!errors.location}
+              className={inputClass("location")}
             />
+            <FieldError id="err-location" msg={errors.location} />
           </div>
         </div>
       )}
