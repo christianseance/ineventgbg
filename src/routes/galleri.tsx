@@ -183,51 +183,57 @@ function Galleri() {
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {filtered.map((cat, i) => (
-            <article
-              key={cat.slug}
-              className={`group relative overflow-hidden bg-card border border-border ${
-                i % 5 === 0 ? "lg:row-span-2" : ""
-              }`}
-            >
-              <div className={`relative ${i % 5 === 0 ? "aspect-[3/4]" : "aspect-[4/3]"} overflow-hidden`}>
-                <img
-                  src={cat.cover}
-                  alt={cat.name}
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-90" />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-background/80 backdrop-blur-sm px-2.5 py-1 text-[10px] uppercase tracking-widest text-primary">
-                    {GROUPS[cat.group].label}
-                  </span>
+          {filtered.map((cat, i) => {
+            const isCirkus = cat.slug === "cirkustalt";
+            const linkProps = isCirkus
+              ? ({ to: "/cirkustalt" } as const)
+              : ({ to: "/kontakt", search: { subject: cat.name } } as const);
+            const ctaLabel = isCirkus ? "Se cirkustälten" : "Få offert på liknande";
+            const ariaLabel = isCirkus ? "Se cirkustälten" : `Få offert för ${cat.name}`;
+            return (
+              <article
+                key={cat.slug}
+                className={`group relative overflow-hidden bg-card border border-border ${
+                  i % 5 === 0 ? "lg:row-span-2" : ""
+                }`}
+              >
+                <div className={`relative ${i % 5 === 0 ? "aspect-[3/4]" : "aspect-[4/3]"} overflow-hidden`}>
+                  <img
+                    src={cat.cover}
+                    alt={cat.name}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-90" />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-background/80 backdrop-blur-sm px-2.5 py-1 text-[10px] uppercase tracking-widest text-primary">
+                      {GROUPS[cat.group].label}
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-start justify-between gap-3">
-                  <h3 className="text-display text-3xl">{cat.name}</h3>
+                <div className="p-6">
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="text-display text-3xl">{cat.name}</h3>
+                    <Link
+                      {...linkProps}
+                      className="shrink-0 h-10 w-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
+                      aria-label={ariaLabel}
+                    >
+                      <ArrowUpRight size={16} />
+                    </Link>
+                  </div>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{cat.blurb}</p>
                   <Link
-                    to="/kontakt"
-                    search={{ subject: cat.name }}
-                    className="shrink-0 h-10 w-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
-                    aria-label={`Få offert för ${cat.name}`}
+                    {...linkProps}
+                    className="mt-5 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-primary hover:gap-3 transition-all"
                   >
-                    <ArrowUpRight size={16} />
+                    {ctaLabel}
+                    <ArrowUpRight size={12} />
                   </Link>
                 </div>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{cat.blurb}</p>
-                <Link
-                  to="/kontakt"
-                  search={{ subject: cat.name }}
-                  className="mt-5 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-primary hover:gap-3 transition-all"
-                >
-                  Få offert på liknande
-                  <ArrowUpRight size={12} />
-                </Link>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       )}
     </div>

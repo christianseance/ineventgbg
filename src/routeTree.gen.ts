@@ -13,6 +13,7 @@ import { Route as TjansterRouteImport } from './routes/tjanster'
 import { Route as OmOssRouteImport } from './routes/om-oss'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as GalleriRouteImport } from './routes/galleri'
+import { Route as CirkustaltRouteImport } from './routes/cirkustalt'
 import { Route as IndexRouteImport } from './routes/index'
 
 const TjansterRoute = TjansterRouteImport.update({
@@ -35,6 +36,11 @@ const GalleriRoute = GalleriRouteImport.update({
   path: '/galleri',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CirkustaltRoute = CirkustaltRouteImport.update({
+  id: '/cirkustalt',
+  path: '/cirkustalt',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -43,6 +49,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cirkustalt': typeof CirkustaltRoute
   '/galleri': typeof GalleriRoute
   '/kontakt': typeof KontaktRoute
   '/om-oss': typeof OmOssRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cirkustalt': typeof CirkustaltRoute
   '/galleri': typeof GalleriRoute
   '/kontakt': typeof KontaktRoute
   '/om-oss': typeof OmOssRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cirkustalt': typeof CirkustaltRoute
   '/galleri': typeof GalleriRoute
   '/kontakt': typeof KontaktRoute
   '/om-oss': typeof OmOssRoute
@@ -65,14 +74,28 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/galleri' | '/kontakt' | '/om-oss' | '/tjanster'
+  fullPaths:
+    | '/'
+    | '/cirkustalt'
+    | '/galleri'
+    | '/kontakt'
+    | '/om-oss'
+    | '/tjanster'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/galleri' | '/kontakt' | '/om-oss' | '/tjanster'
-  id: '__root__' | '/' | '/galleri' | '/kontakt' | '/om-oss' | '/tjanster'
+  to: '/' | '/cirkustalt' | '/galleri' | '/kontakt' | '/om-oss' | '/tjanster'
+  id:
+    | '__root__'
+    | '/'
+    | '/cirkustalt'
+    | '/galleri'
+    | '/kontakt'
+    | '/om-oss'
+    | '/tjanster'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CirkustaltRoute: typeof CirkustaltRoute
   GalleriRoute: typeof GalleriRoute
   KontaktRoute: typeof KontaktRoute
   OmOssRoute: typeof OmOssRoute
@@ -109,6 +132,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GalleriRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cirkustalt': {
+      id: '/cirkustalt'
+      path: '/cirkustalt'
+      fullPath: '/cirkustalt'
+      preLoaderRoute: typeof CirkustaltRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -121,6 +151,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CirkustaltRoute: CirkustaltRoute,
   GalleriRoute: GalleriRoute,
   KontaktRoute: KontaktRoute,
   OmOssRoute: OmOssRoute,
