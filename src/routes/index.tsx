@@ -338,8 +338,8 @@ function Index() {
             <div className="lg:col-span-5">
               <div className="grid grid-cols-3 gap-px bg-border border border-border">
                 <div className="bg-background p-6 text-center">
-                  <div className="text-display text-4xl text-primary">300+</div>
-                  <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-2">Genomförda event</div>
+                  <div className="text-display text-4xl text-primary">96%</div>
+                  <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-2">Nöjda kunder</div>
                 </div>
                 <div className="bg-background p-6 text-center">
                   <div className="text-display text-4xl text-primary">25</div>
