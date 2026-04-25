@@ -105,6 +105,13 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
     if (errors[k as string]) setErrors((e) => ({ ...e, [k as string]: "" }));
   };
 
+  const selectEventType = (value: string) => {
+    setData((d) => ({ ...d, event_type: value }));
+    setErrors((e) => ({ ...e, event_type: "" }));
+    // Liten fördröjning så användaren ser sitt val markeras innan vi byter steg
+    setTimeout(() => setStep(2), 180);
+  };
+
   const goNext = () => {
     if (step === 1) {
       const r = stepOneSchema.safeParse(data);
