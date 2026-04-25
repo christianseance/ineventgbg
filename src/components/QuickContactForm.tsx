@@ -58,7 +58,7 @@ const stepTwoSchema = z.object({
   location: z.string().trim().max(150).optional().or(z.literal("")),
 });
 const stepThreeSchema = z.object({
-  name: z.string().trim().min(2, "Ange ditt namn").max(100),
+  name: z.string().trim().max(100).optional().or(z.literal("")),
   email: z.string().trim().email("Ogiltig e-postadress").max(255),
   phone: z.string().trim().max(30).optional().or(z.literal("")),
   message: z.string().trim().max(2000).optional().or(z.literal("")),
