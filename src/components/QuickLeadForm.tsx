@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Download, FileText } from "lucide-react";
+import { ArrowRight, Download, FileText, Mail, Check } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 import { submitLead } from "@/server/leads.functions";
