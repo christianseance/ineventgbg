@@ -565,7 +565,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               className="inline-flex items-center gap-2 sm:gap-3 bg-primary px-5 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors whitespace-nowrap"
             >
               <span className="sm:hidden">Nästa</span>
-              <span className="hidden sm:inline">Nästa / hoppa över</span>
+              <span className="hidden sm:inline">Nästa / hoppa</span>
               <ArrowRight size={16} />
             </button>
           )}
