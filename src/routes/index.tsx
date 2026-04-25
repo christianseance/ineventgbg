@@ -214,11 +214,10 @@ function Index() {
               <ul className="space-y-5 text-base text-foreground/90">
                 <li className="flex gap-4">
                   <span className="text-primary mt-1">—</span>
-                  <span>Att slå upp ett tält. Det har vi gjort i över tjugofem år.</span>
-                </li>
-                <li className="flex gap-4">
-                  <span className="text-primary mt-1">—</span>
-                  <span>Cirkustält, eventtält och enklare scenuppsättningar.</span>
+                  <span>
+                    Att slå upp ett cirkustält, en by av event-tält och enklare
+                    scenuppsättningar. Det har vi gjort i över tjugofem år.
+                  </span>
                 </li>
                 <li className="flex gap-4">
                   <span className="text-primary mt-1">—</span>
