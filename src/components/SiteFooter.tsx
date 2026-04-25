@@ -10,7 +10,6 @@ export function SiteFooter() {
           <Logo />
           <p className="text-muted-foreground text-sm max-w-md">
             Inevent erbjuder allt från cirkustält och podium till bröllop, företagsfester och festivaler.
-            Utgår från Göteborg.
           </p>
         </div>
 
