@@ -33,17 +33,22 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Inevent — Eventproduktion & uthyrning av tält, podium och teknik" },
+      { title: "Inevent — Eventproduktion & uthyrning av tält m.m." },
       {
         name: "description",
         content:
           "Vi löser allt inom event. Cirkustält, eventtält, podium, ljus, lasrar, DJ, bröllop och företagsevent. Utgår från Göteborg — finns där du behöver oss.",
       },
       { name: "author", content: "Inevent" },
-      { property: "og:title", content: "Inevent — Eventproduktion & uthyrning" },
-      { property: "og:description", content: "Tält, podium, ljus, DJ och kompletta produktioner. Begär offert idag." },
+      { property: "og:title", content: "Inevent — Eventproduktion & uthyrning av tält m.m." },
+      { property: "og:description", content: "Vi löser allt inom event, hyr ut cirkus-tält och podium, bord, barstolar, många sorters event-tält, fixar bröllop, företags-event, DJs, discon, ljusteknik" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Inevent — Eventproduktion & uthyrning av tält m.m." },
+      { name: "description", content: "Vi löser allt inom event, hyr ut cirkus-tält och podium, bord, barstolar, många sorters event-tält, fixar bröllop, företags-event, DJs, discon, ljusteknik" },
+      { name: "twitter:description", content: "Vi löser allt inom event, hyr ut cirkus-tält och podium, bord, barstolar, många sorters event-tält, fixar bröllop, företags-event, DJs, discon, ljusteknik" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/8n5cYqnmJaWCMpbGGTNUhTfWH103/social-images/social-1777085227669-Inevent_Logo_Black_copy.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/8n5cYqnmJaWCMpbGGTNUhTfWH103/social-images/social-1777085227669-Inevent_Logo_Black_copy.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
