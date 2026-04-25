@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Logo } from "./Logo";
+import { LogoHorizontal } from "./LogoHorizontal";
 
 const NAV = [
   { to: "/", label: "Start" },
@@ -32,7 +32,7 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-4 lg:px-10">
         <Link to="/" className="text-foreground hover:text-primary transition-colors">
-          <Logo />
+          <LogoHorizontal />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
