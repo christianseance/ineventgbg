@@ -200,10 +200,10 @@ function Cirkustalt() {
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
-              to="/galleri"
+              to="/talt"
               className="inline-flex items-center gap-3 border border-foreground/20 px-7 py-4 text-sm font-semibold uppercase tracking-widest text-foreground hover:border-foreground hover:bg-foreground/5 transition-colors"
             >
-              Tillbaka till galleri
+              Övriga tält
             </Link>
           </div>
         </section>
