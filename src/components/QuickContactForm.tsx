@@ -109,7 +109,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
     setData((d) => ({ ...d, event_type: value }));
     setErrors((e) => ({ ...e, event_type: "" }));
     // Liten fördröjning så användaren ser sitt val markeras innan vi byter steg
-    setTimeout(() => setStep(2), 180);
+    setTimeout(() => setStep(2), 450);
   };
 
   const goNext = () => {
@@ -303,7 +303,6 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
                 min="0"
                 value={data.guest_count}
                 onChange={(e) => update("guest_count", e.target.value)}
-                placeholder="t.ex. 150"
                 className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary"
               />
               {errors.guest_count && (
@@ -319,7 +318,6 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               type="text"
               value={data.location}
               onChange={(e) => update("location", e.target.value)}
-              placeholder="t.ex. Göteborg"
               className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary"
             />
           </div>
@@ -402,13 +400,22 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
           <span />
         )}
 
-        {step === 2 && (
+        {step === 1 && (
           <button
             type="button"
             onClick={goNext}
             className="inline-flex items-center gap-3 bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors"
           >
             Nästa <ArrowRight size={16} />
+          </button>
+        )}
+        {step === 2 && (
+          <button
+            type="button"
+            onClick={goNext}
+            className="inline-flex items-center gap-3 bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors"
+          >
+            Nästa / hoppa över <ArrowRight size={16} />
           </button>
         )}
         {step === 3 && (
@@ -421,7 +428,6 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
             {submitting ? "Skickar..." : "Skicka förfrågan"}
           </button>
         )}
-        {step === 1 && <span />}
       </div>
     </form>
   );
