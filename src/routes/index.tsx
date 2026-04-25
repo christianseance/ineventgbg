@@ -190,6 +190,88 @@ function Index() {
         </div>
       </section>
 
+      {/* HONEST — strengths & limits */}
+      <section className="relative py-32 bg-card/30 border-y border-border">
+        <div className="mx-auto max-w-[1400px] px-5 lg:px-10">
+          <div className="grid lg:grid-cols-12 gap-8 mb-16">
+            <div className="lg:col-span-5">
+              <span className="text-xs uppercase tracking-[0.3em] text-primary">Ärligt</span>
+              <h2 className="text-display text-5xl lg:text-7xl mt-3">
+                Vad vi <span className="text-primary">är</span> — och inte är.
+              </h2>
+            </div>
+            <div className="lg:col-span-6 lg:col-start-7 self-end">
+              <p className="text-lg text-muted-foreground">
+                Vi tror på att vara raka. Här är vad du kan förvänta dig av oss — och vad du
+                bör söka någon annanstans för.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-px bg-border">
+            <div className="bg-background p-10 lg:p-14">
+              <h3 className="text-display text-3xl lg:text-4xl mb-8">Det vi är bra på</h3>
+              <ul className="space-y-5 text-base text-foreground/90">
+                <li className="flex gap-4">
+                  <span className="text-primary mt-1">—</span>
+                  <span>Att slå upp ett tält. Det har vi gjort i över tjugofem år.</span>
+                </li>
+                <li className="flex gap-4">
+                  <span className="text-primary mt-1">—</span>
+                  <span>Cirkustält, eventtält och enklare scenuppsättningar.</span>
+                </li>
+                <li className="flex gap-4">
+                  <span className="text-primary mt-1">—</span>
+                  <span>Ärliga råd om vad du faktiskt behöver — och inte.</span>
+                </li>
+                <li className="flex gap-4">
+                  <span className="text-primary mt-1">—</span>
+                  <span>Att vara på plats och få det att fungera ordentligt.</span>
+                </li>
+                <li className="flex gap-4">
+                  <span className="text-primary mt-1">—</span>
+                  <span>Eventarkitektur — vi designar rummet från skiss till sista detalj.</span>
+                </li>
+                <li className="flex gap-4">
+                  <span className="text-primary mt-1">—</span>
+                  <span>Belysning som lyfter stämningen, inte bara lyser upp.</span>
+                </li>
+                <li className="flex gap-4">
+                  <span className="text-primary mt-1">—</span>
+                  <span>Musikkunskap — vi vet vem och vad som passar din stund.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-background p-10 lg:p-14">
+              <h3 className="text-display text-3xl lg:text-4xl mb-8">
+                Det vi inte är världsmästare på
+              </h3>
+              <ul className="space-y-5 text-base text-foreground/90">
+                <li className="flex gap-4">
+                  <span className="text-muted-foreground mt-1">—</span>
+                  <span>Att skicka offert supersnabbt. Räkna med några dagar, i samråd.</span>
+                </li>
+                <li className="flex gap-4">
+                  <span className="text-muted-foreground mt-1">—</span>
+                  <span>Stora produktioner som kräver väldigt mycket personal — vi är få.</span>
+                </li>
+                <li className="flex gap-4">
+                  <span className="text-muted-foreground mt-1">—</span>
+                  <span>
+                    Allt-inkluderat lyxlösningar för annat än tält. Vi gör det vi har utrustning för.
+                  </span>
+                </li>
+              </ul>
+              <p className="mt-10 text-sm text-muted-foreground leading-relaxed border-t border-border pt-6">
+                Behöver du något vi inte har — säg till. Vi tipsar gärna om någon som passar
+                bättre, eller pusslar ihop det åt dig inom vårat fantastiska nätverk.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FEATURED — asymmetric grid */}
       <section className="relative py-20 bg-card/30 border-y border-border">
         <div className="mx-auto max-w-[1400px] px-5 lg:px-10">
