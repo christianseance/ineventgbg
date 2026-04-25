@@ -257,7 +257,7 @@ function Kontakt() {
                 ))}
               </select>
             </div>
-            <Field label="Datum (om känt)" name="event_date" type="date" />
+            <Field label="Datum (om känt)" name="event_date" type="date" min={new Date().toISOString().split("T")[0]} error={errors.event_date} />
             <Field label="Antal gäster" name="guest_count" type="number" placeholder="t.ex. 150" />
           </div>
 
