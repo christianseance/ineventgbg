@@ -502,7 +502,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
         </div>
       )}
 
-      <div className="mt-8 flex flex-nowrap items-center gap-2 sm:gap-3 pt-5 border-t border-border">
+      <div className="mt-6 sm:mt-8 flex flex-nowrap items-center gap-2 sm:gap-3 pt-4 sm:pt-5 border-t border-border">
         {step > 1 && (
           <button
             type="button"
