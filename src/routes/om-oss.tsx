@@ -30,9 +30,9 @@ function OmOss() {
           </h1>
           <div className="mt-10 space-y-6 text-muted-foreground text-lg leading-relaxed max-w-2xl">
             <p>
-              Inevent startades 2001 i Göteborg av människor som tröttnade på halvdana eventproduktioner. Idag äger vi
-              en av Sveriges största lager av cirkustält, eventtält, podium, ljus och teknik — och, lika viktigt, ett
-              team som vet exakt hur allt riggas.
+              Inevent startades 2001 i Göteborg av Mathias, och 2026 fick han sällskap av några eventveteraner till som
+              tröttnat på halvdana produktioner. Idag äger vi en av Sveriges största lager av cirkustält, eventtält,
+              podium, ljus och teknik — och, lika viktigt, ett team som vet exakt hur allt riggas.
             </p>
             <p>
               Vi tar projekt från en enda dag till veckolånga festivaler. Från ett podium på en gata till en komplett
