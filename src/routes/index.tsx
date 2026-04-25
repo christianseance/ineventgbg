@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "https://inevent.se/" },
       { property: "og:site_name", content: "Inevent" },
       { property: "og:locale", content: "sv_SE" },
-      { property: "og:title", content: "Inevent — Vi löser allt inom event" },
+      { property: "og:title", content: "Inevent — Vi löser nästan allt inom event" },
       {
         property: "og:description",
         content: "Cirkustält, podium, ljus, DJ, bröllop, företagsfest. Begär offert idag.",
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
       { property: "og:image:height", content: "630" },
       { property: "og:image:alt", content: "Cirkustält upplyst i rött med scenljus" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Inevent — Vi löser allt inom event" },
+      { name: "twitter:title", content: "Inevent — Vi löser nästan allt inom event" },
       {
         name: "twitter:description",
         content: "Cirkustält, podium, ljus, DJ, bröllop, företagsfest. Begär offert idag.",
