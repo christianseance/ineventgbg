@@ -9,7 +9,7 @@ export function SiteFooter() {
         <div className="lg:col-span-2 space-y-5">
           <Logo />
           <p className="text-muted-foreground text-sm max-w-md">
-            Vi löser nästan allt inom event. Från cirkustält och podium till bröllop, företagsfester och festivaler.
+            Inevent erbjuder allt från cirkustält och podium till bröllop, företagsfester och festivaler.
             Utgår från Göteborg.
           </p>
         </div>
