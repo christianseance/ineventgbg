@@ -111,7 +111,7 @@ export function QuickLeadForm() {
                   download="Inevent-Forberedelseguide.pdf"
                   className="group inline-flex items-center gap-3 bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors"
                 >
-                  <Download size={16} /> Ladda ner guiden
+                  <Download size={16} /> Beställ guiden
                 </a>
               </div>
             ) : (
@@ -175,7 +175,7 @@ export function QuickLeadForm() {
                   disabled={submitting}
                   className="group inline-flex items-center justify-center gap-3 bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors w-full sm:w-auto disabled:opacity-60"
                 >
-                  {submitting ? "Skickar…" : "Ladda ner guiden"}
+                  {submitting ? "Skickar…" : "Beställ guiden"}
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </button>
                 <p className="text-xs text-muted-foreground">
