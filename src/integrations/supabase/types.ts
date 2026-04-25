@@ -14,7 +14,69 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      leads: {
+        Row: {
+          created_at: string
+          email: string
+          event_date: string | null
+          event_type: string | null
+          guest_count: number | null
+          id: string
+          location: string | null
+          message: string
+          name: string
+          newsletter_opt_in: boolean
+          phone: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          event_date?: string | null
+          event_type?: string | null
+          guest_count?: number | null
+          id?: string
+          location?: string | null
+          message: string
+          name: string
+          newsletter_opt_in?: boolean
+          phone?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          event_date?: string | null
+          event_type?: string | null
+          guest_count?: number | null
+          id?: string
+          location?: string | null
+          message?: string
+          name?: string
+          newsletter_opt_in?: boolean
+          phone?: string | null
+        }
+        Relationships: []
+      }
+      newsletter_subscribers: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          source: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          source?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          source?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
