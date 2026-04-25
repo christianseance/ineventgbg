@@ -19,7 +19,7 @@ export const Route = createFileRoute("/cirkustalt")({
       { property: "og:title", content: "Cirkustält uthyrning · Inevent" },
       {
         property: "og:description",
-        content: "Big tops i flera storlekar — perfekt för festivaler, släpp och pop-ups.",
+        content: "Big tops i flera storlekar. Perfekt för festivaler, släpp och pop-ups.",
       },
       { property: "og:image", content: cirkustalt1 },
       { name: "twitter:image", content: cirkustalt1 },
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/cirkustalt")({
 const features = [
   "Storlekar från intima 200 kvm till massiva 1500+ kvm",
   "Professionell rigg av certifierat team",
-  "Klarar svenskt väder — vind, regn och kyla",
+  "Klarar svenskt väder: vind, regn och kyla",
   "Anpassningsbart med scen, ljus, ljud och inredning",
   "Leverans och uppställning i hela Sverige",
   "Försäkrade och kontrollerade enligt branschstandard",
@@ -55,7 +55,7 @@ function Cirkustalt() {
           </h1>
           <p className="mt-5 text-lg lg:text-xl text-foreground/90 max-w-2xl">
             Ikoniska big tops som vänder vilket fält, torg eller parkering som helst till en
-            destination. Sett från månen — eller åtminstone från andra sidan stan.
+            destination. Sett från månen, eller åtminstone från andra sidan stan.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -86,7 +86,7 @@ function Cirkustalt() {
             </h2>
             <p className="mt-5 text-muted-foreground leading-relaxed">
               Ett cirkustält är scenografi i sig självt. Spirorna, draperingarna, känslan av att
-              kliva in i något större — det är därför festivaler, märken och städer väljer big tops
+              kliva in i något större. Det är därför festivaler, märken och städer väljer big tops
               när de vill att något ska kännas.
             </p>
           </div>
@@ -168,7 +168,7 @@ function Cirkustalt() {
             },
             {
               title: "Stadsfester & Galor",
-              text: "Stadens torg blir festsal. Från julmarknad till kommunjubileum — tältet sätter scenen.",
+              text: "Stadens torg blir festsal. Från julmarknad till kommunjubileum, tältet sätter scenen.",
             },
           ].map((c) => (
             <article key={c.title} className="bg-background p-8 lg:p-10">

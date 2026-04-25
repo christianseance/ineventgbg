@@ -133,7 +133,7 @@ function Tjanster() {
             <blockquote className="mt-5 border-l-2 border-primary pl-5 py-2 text-sm text-muted-foreground italic">
               ”Raka besked, snabb uppställning och ett tält som lyfte hela kvällen.”
               <footer className="mt-2 not-italic text-xs uppercase tracking-widest text-foreground/60">
-                — Tidigare kund, bröllop i Bohuslän
+                Tidigare kund, bröllop i Bohuslän
               </footer>
             </blockquote>
           </div>
