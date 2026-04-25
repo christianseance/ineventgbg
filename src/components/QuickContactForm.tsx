@@ -160,6 +160,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
       const r = stepOneSchema.safeParse(data);
       if (!r.success) {
         setErrors({ event_type: r.error.issues[0]?.message ?? "Välj ett alternativ" });
+        toast.error("Välj en eventtyp för att gå vidare.");
         return;
       }
       setStep(2);
@@ -171,6 +172,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
           errs[String(i.path[0])] = i.message;
         });
         setErrors(errs);
+        toast.error("Kolla de markerade fälten och prova igen.");
         return;
       }
       setErrors({});
