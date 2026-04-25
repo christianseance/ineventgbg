@@ -304,6 +304,9 @@ function Index() {
         </div>
       </section>
 
+      {/* QUICK LEAD: minimal email + message form */}
+      <QuickLeadForm />
+
       {/* FEATURED: asymmetric grid */}
       <section className="relative py-20 bg-card/30 border-y border-border">
         <div className="mx-auto max-w-[1400px] px-5 lg:px-10">
