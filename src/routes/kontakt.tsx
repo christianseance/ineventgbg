@@ -46,65 +46,6 @@ function Kontakt() {
         <QuickContactForm initialSubject={subject} />
       </div>
 
-      {/* Contact info directly below form */}
-      <section className="mt-6 lg:mt-8 grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="flex items-start gap-4">
-          <span className="mt-1 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-            <Mail size={16} />
-          </span>
-          <div>
-            <div className="text-xs uppercase tracking-widest text-muted-foreground">E-post</div>
-            <a
-              href="mailto:mathias@inevent.se"
-              className="block text-foreground hover:text-primary transition-colors"
-            >
-              mathias@inevent.se
-            </a>
-            <a
-              href="mailto:seance@inevent.se"
-              className="block text-foreground hover:text-primary transition-colors"
-            >
-              seance@inevent.se
-            </a>
-          </div>
-        </div>
-
-        <div className="flex items-start gap-4">
-          <span className="mt-1 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-            <Phone size={16} />
-          </span>
-          <div>
-            <div className="text-xs uppercase tracking-widest text-muted-foreground">Telefon</div>
-            <a href="tel:+46708837997" className="block text-foreground hover:text-primary transition-colors">
-              +46 708 83 79 97
-            </a>
-            <a href="tel:+46708967690" className="block text-foreground hover:text-primary transition-colors">
-              +46 708 96 76 90
-            </a>
-          </div>
-        </div>
-
-        <div className="flex items-start gap-4">
-          <span className="mt-1 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-            <MapPin size={16} />
-          </span>
-          <div>
-            <div className="text-xs uppercase tracking-widest text-muted-foreground">Bas</div>
-            <div className="text-foreground">Göteborg</div>
-            <div className="text-sm text-muted-foreground">Finns där du behöver oss</div>
-          </div>
-        </div>
-
-        <div className="border border-border p-5 bg-card">
-          <div className="flex items-center gap-2 text-primary mb-2">
-            <span className="pulse-dot h-2 w-2 rounded-full bg-primary" />
-            <span className="text-xs uppercase tracking-widest">Snabbt svar</span>
-          </div>
-          <p className="text-sm text-muted-foreground">
-            Oftast inom <span className="text-foreground">någon timma</span> på vardagar — annars senast inom 36 timmar.
-          </p>
-        </div>
-      </section>
     </div>
   );
 }
