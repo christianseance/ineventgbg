@@ -63,13 +63,7 @@ function Galleri() {
   };
   const applySearch = () => {
     navigate({ search: (s: z.infer<typeof searchSchema>) => ({ ...s, q: localQ || undefined }) });
-    if (!localQ) return;
-    const hasMatches = CATEGORIES.some((c) => {
-      if (group && c.group !== group) return false;
-      if (category && c.slug !== category) return false;
-      return `${c.name} ${c.blurb}`.toLowerCase().includes(localQ.toLowerCase());
-    });
-    if (hasMatches) scrollToResults();
+    if (localQ) scrollToResults();
   };
   const clearAll = () => {
     setLocalQ("");
