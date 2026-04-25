@@ -307,9 +307,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               );
             })}
           </div>
-          {errors.event_type && (
-            <p className="mt-3 text-xs text-destructive">{errors.event_type}</p>
-          )}
+          <FieldError id="err-event-type" msg={errors.event_type} />
         </div>
       )}
 
