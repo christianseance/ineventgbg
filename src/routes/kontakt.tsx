@@ -15,7 +15,20 @@ const formSchema = z.object({
   email: z.string().trim().email("Ogiltig e-postadress").max(255),
   phone: z.string().trim().max(30).optional().or(z.literal("")),
   event_type: z.string().trim().max(100).optional().or(z.literal("")),
-  event_date: z.string().optional().or(z.literal("")),
+  event_date: z
+    .string()
+    .optional()
+    .or(z.literal(""))
+    .refine(
+      (v) => {
+        if (!v) return true;
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const d = new Date(v);
+        return !isNaN(d.getTime()) && d >= today;
+      },
+      { message: "Datumet kan inte vara passerat" }
+    ),
   guest_count: z.string().optional().or(z.literal("")),
   location: z.string().trim().max(150).optional().or(z.literal("")),
   message: z.string().trim().min(10, "Berätta lite mer (minst 10 tecken)").max(2000),
@@ -244,7 +257,7 @@ function Kontakt() {
                 ))}
               </select>
             </div>
-            <Field label="Datum (om känt)" name="event_date" type="date" />
+            <Field label="Datum (om känt)" name="event_date" type="date" min={new Date().toISOString().split("T")[0]} error={errors.event_date} />
             <Field label="Antal gäster" name="guest_count" type="number" placeholder="t.ex. 150" />
           </div>
 
@@ -299,6 +312,7 @@ function Field({
   error,
   required,
   placeholder,
+  min,
 }: {
   label: string;
   name: string;
@@ -306,6 +320,7 @@ function Field({
   error?: string;
   required?: boolean;
   placeholder?: string;
+  min?: string;
 }) {
   return (
     <div>
@@ -315,6 +330,7 @@ function Field({
         name={name}
         required={required}
         placeholder={placeholder}
+        min={min}
         className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary"
       />
       {error && <p className="mt-1 text-xs text-destructive">{error}</p>}
