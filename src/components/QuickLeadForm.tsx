@@ -41,7 +41,7 @@ export function QuickLeadForm() {
           name: parsed.data.name || "Guide-nedladdning",
           email: parsed.data.email,
           message: "Laddade ner förberedelseguiden från startsidan.",
-          newsletter_opt_in: true,
+          newsletter_opt_in: newsletter,
           website,
           phone: "",
           event_type: "guide_download",
