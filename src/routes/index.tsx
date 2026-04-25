@@ -55,8 +55,8 @@ function Index() {
                 <span className="text-stroke">Du gör showen.</span>
               </h1>
               <p className="mt-8 text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                Cirkustält, podier, ljus, lasrar, DJ:s, bröllop, företagsfester — du namnger det,
-                vi bygger det. Utgår från Göteborg — finns där du behöver oss.
+                Cirkustält, podier, ljus, lasrar, DJ:s, bröllop, företagsfester — du namnger det, vi bygger det. Utgår
+                från Göteborg — finns där du behöver oss.
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link
@@ -89,12 +89,14 @@ function Index() {
                 </div>
                 <div className="h-px bg-border" />
                 <div>
-                  <div className="text-display text-5xl text-foreground">25<span className="text-primary">år</span></div>
+                  <div className="text-display text-5xl text-foreground">
+                    25<span className="text-primary">år</span>
+                  </div>
                   <div className="text-xs uppercase tracking-widest text-muted-foreground mt-1">I branschen</div>
                 </div>
                 <div className="h-px bg-border" />
                 <div>
-                  <div className="text-display text-5xl text-foreground">24h</div>
+                  <div className="text-display text-5xl text-foreground">24-48h</div>
                   <div className="text-xs uppercase tracking-widest text-muted-foreground mt-1">Svar på offert</div>
                 </div>
               </div>
@@ -135,8 +137,8 @@ function Index() {
             </div>
             <div className="lg:col-span-7 lg:col-start-6 self-end">
               <p className="text-lg text-muted-foreground">
-                Hyr direkt från lagret, boka komplett event eller lägg till en av våra människor i ditt team.
-                Allt skalbart — från ett ensamt podium till en full festivalproduktion.
+                Hyr direkt från lagret, boka komplett event eller lägg till en av våra människor i ditt team. Allt
+                skalbart — från ett ensamt podium till en full festivalproduktion.
               </p>
             </div>
           </div>
@@ -157,7 +159,10 @@ function Index() {
                       <span className="text-xs text-muted-foreground">0{i + 1}</span>
                       <Icon size={20} className="text-primary" />
                     </div>
-                    <ArrowUpRight size={20} className="text-muted-foreground group-hover:text-primary group-hover:rotate-12 transition-all" />
+                    <ArrowUpRight
+                      size={20}
+                      className="text-muted-foreground group-hover:text-primary group-hover:rotate-12 transition-all"
+                    />
                   </div>
                   <h3 className="text-display text-4xl mb-3">{g.label}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{g.description}</p>
@@ -232,7 +237,9 @@ function Index() {
             <div className="lg:col-span-5">
               <span className="text-xs uppercase tracking-[0.3em] text-primary">Hur det går till</span>
               <h2 className="text-display text-5xl lg:text-7xl mt-3">
-                Idé till <br /><span className="text-primary">uppställning</span> <br />på fyra steg.
+                Idé till <br />
+                <span className="text-primary">uppställning</span> <br />
+                på fyra steg.
               </h2>
               <Link
                 to="/kontakt"
@@ -243,12 +250,31 @@ function Index() {
             </div>
             <ol className="lg:col-span-7 space-y-6">
               {[
-                { n: "01", t: "Briefen", d: "Ring eller fyll i formuläret. Vi lyssnar, ställer frågor och förstår vad du vill skapa." },
-                { n: "02", t: "Förslaget", d: "Inom 24h får du en konkret offert med setup, teknik, tider och pris." },
-                { n: "03", t: "Produktionen", d: "Vi tar hand om logistik, tillstånd, leverantörer och rigging. Du fokuserar på gästerna." },
-                { n: "04", t: "Showen", d: "Vi är på plats hela vägen — från första spik till sista bil ut från området." },
+                {
+                  n: "01",
+                  t: "Briefen",
+                  d: "Ring eller fyll i formuläret. Vi lyssnar, ställer frågor och förstår vad du vill skapa.",
+                },
+                {
+                  n: "02",
+                  t: "Förslaget",
+                  d: "Inom 24-48h får du en konkret offert med setup, teknik, tider och pris.",
+                },
+                {
+                  n: "03",
+                  t: "Produktionen",
+                  d: "Vi tar hand om logistik, tillstånd, leverantörer och rigging. Du fokuserar på gästerna.",
+                },
+                {
+                  n: "04",
+                  t: "Showen",
+                  d: "Vi är på plats hela vägen — från första spik till sista bil ut från området.",
+                },
               ].map((step) => (
-                <li key={step.n} className="group flex gap-6 border-b border-border pb-6 hover:border-primary transition-colors">
+                <li
+                  key={step.n}
+                  className="group flex gap-6 border-b border-border pb-6 hover:border-primary transition-colors"
+                >
                   <span className="text-display text-5xl text-primary shrink-0 w-20">{step.n}</span>
                   <div>
                     <h3 className="text-display text-3xl mb-2">{step.t}</h3>

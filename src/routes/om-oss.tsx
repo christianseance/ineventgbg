@@ -30,30 +30,26 @@ function OmOss() {
           </h1>
           <div className="mt-10 space-y-6 text-muted-foreground text-lg leading-relaxed max-w-2xl">
             <p>
-              Inevent startades 2001 i Göteborg av människor som tröttnade på halvdana eventproduktioner.
-              Idag äger vi en av Sveriges största lager av cirkustält, eventtält, podium, ljus och teknik —
-              och, lika viktigt, ett team som vet exakt hur allt riggas.
+              Inevent startades 2001 i Göteborg av människor som tröttnade på halvdana eventproduktioner. Idag äger vi
+              en av Sveriges största lager av cirkustält, eventtält, podium, ljus och teknik — och, lika viktigt, ett
+              team som vet exakt hur allt riggas.
             </p>
             <p>
-              Vi tar projekt från en enda dag till veckolånga festivaler. Från ett podium på en gata
-              till en komplett LED-vägg i en konsertarena. Bröllop med 30 gäster eller företagsfest
-              med 3 000.
+              Vi tar projekt från en enda dag till veckolånga festivaler. Från ett podium på en gata till en komplett
+              LED-vägg i en konsertarena. Bröllop med 30 gäster eller företagsfest med 3 000.
             </p>
-            <p>
-              Det vi lovar är enkelt: vi svarar snabbt, vi är ärliga med pris, och när dagen kommer
-              fungerar allt.
-            </p>
+            <p>Det vi lovar är enkelt: vi svarar snabbt, vi är ärliga med pris, och när dagen kommer fungerar allt.</p>
           </div>
         </div>
 
         <div className="lg:col-span-5 space-y-px bg-border">
           {[
             { k: "2001", v: "Året vi startade" },
-            { k: "500+", v: "Genomförda event" },
+            { k: "300+", v: "Genomförda event" },
             { k: "Norden", v: "Geografisk räckvidd" },
-            { k: "24h", v: "Svar på offerter" },
-            { k: "12", v: "Människor i teamet" },
-            { k: "1500m²", v: "Lagerareal i Göteborg" },
+            { k: "24-48h", v: "Svar på offerter" },
+            { k: "3", v: "Människor i coreteamet" },
+            { k: "999m²", v: "Lagerareal i Göteborg" },
           ].map((s) => (
             <div key={s.k} className="bg-background p-8 flex justify-between items-baseline">
               <span className="text-display text-5xl text-foreground">{s.k}</span>

@@ -102,9 +102,7 @@ function Kontakt() {
       if (error) throw error;
 
       if (v.newsletter_opt_in) {
-        await supabase
-          .from("newsletter_subscribers")
-          .insert({ email: v.email, source: "contact_form" });
+        await supabase.from("newsletter_subscribers").insert({ email: v.email, source: "contact_form" });
       }
 
       setDone(true);
@@ -122,7 +120,9 @@ function Kontakt() {
       <div className="mx-auto max-w-2xl px-5 py-32 text-center">
         <CheckCircle2 size={64} className="mx-auto text-primary mb-6" />
         <h1 className="text-display text-5xl lg:text-7xl">
-          Tack!<br /><span className="text-primary">Vi hör av oss.</span>
+          Tack!
+          <br />
+          <span className="text-primary">Vi hör av oss.</span>
         </h1>
         <p className="mt-6 text-lg text-muted-foreground">
           Vi har tagit emot din förfrågan och återkommer inom 24 timmar med ett konkret förslag.
@@ -139,7 +139,8 @@ function Kontakt() {
           <div>
             <span className="text-xs uppercase tracking-[0.3em] text-primary">Kontakt</span>
             <h1 className="text-display text-5xl lg:text-7xl mt-3">
-              Berätta <br /><span className="text-primary">om ditt event.</span>
+              Berätta <br />
+              <span className="text-primary">om ditt event.</span>
             </h1>
             <p className="mt-6 text-muted-foreground">
               Vi återkommer inom 24 timmar med en personlig offert. Inga förpliktelser.
@@ -153,8 +154,18 @@ function Kontakt() {
               </span>
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground">E-post</div>
-                <a href="mailto:mathias@inevent.se" className="block text-foreground hover:text-primary transition-colors">mathias@inevent.se</a>
-                <a href="mailto:seance@inevent.se" className="block text-foreground hover:text-primary transition-colors">seance@inevent.se</a>
+                <a
+                  href="mailto:mathias@inevent.se"
+                  className="block text-foreground hover:text-primary transition-colors"
+                >
+                  mathias@inevent.se
+                </a>
+                <a
+                  href="mailto:seance@inevent.se"
+                  className="block text-foreground hover:text-primary transition-colors"
+                >
+                  seance@inevent.se
+                </a>
               </div>
             </div>
 
@@ -164,8 +175,12 @@ function Kontakt() {
               </span>
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground">Telefon</div>
-                <a href="tel:+46708837997" className="block text-foreground hover:text-primary transition-colors">+46 708 83 79 97</a>
-                <a href="tel:+46708967690" className="block text-foreground hover:text-primary transition-colors">+46 708 96 76 90</a>
+                <a href="tel:+46708837997" className="block text-foreground hover:text-primary transition-colors">
+                  +46 708 83 79 97
+                </a>
+                <a href="tel:+46708967690" className="block text-foreground hover:text-primary transition-colors">
+                  +46 708 96 76 90
+                </a>
               </div>
             </div>
 
@@ -187,7 +202,8 @@ function Kontakt() {
               <span className="text-xs uppercase tracking-widest">Snabbt svar</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Vi svarar normalt inom <span className="text-foreground">2–4 timmar</span> på vardagar — alltid inom 24h.
+              Vi svarar normalt inom <span className="text-foreground">4-8 timmar</span> på vardagar — alltid inom
+              24-48h.
             </p>
           </div>
         </aside>
@@ -211,7 +227,11 @@ function Kontakt() {
                 className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary"
               >
                 <option value="">Välj...</option>
-                {EVENT_TYPES.map((t) => <option key={t} value={t}>{t}</option>)}
+                {EVENT_TYPES.map((t) => (
+                  <option key={t} value={t}>
+                    {t}
+                  </option>
+                ))}
               </select>
             </div>
             <Field label="Datum (om känt)" name="event_date" type="date" />
@@ -241,7 +261,8 @@ function Kontakt() {
               className="mt-1 h-4 w-4 accent-primary"
             />
             <span>
-              Lägg till mig på e-postlistan — vi mejlar några gånger per år om nya tält, projekt och säsongs-erbjudanden.
+              Lägg till mig på e-postlistan — vi mejlar några gånger per år om nya tält, projekt och
+              säsongs-erbjudanden.
             </span>
           </label>
 
@@ -263,9 +284,19 @@ function Kontakt() {
 }
 
 function Field({
-  label, name, type = "text", error, required, placeholder,
+  label,
+  name,
+  type = "text",
+  error,
+  required,
+  placeholder,
 }: {
-  label: string; name: string; type?: string; error?: string; required?: boolean; placeholder?: string;
+  label: string;
+  name: string;
+  type?: string;
+  error?: string;
+  required?: boolean;
+  placeholder?: string;
 }) {
   return (
     <div>
