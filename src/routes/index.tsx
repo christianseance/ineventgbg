@@ -289,8 +289,8 @@ function Index() {
               <div className="mt-10 space-y-4 text-sm text-muted-foreground leading-relaxed border-t border-border pt-6">
                 <p>
                   Behöver du något vi inte har — säg till. Tälten, scenerna, rumsdesignen,
-                  dekor, belysning och DJs är vår hemmaplan. Allt däromkring — teknik, mat,
-                  extra personal — kopplar vi in via partners vi handplockat genom åren.
+                  dekor, belysning och DJs är vår hemmaplan. Allt däromkring — särskild teknik, mat,
+                  fotograf, städ, annan extra personal — kopplar vi in via partners vi handplockat genom åren.
                   En kontakt, ett upplägg.
                 </p>
                 <p>
