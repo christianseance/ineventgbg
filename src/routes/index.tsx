@@ -262,10 +262,17 @@ function Index() {
                   </span>
                 </li>
               </ul>
-              <p className="mt-10 text-sm text-muted-foreground leading-relaxed border-t border-border pt-6">
-                Behöver du något vi inte har — säg till. Vi tipsar gärna om någon som passar
-                bättre, eller pusslar ihop det åt dig inom vårat fantastiska nätverk.
-              </p>
+              <div className="mt-10 space-y-4 text-sm text-muted-foreground leading-relaxed border-t border-border pt-6">
+                <p>
+                  Behöver du något vi inte har — säg till. Tälten, scenerna och rumsdesignen
+                  är vår hemmaplan. Allt däromkring — teknik, mat, DJs, eventarkitektur —
+                  kopplar vi in via partners vi handplockat genom åren. En kontakt, ett upplägg.
+                </p>
+                <p>
+                  Vi går igenom offerter noga med er, och vi är inte många (ännu) — men
+                  det vi har fungerar, och vi gör jobbet ordentligt.
+                </p>
+              </div>
             </div>
           </div>
         </div>
