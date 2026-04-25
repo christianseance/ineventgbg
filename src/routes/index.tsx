@@ -6,16 +6,16 @@ import { CATEGORIES, GROUPS } from "@/data/gallery";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Inevent — Tält, scener & komplett eventproduktion" },
+      { title: "Inevent — Cirkustält, podium, ljus & komplett eventproduktion" },
       {
         name: "description",
         content:
-          "Från cirkustält och scen till bröllop och DJ — vi gör hela ditt event. Utgår från Göteborg — finns där du behöver oss.",
+          "Cirkustält, podium, ljus, DJ och allt event-pyssel — vi gör hela ditt event. Utgår från Göteborg — finns där du behöver oss.",
       },
       { property: "og:title", content: "Inevent — Vi löser allt inom event" },
       {
         property: "og:description",
-        content: "Cirkustält, scen, ljud & ljus, DJ, bröllop, företagsfest. Begär offert idag.",
+        content: "Cirkustält, podium, ljus, DJ, bröllop, företagsfest. Begär offert idag.",
       },
     ],
   }),
