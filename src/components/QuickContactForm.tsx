@@ -397,6 +397,12 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
           </button>
         )}
 
+        {step === 1 && (
+          <div className="flex-1 min-w-0 text-xs text-muted-foreground">
+            Välj det som passar bäst — du kan precisera senare.
+          </div>
+        )}
+
         {step === 3 && (
           <div className="flex-1 min-w-0 overflow-hidden text-xs">
             <PrivacyDisclosure />
