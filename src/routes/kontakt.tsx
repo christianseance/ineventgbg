@@ -176,7 +176,7 @@ function Kontakt() {
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground">Bas</div>
                 <div className="text-foreground">Göteborg</div>
-                <div className="text-sm text-muted-foreground">Levererar i hela Sverige & Norden</div>
+                <div className="text-sm text-muted-foreground">Finns där du behöver oss</div>
               </div>
             </div>
           </div>
