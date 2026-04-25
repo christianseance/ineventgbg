@@ -32,6 +32,17 @@ function Galleri() {
   const { group, category, q } = Route.useSearch();
   const navigate = useNavigate({ from: "/galleri" });
   const [localQ, setLocalQ] = useState(q ?? "");
+  const resultsRef = useRef<HTMLDivElement>(null);
+
+  const scrollToResults = () => {
+    requestAnimationFrame(() => {
+      const el = resultsRef.current;
+      if (!el) return;
+      const headerOffset = 80;
+      const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
+      window.scrollTo({ top, behavior: "smooth" });
+    });
+  };
 
   const filtered = useMemo(() => {
     return CATEGORIES.filter((c) => {
@@ -42,10 +53,14 @@ function Galleri() {
     });
   }, [group, category, q]);
 
-  const setGroup = (g?: Group) =>
+  const setGroup = (g?: Group) => {
     navigate({ search: (s: z.infer<typeof searchSchema>) => ({ ...s, group: g, category: undefined }) });
-  const setCategory = (slug?: string) =>
+    scrollToResults();
+  };
+  const setCategory = (slug?: string) => {
     navigate({ search: (s: z.infer<typeof searchSchema>) => ({ ...s, category: slug }) });
+    scrollToResults();
+  };
   const applySearch = () =>
     navigate({ search: (s: z.infer<typeof searchSchema>) => ({ ...s, q: localQ || undefined }) });
   const clearAll = () => {
