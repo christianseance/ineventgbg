@@ -182,6 +182,7 @@ export function QuickLeadForm() {
                 <p className="text-xs text-muted-foreground">
                   Du får den direkt! Du signar upp dig för våra mejl, som kommer då och då. Avregistrera när du vill.
                 </p>
+                <PrivacyDisclosure />
               </form>
             )}
           </div>
