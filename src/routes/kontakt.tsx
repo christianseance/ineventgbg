@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
 import { zodValidator } from "@tanstack/zod-adapter";
-import { Mail, Phone, MapPin } from "lucide-react";
 import { QuickContactForm } from "@/components/QuickContactForm";
 
 const searchSchema = z.object({
