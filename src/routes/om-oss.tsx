@@ -38,7 +38,7 @@ function OmOss() {
               Vi tar projekt från en enda dag till veckolånga festivaler. Från ett podium på en gata, via ett bröllop
               med 30 gäster till en företagsfest med 500 nöjda deltagare.
             </p>
-            <p>Det vi lovar är enkelt: vi svarar snabbt, vi är ärliga med pris, och när dagen kommer fungerar allt.</p>
+            <p>Det vi lovar är enkelt: vi svarar noggrant, vi är ärliga med pris, och när dagen kommer fungerar allt.</p>
           </div>
         </div>
 
