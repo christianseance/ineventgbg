@@ -30,7 +30,7 @@ export function SiteFooter() {
           <ul className="space-y-2 text-sm">
             <li className="flex items-start gap-2">
               <MapPin size={14} className="mt-1 text-primary shrink-0" />
-              <span>Bas: Göteborg — vi tar oss dit du behöver oss</span>
+              <span>Bas: Göteborg — vi tar oss dit vi behövs</span>
             </li>
             <li className="flex items-start gap-2">
               <Mail size={14} className="mt-1 text-primary shrink-0" />
