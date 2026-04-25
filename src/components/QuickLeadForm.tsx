@@ -179,7 +179,7 @@ export function QuickLeadForm() {
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </button>
                 <p className="text-xs text-muted-foreground">
-                  Genom att ladda ner får du även våra mejl då och då. Avregistrera när du vill.
+                  Du får den direkt! Du signar upp dig för våra mejl, som kommer då och då. Avregistrera när du vill.
                 </p>
               </form>
             )}
