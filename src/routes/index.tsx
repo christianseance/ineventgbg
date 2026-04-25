@@ -96,7 +96,7 @@ function Index() {
                 </div>
                 <div className="h-px bg-border" />
                 <div>
-                  <div className="text-display text-5xl text-foreground">24-48h</div>
+                  <div className="text-display text-5xl text-foreground">24-36h</div>
                   <div className="text-xs uppercase tracking-widest text-muted-foreground mt-1">Svar på offert</div>
                 </div>
               </div>
@@ -258,7 +258,7 @@ function Index() {
                 {
                   n: "02",
                   t: "Förslaget",
-                  d: "Inom 24-48h får du en konkret offert med setup, teknik, tider och pris.",
+                  d: "Inom 24-36h får du en konkret offert med setup, teknik, tider och pris.",
                 },
                 {
                   n: "03",
@@ -294,7 +294,7 @@ function Index() {
             Redo att <span className="text-primary">bygga</span> ditt event?
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Berätta om visionen — vi återkommer med en plan inom 24-48 timmar.
+            Berätta om visionen — vi återkommer med en plan inom 24-36 timmar.
           </p>
           <Link
             to="/kontakt"

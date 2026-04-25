@@ -29,10 +29,10 @@ export const Route = createFileRoute("/kontakt")({
       {
         name: "description",
         content:
-          "Berätta om ditt event så återkommer vi med en konkret offert inom 24-48 timmar. Telefon, e-post och formulär.",
+          "Berätta om ditt event så återkommer vi med en konkret offert inom 24-36 timmar. Telefon, e-post och formulär.",
       },
       { property: "og:title", content: "Kontakta Inevent — Begär offert" },
-      { property: "og:description", content: "Vi svarar inom 24-48 timmar med en personlig offert." },
+      { property: "og:description", content: "Vi svarar inom 24-36 timmar med en personlig offert." },
     ],
   }),
   validateSearch: zodValidator(searchSchema),
@@ -106,7 +106,7 @@ function Kontakt() {
       }
 
       setDone(true);
-      toast.success("Tack! Vi hör av oss inom 24-48 timmar.");
+      toast.success("Tack! Vi hör av oss inom 24-36 timmar.");
     } catch (err) {
       console.error(err);
       toast.error("Något gick fel. Prova igen eller mejla oss direkt.");
@@ -125,7 +125,7 @@ function Kontakt() {
           <span className="text-primary">Vi hör av oss.</span>
         </h1>
         <p className="mt-6 text-lg text-muted-foreground">
-          Vi har tagit emot din förfrågan och återkommer inom 24-48 timmar med ett konkret förslag.
+          Vi har tagit emot din förfrågan och återkommer inom 24-36 timmar med ett konkret förslag.
         </p>
       </div>
     );
@@ -143,7 +143,7 @@ function Kontakt() {
               <span className="text-primary">om ditt event.</span>
             </h1>
             <p className="mt-6 text-muted-foreground">
-              Vi återkommer inom 24-48 timmar med en personlig offert. Inga förpliktelser.
+              Vi återkommer inom 24-36 timmar med en personlig offert. Inga förpliktelser.
             </p>
           </div>
 
@@ -203,7 +203,7 @@ function Kontakt() {
             </div>
             <p className="text-sm text-muted-foreground">
               Vi svarar normalt inom <span className="text-foreground">4-8 timmar</span> på vardagar — alltid inom
-              24-48h.
+              24-36h.
             </p>
           </div>
         </aside>
@@ -267,7 +267,7 @@ function Kontakt() {
           </label>
 
           <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-border">
-            <p className="text-xs text-muted-foreground">Vi återkommer inom 24-48 timmar.</p>
+            <p className="text-xs text-muted-foreground">Vi återkommer inom 24-36 timmar.</p>
             <button
               type="submit"
               disabled={submitting}

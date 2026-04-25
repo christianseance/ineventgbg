@@ -30,7 +30,7 @@ export function StickyCta() {
         </div>
         <h3 className="text-2xl mb-2">Planerar du ett event?</h3>
         <p className="text-sm text-muted-foreground mb-4">
-          Få en personlig offert inom 24-48 timmar — inga förpliktelser.
+          Få en personlig offert inom 24-36 timmar — inga förpliktelser.
         </p>
         <Link
           to="/kontakt"
