@@ -222,7 +222,7 @@ function Galleri() {
                   search={{ subject: cat.name }}
                   className="mt-5 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-primary hover:gap-3 transition-all"
                 >
-                  Begär offert
+                  Få offert på liknande
                   <ArrowUpRight size={12} />
                 </Link>
               </div>
