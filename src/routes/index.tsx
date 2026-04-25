@@ -210,7 +210,7 @@ function Index() {
 
           <div className="grid lg:grid-cols-2 gap-px bg-border">
             <div className="bg-background p-10 lg:p-14">
-              <h3 className="text-display text-3xl lg:text-4xl mb-8">Det vi är bra på</h3>
+              <h3 className="text-display text-3xl lg:text-4xl mb-8">Det vi är bra på nu</h3>
               <ul className="space-y-5 text-base text-foreground/90">
                 <li className="flex gap-4">
                   <span className="text-primary mt-1">—</span>
@@ -245,7 +245,7 @@ function Index() {
 
             <div className="bg-background p-10 lg:p-14">
               <h3 className="text-display text-3xl lg:text-4xl mb-8">
-                Det vi inte är världsmästare på
+                Vad vi inte är bäst på (ännu ;)
               </h3>
               <ul className="space-y-5 text-base text-foreground/90">
                 <li className="flex gap-4">
