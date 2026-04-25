@@ -55,7 +55,7 @@ function Index() {
                 <span className="text-stroke">Du gör showen.</span>
               </h1>
               <p className="mt-8 text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                Cirkustält, scener, ljus, lasrar, DJ:s, bröllop, företagsfester — du namnger det,
+                Cirkustält, podier, ljus, lasrar, DJ:s, bröllop, företagsfester — du namnger det,
                 vi bygger det. Utgår från Göteborg — finns där du behöver oss.
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
