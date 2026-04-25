@@ -284,7 +284,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
       />
 
       {/* Progress */}
-      <div className="mb-8">
+      <div className="mb-5 sm:mb-7 lg:mb-8">
         <div className="flex items-center justify-between mb-3">
           <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
             Steg {step} av 3
