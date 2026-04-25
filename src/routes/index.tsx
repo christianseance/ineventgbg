@@ -96,7 +96,7 @@ function Index() {
                 </div>
                 <div className="h-px bg-border" />
                 <div>
-                  <div className="text-display text-5xl text-foreground">24-48h</div>
+                  <div className="text-display text-5xl text-foreground">24-36h</div>
                   <div className="text-xs uppercase tracking-widest text-muted-foreground mt-1">Svar på offert</div>
                 </div>
               </div>
