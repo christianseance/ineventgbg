@@ -387,9 +387,12 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
                 type="text"
                 value={data.name}
                 onChange={(e) => update("name", e.target.value)}
-                className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary"
+                onBlur={() => validateField("name")}
+                aria-invalid={!!errors.name}
+                aria-describedby={errors.name ? "err-name" : undefined}
+                className={inputClass("name")}
               />
-              {errors.name && <p className="mt-1 text-xs text-destructive">{errors.name}</p>}
+              <FieldError id="err-name" msg={errors.name} />
             </div>
             <div>
               <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
@@ -400,9 +403,12 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
                 required
                 value={data.email}
                 onChange={(e) => update("email", e.target.value)}
-                className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary"
+                onBlur={() => validateField("email")}
+                aria-invalid={!!errors.email}
+                aria-describedby={errors.email ? "err-email" : undefined}
+                className={inputClass("email")}
               />
-              {errors.email && <p className="mt-1 text-xs text-destructive">{errors.email}</p>}
+              <FieldError id="err-email" msg={errors.email} />
             </div>
           </div>
           <div>
@@ -413,8 +419,11 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               type="tel"
               value={data.phone}
               onChange={(e) => update("phone", e.target.value)}
-              className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary"
+              onBlur={() => validateField("phone")}
+              aria-invalid={!!errors.phone}
+              className={inputClass("phone")}
             />
+            <FieldError id="err-phone" msg={errors.phone} />
           </div>
           <div>
             <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
@@ -424,9 +433,12 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               rows={3}
               value={data.message}
               onChange={(e) => update("message", e.target.value)}
+              onBlur={() => validateField("message")}
+              aria-invalid={!!errors.message}
               placeholder="Vision, behov, önskemål..."
-              className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary resize-none"
+              className={`${inputClass("message")} resize-none`}
             />
+            <FieldError id="err-message" msg={errors.message} />
           </div>
           
         </div>
