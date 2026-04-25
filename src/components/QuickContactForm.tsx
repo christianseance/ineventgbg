@@ -105,6 +105,13 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
     if (errors[k as string]) setErrors((e) => ({ ...e, [k as string]: "" }));
   };
 
+  const selectEventType = (value: string) => {
+    setData((d) => ({ ...d, event_type: value }));
+    setErrors((e) => ({ ...e, event_type: "" }));
+    // Liten fördröjning så användaren ser sitt val markeras innan vi byter steg
+    setTimeout(() => setStep(2), 180);
+  };
+
   const goNext = () => {
     if (step === 1) {
       const r = stepOneSchema.safeParse(data);
@@ -241,7 +248,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
                 <button
                   key={opt.value}
                   type="button"
-                  onClick={() => update("event_type", opt.value)}
+                  onClick={() => selectEventType(opt.value)}
                   className={`group flex flex-col items-center justify-center gap-2 border p-5 transition-all ${
                     active
                       ? "border-primary bg-primary/10 text-foreground"
@@ -395,7 +402,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
           <span />
         )}
 
-        {step < 3 ? (
+        {step === 2 && (
           <button
             type="button"
             onClick={goNext}
@@ -403,7 +410,8 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
           >
             Nästa <ArrowRight size={16} />
           </button>
-        ) : (
+        )}
+        {step === 3 && (
           <button
             type="submit"
             disabled={submitting}
@@ -413,6 +421,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
             {submitting ? "Skickar..." : "Skicka förfrågan"}
           </button>
         )}
+        {step === 1 && <span />}
       </div>
     </form>
   );
