@@ -51,7 +51,7 @@ function Index() {
               </div>
               <h1 className="text-display text-[clamp(3.5rem,11vw,11rem)] text-foreground">
                 Vi reser <br />
-                <span className="text-primary">scenen.</span> <br />
+                <span className="text-primary">rummet.</span> <br />
                 <span className="text-stroke">Du gör showen.</span>
               </h1>
               <p className="mt-8 text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
