@@ -312,6 +312,7 @@ function Field({
   error,
   required,
   placeholder,
+  min,
 }: {
   label: string;
   name: string;
@@ -319,6 +320,7 @@ function Field({
   error?: string;
   required?: boolean;
   placeholder?: string;
+  min?: string;
 }) {
   return (
     <div>
@@ -328,6 +330,7 @@ function Field({
         name={name}
         required={required}
         placeholder={placeholder}
+        min={min}
         className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary"
       />
       {error && <p className="mt-1 text-xs text-destructive">{error}</p>}
