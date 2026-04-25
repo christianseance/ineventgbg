@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ArrowRight, ArrowUpRight, Sparkles, Tent, Music, Lightbulb } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Sparkles, Tent, Music } from "lucide-react";
 import heroImg from "@/assets/hero-tent.jpg";
 import heroCanopy from "@/assets/hero-canopy.webp";
 import { CATEGORIES, GROUPS } from "@/data/gallery";
@@ -211,102 +211,6 @@ function Index() {
         </div>
       </section>
 
-      {/* HONEST: strengths & limits */}
-      <section className="relative py-32 bg-card/30 border-y border-border">
-        <div className="mx-auto max-w-[1400px] px-5 lg:px-10">
-          <div className="grid lg:grid-cols-12 gap-8 mb-16">
-            <div className="lg:col-span-5">
-              <span className="text-xs uppercase tracking-[0.3em] text-primary">Ärligt</span>
-              <h2 className="text-display text-5xl lg:text-7xl mt-3">
-                Vad vi <span className="text-primary">är</span>, och inte är.
-              </h2>
-            </div>
-            <div className="lg:col-span-6 lg:col-start-7 self-end">
-              <p className="text-lg text-muted-foreground">
-                Vi tror på att vara raka. Här är vad du kan förvänta dig av oss, och vad du
-                bör söka någon annanstans för.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-px bg-border">
-            <div className="bg-background p-10 lg:p-14">
-              <h3 className="text-display text-3xl lg:text-4xl mb-8">Det vi är bra på nu</h3>
-              <ul className="space-y-5 text-base text-foreground/90">
-                <li className="flex gap-4">
-                  <span className="text-primary mt-1">›</span>
-                  <span>
-                    Att slå upp ett cirkustält, en hel by av event-tält och
-                    scenuppsättningar. Det har vi gjort i över tjugofem år.
-                  </span>
-                </li>
-                <li className="flex gap-4">
-                  <span className="text-primary mt-1">›</span>
-                  <span>Ärliga råd om vad du faktiskt behöver, och inte.</span>
-                </li>
-                <li className="flex gap-4">
-                  <span className="text-primary mt-1">›</span>
-                  <span>Att vara på plats och få det att fungera ordentligt.</span>
-                </li>
-                <li className="flex gap-4">
-                  <span className="text-primary mt-1">›</span>
-                  <span>Eventarkitektur. Vi designar rummet från skiss till sista detalj.</span>
-                </li>
-                <li className="flex gap-4">
-                  <span className="text-primary mt-1">›</span>
-                  <span>Belysning som lyfter stämningen, inte bara lyser upp.</span>
-                </li>
-                <li className="flex gap-4">
-                  <span className="text-primary mt-1">›</span>
-                  <span>Musikkunskap. Vi vet vem och vad som passar din stund.</span>
-                </li>
-                <li className="flex gap-4">
-                  <span className="text-primary mt-1">›</span>
-                  <span>Webdesign, grafik, social media. Vi paketerar eventet digitalt också.</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-background p-10 lg:p-14">
-              <h3 className="text-display text-3xl lg:text-4xl mb-8">
-                Vad vi inte är bäst på (ännu ;)
-              </h3>
-              <ul className="space-y-5 text-base text-foreground/90">
-                <li className="flex gap-4">
-                  <span className="text-muted-foreground mt-1">›</span>
-                  <span>Att skicka offert supersnabbt. Räkna med några dagar, i samråd.</span>
-                </li>
-                <li className="flex gap-4">
-                  <span className="text-muted-foreground mt-1">›</span>
-                  <span>Enorma produktioner som kräver väldigt mycket personal. Vi är en liten verksamhet från start, med en nysatsning nu!</span>
-                </li>
-                <li className="flex gap-4">
-                  <span className="text-muted-foreground mt-1">›</span>
-                  <span>
-                    Helhetslösningar i lyxsegmentet utöver det vi gör med tält och scen.
-                  </span>
-                </li>
-              </ul>
-              <div className="mt-10 space-y-4 text-sm text-muted-foreground leading-relaxed border-t border-border pt-6">
-                <p>
-                  Behöver du något vi inte har? Säg till. Tälten, scenerna, rumsdesignen,
-                  dekor, belysning och DJs är vår hemmaplan. Allt däromkring (särskild teknik, mat,
-                  fotograf, städ, annan extra personal) kopplar vi in via partners vi handplockat genom åren.
-                  En kontakt, ett upplägg.
-                </p>
-                <p>
-                  Vi går igenom offerter noga med er, och vi är inte många (ännu), men
-                  det vi har fungerar, och vi gör jobbet ordentligt.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* QUICK LEAD: lead magnet — förberedelseguide */}
-      <QuickLeadForm />
-
       {/* FEATURED: asymmetric grid */}
       <section className="relative py-20 bg-card/30 border-y border-border">
         <div className="mx-auto max-w-[1400px] px-5 lg:px-10">
@@ -364,62 +268,8 @@ function Index() {
         </div>
       </section>
 
-      {/* PROCESS */}
-      <section className="py-32">
-        <div className="mx-auto max-w-[1400px] px-5 lg:px-10">
-          <div className="grid lg:grid-cols-12 gap-8">
-            <div className="lg:col-span-5">
-              <span className="text-xs uppercase tracking-[0.3em] text-primary">Hur det går till</span>
-              <h2 className="text-display text-5xl lg:text-7xl mt-3">
-                Idé till <br />
-                <span className="text-primary">uppställning</span> <br />
-                på fyra steg.
-              </h2>
-              <Link
-                to="/kontakt"
-                className="mt-10 inline-flex items-center gap-3 bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors"
-              >
-                <Lightbulb size={16} /> Starta projekt
-              </Link>
-            </div>
-            <ol className="lg:col-span-7 space-y-6">
-              {[
-                {
-                  n: "01",
-                  t: "Briefen",
-                  d: "Ring eller fyll i formuläret. Vi lyssnar, ställer frågor och förstår vad du vill skapa.",
-                },
-                {
-                  n: "02",
-                  t: "Förslaget",
-                  d: "Inom någon minut får du svar, om vi inte är på jobb. Annars kan det ta några dagar innan vi i samråd med dig har tagit fram offerten. Vi är få och styr arbetet själva, du talar direkt med oss. Ingen säljavdelning emellan!",
-                },
-                {
-                  n: "03",
-                  t: "Produktionen",
-                  d: "Vi tar hand om logistik och rigging av utrymmet vi dekorerar. Du fokuserar på gästerna.",
-                },
-                {
-                  n: "04",
-                  t: "Showen",
-                  d: "Vi är på plats hela vägen, från första spik till sista bil ut från området.",
-                },
-              ].map((step) => (
-                <li
-                  key={step.n}
-                  className="group flex gap-6 border-b border-border pb-6 hover:border-primary transition-colors"
-                >
-                  <span className="text-display text-5xl text-primary shrink-0 w-20">{step.n}</span>
-                  <div>
-                    <h3 className="text-display text-3xl mb-2">{step.t}</h3>
-                    <p className="text-muted-foreground">{step.d}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
+      {/* QUICK LEAD: lead magnet — förberedelseguide */}
+      <QuickLeadForm />
 
       {/* FINAL CTA */}
       <section className="relative py-24 border-t border-border bg-gradient-to-b from-background to-card/50">

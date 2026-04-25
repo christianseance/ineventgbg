@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Lightbulb } from "lucide-react";
 import { CATEGORIES, GROUPS, type Group } from "@/data/gallery";
 
 export const Route = createFileRoute("/tjanster")({
@@ -87,6 +87,61 @@ function Tjanster() {
           </section>
         );
       })}
+
+      {/* PROCESS */}
+      <section className="pt-8 border-t border-border">
+        <div className="grid lg:grid-cols-12 gap-8">
+          <div className="lg:col-span-5">
+            <span className="text-xs uppercase tracking-[0.3em] text-primary">Hur det går till</span>
+            <h2 className="text-display text-5xl lg:text-7xl mt-3">
+              Idé till <br />
+              <span className="text-primary">uppställning</span> <br />
+              på fyra steg.
+            </h2>
+            <Link
+              to="/kontakt"
+              className="mt-10 inline-flex items-center gap-3 bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors"
+            >
+              <Lightbulb size={16} /> Starta projekt
+            </Link>
+          </div>
+          <ol className="lg:col-span-7 space-y-6">
+            {[
+              {
+                n: "01",
+                t: "Briefen",
+                d: "Ring eller fyll i formuläret. Vi lyssnar, ställer frågor och förstår vad du vill skapa.",
+              },
+              {
+                n: "02",
+                t: "Förslaget",
+                d: "Inom någon minut får du svar, om vi inte är på jobb. Annars kan det ta några dagar innan vi i samråd med dig har tagit fram offerten. Vi är få och styr arbetet själva, du talar direkt med oss. Ingen säljavdelning emellan!",
+              },
+              {
+                n: "03",
+                t: "Produktionen",
+                d: "Vi tar hand om logistik och rigging av utrymmet vi dekorerar. Du fokuserar på gästerna.",
+              },
+              {
+                n: "04",
+                t: "Showen",
+                d: "Vi är på plats hela vägen, från första spik till sista bil ut från området.",
+              },
+            ].map((step) => (
+              <li
+                key={step.n}
+                className="group flex gap-6 border-b border-border pb-6 hover:border-primary transition-colors"
+              >
+                <span className="text-display text-5xl text-primary shrink-0 w-20">{step.n}</span>
+                <div>
+                  <h3 className="text-display text-3xl mb-2">{step.t}</h3>
+                  <p className="text-muted-foreground">{step.d}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
 
       {/* INLINE CTA + SOCIAL PROOF */}
       <section className="relative pt-8 border-t border-border">
