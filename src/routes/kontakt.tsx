@@ -1,14 +1,47 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
 import { zodValidator } from "@tanstack/zod-adapter";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { toast } from "sonner";
-import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2, Paperclip, X } from "lucide-react";
 import { submitLead } from "@/server/leads.functions";
 
 const searchSchema = z.object({
   subject: z.string().optional(),
 });
+
+const BLOCKED_EXTENSIONS = [
+  "exe", "bat", "cmd", "com", "msi", "scr", "pif", "vbs", "vbe", "js", "jse",
+  "wsf", "wsh", "ps1", "psm1", "sh", "bash", "zsh", "app", "dmg", "deb", "rpm",
+  "apk", "jar", "war", "ear", "dll", "so", "dylib", "lnk", "reg", "hta",
+];
+const MAX_FILE_BYTES = 10 * 1024 * 1024; // 10 MB
+
+function hasBlockedExtension(name: string): boolean {
+  const parts = name.toLowerCase().split(".");
+  if (parts.length < 2) return false;
+  return parts.slice(1).some((ext) => BLOCKED_EXTENSIONS.includes(ext));
+}
+
+function fileToBase64(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result as string;
+      // strip "data:...;base64," prefix
+      const idx = result.indexOf(",");
+      resolve(idx >= 0 ? result.slice(idx + 1) : result);
+    };
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(file);
+  });
+}
+
+function formatBytes(bytes: number): string {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+  return `${(bytes / 1024 / 1024).toFixed(1)} MB`;
+}
 
 const formSchema = z.object({
   name: z.string().trim().min(2, "Ange ditt namn").max(100),
