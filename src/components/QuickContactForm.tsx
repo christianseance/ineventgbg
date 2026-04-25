@@ -201,7 +201,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
   }
 
   return (
-    <form onSubmit={onSubmit} className="bg-card border border-border p-6 lg:p-10">
+    <form onSubmit={onSubmit} className="bg-card border border-border px-6 lg:px-10 py-5 lg:py-7">
       {/* Honeypot */}
       <input
         type="text"
