@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Lightbulb } from "lucide-react";
 import { CATEGORIES, GROUPS, type Group } from "@/data/gallery";
 
 export const Route = createFileRoute("/tjanster")({
