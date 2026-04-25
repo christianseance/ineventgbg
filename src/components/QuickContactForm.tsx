@@ -337,7 +337,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
       {step === 2 && (
         <div className="space-y-5">
           <div>
-            <h3 className="text-display text-2xl lg:text-3xl mb-2">När och var?</h3>
+            <h3 className="text-display text-xl sm:text-2xl lg:text-3xl mb-1.5 sm:mb-2">När och var?</h3>
             <p className="text-sm text-muted-foreground mb-2">
               Allt här är valfritt — fyll i det du vet.
             </p>
