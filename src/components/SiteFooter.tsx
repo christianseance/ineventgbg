@@ -7,7 +7,6 @@ export function SiteFooter() {
     <footer className="relative border-t border-border bg-card/40 mt-32">
       <div className="mx-auto max-w-[1400px] px-5 py-16 lg:px-10 grid gap-12 lg:grid-cols-4">
         <div className="lg:col-span-2 space-y-5">
-          <Logo />
           <p className="text-muted-foreground text-sm max-w-md">
             Inevent erbjuder allt från cirkustält och podium till bröllop, företagsfester och festivaler.
           </p>
@@ -41,6 +40,9 @@ export function SiteFooter() {
               <a href="tel:+46708837997" className="hover:text-primary">+46 708 83 79 97</a>
             </li>
           </ul>
+          <div className="pt-4 flex justify-end">
+            <Logo />
+          </div>
         </div>
       </div>
       <div className="border-t border-border">
