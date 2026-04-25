@@ -513,8 +513,14 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
             />
             <FieldError id="err-message" msg={errors.message} />
           </div>
-          
         </div>
+      )}
+
+      {step === 4 && (
+        <ReviewStep
+          data={data}
+          onEdit={(target) => setStep(target)}
+        />
       )}
 
       <div className="mt-6 sm:mt-8 flex flex-nowrap items-center gap-2 sm:gap-3 pt-4 sm:pt-5 border-t border-border">
