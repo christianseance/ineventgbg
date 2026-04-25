@@ -72,8 +72,8 @@ function Index() {
                 <span className="text-stroke">Du gör showen.</span>
               </h1>
               <p className="mt-8 text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                Cirkustält, podier, belysning, bar-bord/stolar, DJ:s, bröllop, företagsfester — nämn det och vi bygger
-                det. Vi utgår från Göteborg — men dyker upp där du behöver oss.
+                Cirkustält, podier, belysning, diverse event-tält, bar/bord-stolar — nämn det och vi bygger det. Vi
+                utgår från Göteborg — men dyker upp där vi behövs.
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link
