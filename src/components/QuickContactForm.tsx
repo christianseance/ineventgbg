@@ -248,7 +248,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
                 <button
                   key={opt.value}
                   type="button"
-                  onClick={() => update("event_type", opt.value)}
+                  onClick={() => selectEventType(opt.value)}
                   className={`group flex flex-col items-center justify-center gap-2 border p-5 transition-all ${
                     active
                       ? "border-primary bg-primary/10 text-foreground"
