@@ -219,9 +219,14 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
     setErrors({});
     setSubmitting(true);
     try {
-      const message =
-        data.message?.trim() ||
-        `Förfrågan via formulär: ${data.event_type}${data.event_date ? `, ${data.event_date}` : ""}${data.location ? `, ${data.location}` : ""}${data.guest_count ? `, ca ${data.guest_count} gäster` : ""}.`;
+      const userMessage = data.message?.trim();
+      const summaryParts = [
+        data.inquiry_type && `Ärendetyp: ${data.inquiry_type}`,
+        data.company && `Företag/Organisation: ${data.company}`,
+      ].filter(Boolean);
+      const summaryHeader = summaryParts.length ? `${summaryParts.join("\n")}\n\n` : "";
+      const fallback = `Förfrågan via formulär: ${data.event_type}${data.event_date ? `, ${data.event_date}` : ""}${data.location ? `, ${data.location}` : ""}${data.guest_count ? `, ca ${data.guest_count} gäster` : ""}.`;
+      const message = `${summaryHeader}${userMessage || fallback}`;
 
       const res = await submitLead({
         data: {
