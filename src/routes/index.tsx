@@ -280,7 +280,7 @@ function Index() {
                 {
                   n: "03",
                   t: "Produktionen",
-                  d: "Vi tar hand om logistik, tillstånd, leverantörer och rigging. Du fokuserar på gästerna.",
+                  d: "Vi tar hand om logistik och rigging av utrymmet vi dekorerar. Du fokuserar på gästerna.",
                 },
                 {
                   n: "04",
