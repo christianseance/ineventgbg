@@ -424,7 +424,7 @@ function Index() {
             Redo att <span className="text-primary">bygga</span> ditt event?
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Berätta om visionen — vi återkommer med första steget till en plan inom 24-36 timmar.
+            Berätta om visionen — vi återkommer med första steget till en plan snarast!
           </p>
           <Link
             to="/kontakt"
