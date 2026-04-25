@@ -23,52 +23,6 @@ export function SiteFooter() {
             <li><Link to="/om-oss" className="hover:text-primary">Om oss</Link></li>
             <li><Link to="/kontakt" className="hover:text-primary">Kontakt</Link></li>
           </ul>
-
-          <div className="pt-4">
-            <h4 className="text-sm tracking-widest text-muted-foreground mb-3">Följ oss</h4>
-            <div className="flex items-center gap-3">
-              <a
-                href="https://paralello.se"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Paralello — cirkustält"
-                title="Paralello — cirkustält"
-                className="inline-flex h-10 w-10 items-center justify-center border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
-              >
-                <Tent size={16} />
-              </a>
-              <a
-                href="https://christianseance.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Christian Seance — DJ"
-                title="Christian Seance — DJ"
-                className="inline-flex h-10 w-10 items-center justify-center border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
-              >
-                <Headphones size={16} />
-              </a>
-              <a
-                href="https://instagram.com/cirkusparalello"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                title="Instagram"
-                className="inline-flex h-10 w-10 items-center justify-center border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
-              >
-                <Instagram size={16} />
-              </a>
-              <a
-                href="https://facebook.com/music.magic.art.heart"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                title="Facebook"
-                className="inline-flex h-10 w-10 items-center justify-center border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
-              >
-                <Facebook size={16} />
-              </a>
-            </div>
-          </div>
         </div>
 
         <div className="space-y-3">
@@ -90,9 +44,51 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-border">
-        <div className="mx-auto max-w-[1400px] px-5 py-5 lg:px-10 flex flex-col sm:flex-row justify-between gap-2 text-xs text-muted-foreground uppercase tracking-widest">
-          <span>© {new Date().getFullYear()} Inevent</span>
-          <span>Vi löser allt inom event.</span>
+        <div className="mx-auto max-w-[1400px] px-5 py-5 lg:px-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground uppercase tracking-widest">
+          <span className="order-1 sm:order-1">© {new Date().getFullYear()} Inevent</span>
+          <div className="order-2 sm:order-2 flex items-center gap-2">
+            <a
+              href="https://paralello.se"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Paralello — cirkustält"
+              title="Paralello — cirkustält"
+              className="inline-flex h-9 w-9 items-center justify-center border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+            >
+              <Tent size={14} />
+            </a>
+            <a
+              href="https://christianseance.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Christian Seance — DJ"
+              title="Christian Seance — DJ"
+              className="inline-flex h-9 w-9 items-center justify-center border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+            >
+              <Headphones size={14} />
+            </a>
+            <a
+              href="https://instagram.com/cirkusparalello"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              title="Instagram"
+              className="inline-flex h-9 w-9 items-center justify-center border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+            >
+              <Instagram size={14} />
+            </a>
+            <a
+              href="https://facebook.com/music.magic.art.heart"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              title="Facebook"
+              className="inline-flex h-9 w-9 items-center justify-center border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+            >
+              <Facebook size={14} />
+            </a>
+          </div>
+          <span className="order-3 sm:order-3">Vi löser allt inom event.</span>
         </div>
       </div>
     </footer>
