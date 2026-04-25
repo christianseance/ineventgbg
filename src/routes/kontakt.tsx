@@ -147,27 +147,27 @@ function Kontakt() {
           </div>
 
           <div className="space-y-5">
-            <a href="mailto:mathias@inevent.se" className="flex items-start gap-4 group">
-              <span className="mt-1 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+            <div className="flex items-start gap-4">
+              <span className="mt-1 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                 <Mail size={16} />
               </span>
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground">E-post</div>
-                <div className="text-foreground group-hover:text-primary transition-colors">mathias@inevent.se</div>
-                <div className="text-foreground group-hover:text-primary transition-colors">seance@inevent.se</div>
+                <a href="mailto:mathias@inevent.se" className="block text-foreground hover:text-primary transition-colors">mathias@inevent.se</a>
+                <a href="mailto:seance@inevent.se" className="block text-foreground hover:text-primary transition-colors">seance@inevent.se</a>
               </div>
-            </a>
+            </div>
 
-            <a href="tel:+46708837997" className="flex items-start gap-4 group">
-              <span className="mt-1 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+            <div className="flex items-start gap-4">
+              <span className="mt-1 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                 <Phone size={16} />
               </span>
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground">Telefon</div>
-                <div className="text-foreground group-hover:text-primary transition-colors">+46 708 83 79 97</div>
-                <div className="text-foreground group-hover:text-primary transition-colors">+46 708 96 76 90</div>
+                <a href="tel:+46708837997" className="block text-foreground hover:text-primary transition-colors">+46 708 83 79 97</a>
+                <a href="tel:+46708967690" className="block text-foreground hover:text-primary transition-colors">+46 708 96 76 90</a>
               </div>
-            </a>
+            </div>
 
             <div className="flex items-start gap-4">
               <span className="mt-1 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
