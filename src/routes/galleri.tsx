@@ -14,13 +14,13 @@ const searchSchema = z.object({
 export const Route = createFileRoute("/galleri")({
   head: () => ({
     meta: [
-      { title: "Galleri — Inevent" },
+      { title: "Galleri · Inevent" },
       {
         name: "description",
         content:
           "Bläddra bland våra kategorier: cirkustält, eventtält, podium, belysning, bar-bord/stolar, bröllop, företagsevent, konferenser, sport, DJs och mer.",
       },
-      { property: "og:title", content: "Galleri — Inevent" },
+      { property: "og:title", content: "Galleri · Inevent" },
       { property: "og:description", content: "Filtrera, sök och utforska allt vi hyr ut och producerar." },
     ],
   }),
@@ -85,7 +85,7 @@ function Galleri() {
         </div>
         <div className="lg:col-span-5 lg:self-end">
           <p className="text-muted-foreground">
-            Filtrera per grupp, kategori eller sök fritt. Klicka på en kategori för att se mer — eller hoppa direkt till
+            Filtrera per grupp, kategori eller sök fritt. Klicka på en kategori för att se mer, eller hoppa direkt till
             offert.
           </p>
         </div>

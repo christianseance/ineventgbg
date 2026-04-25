@@ -75,13 +75,13 @@ const formSchema = z.object({
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
     meta: [
-      { title: "Kontakt — Begär offert | Inevent" },
+      { title: "Kontakt · Begär offert | Inevent" },
       {
         name: "description",
         content:
           "Berätta om ditt event så återkommer vi med en konkret offert inom 24-36 timmar. Telefon, e-post och formulär.",
       },
-      { property: "og:title", content: "Kontakta Inevent — Begär offert" },
+      { property: "og:title", content: "Kontakta Inevent · Begär offert" },
       { property: "og:description", content: "Vi svarar inom 24-36 timmar med en personlig offert." },
     ],
   }),
@@ -231,7 +231,7 @@ function Kontakt() {
   return (
     <div className="mx-auto max-w-[1400px] px-5 lg:px-10 py-12 lg:py-20">
       <div className="grid lg:grid-cols-12 gap-12">
-        {/* Left — info */}
+        {/* Left: info */}
         <aside className="lg:col-span-4 space-y-10">
           <div>
             <span className="text-xs uppercase tracking-[0.3em] text-primary">Kontakt</span>
@@ -299,14 +299,14 @@ function Kontakt() {
               <span className="text-xs uppercase tracking-widest">Snabbt svar</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Vi svarar alltså oftast inom <span className="text-foreground">någon timma</span> på vardagar — och alltid inom 36h.
+              Vi svarar alltså oftast inom <span className="text-foreground">någon timma</span> på vardagar, och alltid inom 36h.
             </p>
           </div>
         </aside>
 
-        {/* Right — form */}
+        {/* Right: form */}
         <form onSubmit={onSubmit} className="lg:col-span-8 bg-card border border-border p-6 lg:p-10 space-y-5">
-          {/* Honeypot — hidden from users, bots will fill it */}
+          {/* Honeypot: hidden from users, bots will fill it */}
           <input
             type="text"
             name="website"
@@ -352,7 +352,7 @@ function Kontakt() {
               rows={6}
               required
               defaultValue={subject ? `Jag är intresserad av: ${subject}\n\n` : ""}
-              placeholder="Vad är visionen? Vad behöver du hjälp med — tält, podium, ljus, DJ, helt event?"
+              placeholder="Vad är visionen? Vad behöver du hjälp med? Tält, podium, ljus, DJ, helt event?"
               onInvalid={(e) => e.currentTarget.setCustomValidity("Vänligen fyll i det här fältet")}
               onInput={(e) => e.currentTarget.setCustomValidity("")}
               className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary resize-none"
@@ -410,7 +410,7 @@ function Kontakt() {
               className="mt-1 h-4 w-4 accent-primary"
             />
             <span>
-              Lägg till mig på e-postlistan — vi mejlar några gånger per år om nya tält, projekt och
+              Lägg till mig på e-postlistan. Vi mejlar några gånger per år om nya tält, projekt och
               säsongs-erbjudanden.
             </span>
           </label>

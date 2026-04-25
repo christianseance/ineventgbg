@@ -13,17 +13,17 @@ const HERO_IMAGES = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Inevent — Cirkustält, podium, ljus & komplett eventproduktion" },
+      { title: "Inevent · Cirkustält, podium, ljus & komplett eventproduktion" },
       {
         name: "description",
         content:
-          "Cirkustält, podium, ljus, DJ och allt event-pyssel — vi gör hela ditt event. Utgår från Göteborg — finns där du behöver oss.",
+          "Cirkustält, podium, ljus, DJ och allt event-pyssel. Vi gör hela ditt event. Utgår från Göteborg, finns där du behöver oss.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://inevent.se/" },
       { property: "og:site_name", content: "Inevent" },
       { property: "og:locale", content: "sv_SE" },
-      { property: "og:title", content: "Inevent — Vi löser nästan allt inom event" },
+      { property: "og:title", content: "Inevent · Vi löser nästan allt inom event" },
       {
         property: "og:description",
         content: "Cirkustält, podium, ljus, DJ, bröllop, företagsfest. Begär offert idag.",
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")({
       { property: "og:image:height", content: "630" },
       { property: "og:image:alt", content: "Cirkustält upplyst i rött med scenljus" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Inevent — Vi löser nästan allt inom event" },
+      { name: "twitter:title", content: "Inevent · Vi löser nästan allt inom event" },
       {
         name: "twitter:description",
         content: "Cirkustält, podium, ljus, DJ, bröllop, företagsfest. Begär offert idag.",
@@ -59,7 +59,7 @@ function Index() {
 
   return (
     <>
-      {/* HERO — asymmetric */}
+      {/* HERO: asymmetric */}
       <section className="relative min-h-[92vh] overflow-hidden grain">
         <div className="absolute inset-0">
           {HERO_IMAGES.map((img, i) => (
@@ -80,7 +80,7 @@ function Index() {
 
         <div className="relative mx-auto max-w-[1400px] px-5 lg:px-10 pt-24 lg:pt-32 pb-40 lg:pb-48">
           <div className="grid lg:grid-cols-12 gap-8 items-end min-h-[70vh]">
-            {/* Left — main headline */}
+            {/* Left: main headline */}
             <div className="lg:col-span-8 fade-up">
               <div className="flex items-center gap-3 mb-6">
                 <span className="h-px w-10 bg-primary" />
@@ -92,8 +92,8 @@ function Index() {
                 <span className="text-stroke">Du gör showen.</span>
               </h1>
               <p className="mt-8 text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                Cirkustält, podier, belysning, diverse event-tält, bar/bord-stolar — nämn det och vi bygger det. Vi
-                utgår från Göteborg — men dyker upp där vi behövs.
+                Cirkustält, podier, belysning, diverse event-tält, bar/bord-stolar. Nämn det och vi bygger det. Vi
+                utgår från Göteborg, men dyker upp där vi behövs.
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link
@@ -113,7 +113,7 @@ function Index() {
               </div>
             </div>
 
-            {/* Right — stats card (asymmetric) */}
+            {/* Right: stats card (asymmetric) */}
             <div className="lg:col-span-4 lg:translate-y-12 fade-up" style={{ animationDelay: "0.2s" }}>
               <div className="bg-card/80 backdrop-blur-md border border-border p-8 space-y-6">
                 <div className="flex items-center gap-2 text-primary">
@@ -162,7 +162,7 @@ function Index() {
         </div>
       </section>
 
-      {/* WHAT WE DO — three pillars */}
+      {/* WHAT WE DO: three pillars */}
       <section className="relative py-32">
         <div className="mx-auto max-w-[1400px] px-5 lg:px-10">
           <div className="grid lg:grid-cols-12 gap-8 mb-16">
@@ -175,7 +175,7 @@ function Index() {
             <div className="lg:col-span-7 lg:col-start-6 self-end">
               <p className="text-lg text-muted-foreground">
                 Hyr direkt från lagret, boka komplett mindre/mellanstort event eller lägg till en av våra experter i ditt team. Allt
-                skalbart — från ett ensamt podium via en mindre festivalproduktion till ett enormt cirkustält!
+                skalbart, från ett ensamt podium via en mindre festivalproduktion till ett enormt cirkustält!
               </p>
             </div>
           </div>
@@ -210,19 +210,19 @@ function Index() {
         </div>
       </section>
 
-      {/* HONEST — strengths & limits */}
+      {/* HONEST: strengths & limits */}
       <section className="relative py-32 bg-card/30 border-y border-border">
         <div className="mx-auto max-w-[1400px] px-5 lg:px-10">
           <div className="grid lg:grid-cols-12 gap-8 mb-16">
             <div className="lg:col-span-5">
               <span className="text-xs uppercase tracking-[0.3em] text-primary">Ärligt</span>
               <h2 className="text-display text-5xl lg:text-7xl mt-3">
-                Vad vi <span className="text-primary">är</span> — och inte är.
+                Vad vi <span className="text-primary">är</span>, och inte är.
               </h2>
             </div>
             <div className="lg:col-span-6 lg:col-start-7 self-end">
               <p className="text-lg text-muted-foreground">
-                Vi tror på att vara raka. Här är vad du kan förvänta dig av oss — och vad du
+                Vi tror på att vara raka. Här är vad du kan förvänta dig av oss, och vad du
                 bör söka någon annanstans för.
               </p>
             </div>
@@ -233,35 +233,35 @@ function Index() {
               <h3 className="text-display text-3xl lg:text-4xl mb-8">Det vi är bra på nu</h3>
               <ul className="space-y-5 text-base text-foreground/90">
                 <li className="flex gap-4">
-                  <span className="text-primary mt-1">—</span>
+                  <span className="text-primary mt-1">›</span>
                   <span>
                     Att slå upp ett cirkustält, en hel by av event-tält och
                     scenuppsättningar. Det har vi gjort i över tjugofem år.
                   </span>
                 </li>
                 <li className="flex gap-4">
-                  <span className="text-primary mt-1">—</span>
-                  <span>Ärliga råd om vad du faktiskt behöver — och inte.</span>
+                  <span className="text-primary mt-1">›</span>
+                  <span>Ärliga råd om vad du faktiskt behöver, och inte.</span>
                 </li>
                 <li className="flex gap-4">
-                  <span className="text-primary mt-1">—</span>
+                  <span className="text-primary mt-1">›</span>
                   <span>Att vara på plats och få det att fungera ordentligt.</span>
                 </li>
                 <li className="flex gap-4">
-                  <span className="text-primary mt-1">—</span>
-                  <span>Eventarkitektur — vi designar rummet från skiss till sista detalj.</span>
+                  <span className="text-primary mt-1">›</span>
+                  <span>Eventarkitektur. Vi designar rummet från skiss till sista detalj.</span>
                 </li>
                 <li className="flex gap-4">
-                  <span className="text-primary mt-1">—</span>
+                  <span className="text-primary mt-1">›</span>
                   <span>Belysning som lyfter stämningen, inte bara lyser upp.</span>
                 </li>
                 <li className="flex gap-4">
-                  <span className="text-primary mt-1">—</span>
-                  <span>Musikkunskap — vi vet vem och vad som passar din stund.</span>
+                  <span className="text-primary mt-1">›</span>
+                  <span>Musikkunskap. Vi vet vem och vad som passar din stund.</span>
                 </li>
                 <li className="flex gap-4">
-                  <span className="text-primary mt-1">—</span>
-                  <span>Webdesign, grafik, social media — vi paketerar eventet digitalt också.</span>
+                  <span className="text-primary mt-1">›</span>
+                  <span>Webdesign, grafik, social media. Vi paketerar eventet digitalt också.</span>
                 </li>
               </ul>
             </div>
@@ -272,15 +272,15 @@ function Index() {
               </h3>
               <ul className="space-y-5 text-base text-foreground/90">
                 <li className="flex gap-4">
-                  <span className="text-muted-foreground mt-1">—</span>
+                  <span className="text-muted-foreground mt-1">›</span>
                   <span>Att skicka offert supersnabbt. Räkna med några dagar, i samråd.</span>
                 </li>
                 <li className="flex gap-4">
-                  <span className="text-muted-foreground mt-1">—</span>
-                  <span>Enorma produktioner som kräver väldigt mycket personal — vi är en liten verksamhet från start, med en nysatsning nu!</span>
+                  <span className="text-muted-foreground mt-1">›</span>
+                  <span>Enorma produktioner som kräver väldigt mycket personal. Vi är en liten verksamhet från start, med en nysatsning nu!</span>
                 </li>
                 <li className="flex gap-4">
-                  <span className="text-muted-foreground mt-1">—</span>
+                  <span className="text-muted-foreground mt-1">›</span>
                   <span>
                     Allt-inkluderat lyxlösningar för annat än tält.
                   </span>
@@ -288,13 +288,13 @@ function Index() {
               </ul>
               <div className="mt-10 space-y-4 text-sm text-muted-foreground leading-relaxed border-t border-border pt-6">
                 <p>
-                  Behöver du något vi inte har — säg till. Tälten, scenerna, rumsdesignen,
-                  dekor, belysning och DJs är vår hemmaplan. Allt däromkring — särskild teknik, mat,
-                  fotograf, städ, annan extra personal — kopplar vi in via partners vi handplockat genom åren.
+                  Behöver du något vi inte har? Säg till. Tälten, scenerna, rumsdesignen,
+                  dekor, belysning och DJs är vår hemmaplan. Allt däromkring (särskild teknik, mat,
+                  fotograf, städ, annan extra personal) kopplar vi in via partners vi handplockat genom åren.
                   En kontakt, ett upplägg.
                 </p>
                 <p>
-                  Vi går igenom offerter noga med er, och vi är inte många (ännu) — men
+                  Vi går igenom offerter noga med er, och vi är inte många (ännu), men
                   det vi har fungerar, och vi gör jobbet ordentligt.
                 </p>
               </div>
@@ -303,7 +303,7 @@ function Index() {
         </div>
       </section>
 
-      {/* FEATURED — asymmetric grid */}
+      {/* FEATURED: asymmetric grid */}
       <section className="relative py-20 bg-card/30 border-y border-border">
         <div className="mx-auto max-w-[1400px] px-5 lg:px-10">
           <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
@@ -388,7 +388,7 @@ function Index() {
                 {
                   n: "02",
                   t: "Förslaget",
-                  d: "Inom någon minut får du svar, om vi inte är på jobb — annars kan det ta några dagar innan vi i samråd med dig har tagit fram offerten. Vi är få och styr arbetet själva, du talar direkt med oss — ingen säljavdelning emellan!",
+                  d: "Inom någon minut får du svar, om vi inte är på jobb. Annars kan det ta några dagar innan vi i samråd med dig har tagit fram offerten. Vi är få och styr arbetet själva, du talar direkt med oss. Ingen säljavdelning emellan!",
                 },
                 {
                   n: "03",
@@ -398,7 +398,7 @@ function Index() {
                 {
                   n: "04",
                   t: "Showen",
-                  d: "Vi är på plats hela vägen — från första spik till sista bil ut från området.",
+                  d: "Vi är på plats hela vägen, från första spik till sista bil ut från området.",
                 },
               ].map((step) => (
                 <li
@@ -424,7 +424,7 @@ function Index() {
             Redo att <span className="text-primary">bygga</span> ditt event?
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Berätta om visionen — vi återkommer med första steget till en plan snarast!
+            Berätta om visionen. Vi återkommer med första steget till en plan snarast!
           </p>
           <Link
             to="/kontakt"

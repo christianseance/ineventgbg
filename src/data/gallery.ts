@@ -24,7 +24,7 @@ export type Category = {
 export const GROUPS: Record<Group, { label: string; description: string }> = {
   uthyrning: {
     label: "Uthyrning",
-    description: "Tält, scener, podium och teknik — direkt från vårt lager.",
+    description: "Tält, scener, podium och teknik direkt från vårt lager.",
   },
   event: {
     label: "Event",
@@ -43,7 +43,7 @@ export const CATEGORIES: Category[] = [
     name: "Cirkustält",
     group: "uthyrning",
     cover: circustalt,
-    blurb: "Ikoniska big tops i flera storlekar — perfekt för festivaler, släpp och pop-ups.",
+    blurb: "Ikoniska big tops i flera storlekar. Perfekt för festivaler, släpp och pop-ups.",
   },
   {
     slug: "eventtalt",
@@ -64,7 +64,7 @@ export const CATEGORIES: Category[] = [
     name: "Belysning och teknik",
     group: "uthyrning",
     cover: teknik,
-    blurb: "Moving heads m.m, rökmaskiner och PA — riggat och kört av proffs.",
+    blurb: "Moving heads m.m, rökmaskiner och PA, riggat och kört av proffs.",
   },
   {
     slug: "installation-konst",
@@ -79,7 +79,7 @@ export const CATEGORIES: Category[] = [
     name: "Bröllop",
     group: "event",
     cover: brollop,
-    blurb: "Romantiska kvällar under stjärnhimmel — vi bygger drömscenografin.",
+    blurb: "Romantiska kvällar under stjärnhimmel. Vi bygger drömscenografin.",
   },
   {
     slug: "foretagsevent",
@@ -108,14 +108,14 @@ export const CATEGORIES: Category[] = [
     name: "DJ",
     group: "funktioner",
     cover: dj,
-    blurb: "Bekanta låtar i partyversioner, elektroniskt, classics, många olika genres täcker vi in — DJs för varje typ av kväll.",
+    blurb: "Bekanta låtar i partyversioner, elektroniskt, classics, många olika genres täcker vi in. DJs för varje typ av kväll.",
   },
   {
     slug: "eventarkitekt",
     name: "Eventarkitekt",
     group: "funktioner",
     cover: arkitekt,
-    blurb: "Vi designar rummet — från första skiss till sista detalj.",
+    blurb: "Vi designar rummet, från första skiss till sista detalj.",
   },
   {
     slug: "produktionsledare",
