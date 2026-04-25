@@ -75,7 +75,7 @@ function Galleri() {
       </div>
 
       {/* Filter bar */}
-      <div className="bg-card border border-border p-5 mb-8 space-y-5 sticky top-20 z-30 backdrop-blur-xl bg-card/90">
+      <div className="bg-card border border-border p-5 mb-8 space-y-5 lg:sticky lg:top-20 z-30 backdrop-blur-xl bg-card/90">
         {/* Group tabs */}
         <div className="flex flex-wrap items-center gap-2">
           <button
