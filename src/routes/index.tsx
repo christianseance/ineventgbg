@@ -215,7 +215,7 @@ function Index() {
                 <li className="flex gap-4">
                   <span className="text-primary mt-1">—</span>
                   <span>
-                    Att slå upp ett cirkustält, en by av event-tält och enklare
+                    Att slå upp ett cirkustält, en hel by av event-tält och enklare
                     scenuppsättningar. Det har vi gjort i över tjugofem år.
                   </span>
                 </li>
