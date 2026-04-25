@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Från cirkustält och scen till bröllop och DJ — vi gör hela ditt event. Utgår från Göteborg, levererar i hela Sverige och Norden.",
+          "Från cirkustält och scen till bröllop och DJ — vi gör hela ditt event. Utgår från Göteborg — finns där du behöver oss.",
       },
       { property: "og:title", content: "Inevent — Vi löser allt inom event" },
       {
