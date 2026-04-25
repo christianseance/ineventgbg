@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Tent, Headphones, Instagram, Facebook } from "lucide-react";
 
 export function SiteFooter() {
   return (
@@ -23,6 +23,52 @@ export function SiteFooter() {
             <li><Link to="/om-oss" className="hover:text-primary">Om oss</Link></li>
             <li><Link to="/kontakt" className="hover:text-primary">Kontakt</Link></li>
           </ul>
+
+          <div className="pt-4">
+            <h4 className="text-sm tracking-widest text-muted-foreground mb-3">Följ oss</h4>
+            <div className="flex items-center gap-3">
+              <a
+                href="https://paralello.se"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Paralello — cirkustält"
+                title="Paralello — cirkustält"
+                className="inline-flex h-10 w-10 items-center justify-center border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+              >
+                <Tent size={16} />
+              </a>
+              <a
+                href="https://christianseance.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Christian Seance — DJ"
+                title="Christian Seance — DJ"
+                className="inline-flex h-10 w-10 items-center justify-center border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+              >
+                <Headphones size={16} />
+              </a>
+              <a
+                href="https://instagram.com/cirkusparalello"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                title="Instagram"
+                className="inline-flex h-10 w-10 items-center justify-center border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+              >
+                <Instagram size={16} />
+              </a>
+              <a
+                href="https://facebook.com/music.magic.art.heart"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                title="Facebook"
+                className="inline-flex h-10 w-10 items-center justify-center border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+              >
+                <Facebook size={16} />
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className="space-y-3">
