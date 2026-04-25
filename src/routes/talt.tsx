@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import cirkustalt1 from "@/assets/cirkustalt-1.jpg";
+import taltHero from "@/assets/talt-hero-yurt.webp";
 
 export const Route = createFileRoute("/talt")({
   head: () => ({
@@ -17,8 +17,8 @@ export const Route = createFileRoute("/talt")({
         content:
           "Bastutält, baslägertält, taktält, nomadtält, yurthor, yoga- och marknadstält. Riggat av proffs.",
       },
-      { property: "og:image", content: cirkustalt1 },
-      { name: "twitter:image", content: cirkustalt1 },
+      { property: "og:image", content: taltHero },
+      { name: "twitter:image", content: taltHero },
     ],
   }),
   component: TaltPage,
@@ -93,8 +93,8 @@ function TaltPage() {
       {/* HERO */}
       <section className="relative h-[70vh] min-h-[520px] overflow-hidden">
         <img
-          src={cirkustalt1}
-          alt="Tält uppställt i landskap"
+          src={taltHero}
+          alt="Yurttält uppställt på gräsfält i skymning"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/30 to-background" />
