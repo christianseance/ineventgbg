@@ -108,7 +108,7 @@ export const CATEGORIES: Category[] = [
     name: "DJ",
     group: "funktioner",
     cover: dj,
-    blurb: "House, disco, classics — DJs för varje typ av kväll.",
+    blurb: "Bekanta låtar i partyversioner, elektroniskt, classics, många olika genres täcker vi in — DJs för varje typ av kväll.",
   },
   {
     slug: "eventarkitekt",
