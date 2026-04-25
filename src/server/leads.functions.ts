@@ -115,6 +115,52 @@ export const submitLead = createServerFn({ method: "POST" })
       };
     }
 
+    // Handle attachment upload (if any)
+    let attachmentPath: string | null = null;
+    let attachmentName: string | null = null;
+    let attachmentSize: number | null = null;
+    let attachmentMime: string | null = null;
+
+    if (data.attachment) {
+      const a = data.attachment;
+      if (isBlockedFilename(a.name)) {
+        return { ok: false as const, error: "Filtypen är inte tillåten." };
+      }
+      if (!isAllowedMime(a.mime)) {
+        return { ok: false as const, error: "Filformatet stöds inte." };
+      }
+
+      let bytes: Uint8Array;
+      try {
+        const binary = atob(a.base64);
+        bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+      } catch {
+        return { ok: false as const, error: "Filen kunde inte läsas." };
+      }
+
+      if (bytes.byteLength > MAX_FILE_BYTES) {
+        return { ok: false as const, error: "Filen är för stor (max 10 MB)." };
+      }
+
+      const safeName = sanitizeFilename(a.name);
+      const path = `${new Date().toISOString().slice(0, 10)}/${crypto.randomUUID()}-${safeName}`;
+
+      const { error: upErr } = await supabaseAdmin.storage
+        .from("lead-attachments")
+        .upload(path, bytes, { contentType: a.mime, upsert: false });
+
+      if (upErr) {
+        console.error("attachment upload error:", upErr);
+        return { ok: false as const, error: "Filen kunde inte laddas upp." };
+      }
+
+      attachmentPath = path;
+      attachmentName = a.name;
+      attachmentSize = a.size;
+      attachmentMime = a.mime;
+    }
+
     const { error } = await supabaseAdmin.from("leads").insert({
       name: data.name,
       email: data.email,
@@ -125,10 +171,18 @@ export const submitLead = createServerFn({ method: "POST" })
       location: data.location || null,
       message: data.message,
       newsletter_opt_in: data.newsletter_opt_in,
+      attachment_path: attachmentPath,
+      attachment_name: attachmentName,
+      attachment_size: attachmentSize,
+      attachment_mime: attachmentMime,
     });
 
     if (error) {
       console.error("submitLead insert error:", error);
+      // Try to clean up the uploaded file
+      if (attachmentPath) {
+        await supabaseAdmin.storage.from("lead-attachments").remove([attachmentPath]);
+      }
       return { ok: false as const, error: "Kunde inte skicka. Försök igen." };
     }
 
