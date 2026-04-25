@@ -30,7 +30,7 @@ function Tjanster() {
         </div>
         <div className="lg:col-span-5 self-end">
           <p className="text-muted-foreground text-lg">
-            Hyr ut delar, lägg upp ett komplett event eller ta in en av våra människor i ditt team.
+            Hyr ut delar, lägg upp ett komplett event eller ta in en av våra experter i ditt team.
             Tre tydliga vägar — alla fullt skalbara.
           </p>
         </div>
