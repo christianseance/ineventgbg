@@ -383,12 +383,12 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary resize-none"
             />
           </div>
-          <PrivacyDisclosure />
+          
         </div>
       )}
 
-      <div className="mt-8 flex items-center justify-between gap-3 pt-5 border-t border-border">
-        {step > 1 ? (
+      <div className="mt-8 flex flex-wrap items-center gap-3 pt-5 border-t border-border">
+        {step > 1 && (
           <button
             type="button"
             onClick={goBack}
@@ -396,38 +396,44 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
           >
             <ArrowLeft size={14} /> Tillbaka
           </button>
-        ) : (
-          <span />
         )}
 
-        {step === 1 && (
-          <button
-            type="button"
-            onClick={goNext}
-            className="inline-flex items-center gap-3 bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors"
-          >
-            Nästa <ArrowRight size={16} />
-          </button>
-        )}
-        {step === 2 && (
-          <button
-            type="button"
-            onClick={goNext}
-            className="inline-flex items-center gap-3 bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors"
-          >
-            Nästa / hoppa över <ArrowRight size={16} />
-          </button>
-        )}
         {step === 3 && (
-          <button
-            type="submit"
-            disabled={submitting}
-            className="inline-flex items-center gap-3 bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors disabled:opacity-60 shadow-stage"
-          >
-            {submitting ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
-            {submitting ? "Skickar..." : "Skicka förfrågan"}
-          </button>
+          <div className="flex-1 min-w-0">
+            <PrivacyDisclosure />
+          </div>
         )}
+
+        <div className={step === 3 ? "ml-auto" : "ml-auto"}>
+          {step === 1 && (
+            <button
+              type="button"
+              onClick={goNext}
+              className="inline-flex items-center gap-3 bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors"
+            >
+              Nästa <ArrowRight size={16} />
+            </button>
+          )}
+          {step === 2 && (
+            <button
+              type="button"
+              onClick={goNext}
+              className="inline-flex items-center gap-3 bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors"
+            >
+              Nästa / hoppa över <ArrowRight size={16} />
+            </button>
+          )}
+          {step === 3 && (
+            <button
+              type="submit"
+              disabled={submitting}
+              className="inline-flex items-center gap-3 bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors disabled:opacity-60 shadow-stage"
+            >
+              {submitting ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
+              {submitting ? "Skickar..." : "Skicka förfrågan"}
+            </button>
+          )}
+        </div>
       </div>
     </form>
   );
