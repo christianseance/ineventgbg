@@ -60,10 +60,22 @@ const stepTwoSchema = z.object({
 });
 const stepThreeSchema = z.object({
   name: z.string().trim().max(100).optional().or(z.literal("")),
+  company: z.string().trim().max(120).optional().or(z.literal("")),
+  inquiry_type: z.string().trim().max(60).optional().or(z.literal("")),
   email: z.string().trim().email("Ogiltig e-postadress").max(255),
   phone: z.string().trim().max(30).optional().or(z.literal("")),
   message: z.string().trim().max(2000).optional().or(z.literal("")),
 });
+
+const INQUIRY_TYPES = [
+  "Offertförfrågan",
+  "Allmän fråga",
+  "Tillgänglighet / datum",
+  "Prisindikation",
+  "Samarbete / partner",
+  "Press / media",
+  "Annat",
+] as const;
 
 type State = {
   event_type: string;
@@ -71,6 +83,8 @@ type State = {
   guest_count: string;
   location: string;
   name: string;
+  company: string;
+  inquiry_type: string;
   email: string;
   phone: string;
   message: string;
@@ -82,6 +96,8 @@ const INITIAL: State = {
   guest_count: "",
   location: "",
   name: "",
+  company: "",
+  inquiry_type: "Offertförfrågan",
   email: "",
   phone: "",
   message: "",
