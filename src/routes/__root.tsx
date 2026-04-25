@@ -2,6 +2,7 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/r
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { StickyCta } from "@/components/StickyCta";
+import { ContactFloat } from "@/components/ContactFloat";
 import { Toaster } from "@/components/ui/sonner";
 
 import appCss from "../styles.css?url";
@@ -79,6 +80,7 @@ function RootComponent() {
       </main>
       <SiteFooter />
       <StickyCta />
+      <ContactFloat />
       <Toaster richColors position="top-center" />
     </>
   );

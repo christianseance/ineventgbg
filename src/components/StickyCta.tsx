@@ -81,7 +81,7 @@ export function StickyCta() {
   if (closed || !show) return null;
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 z-40 max-w-sm fade-up">
+    <div className="fixed bottom-20 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-24 z-40 max-w-sm fade-up">
       <div className="relative bg-card border border-border shadow-stage p-5">
         <button
           onClick={handleClose}

@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight, Sparkles, Tent, Music, Lightbulb } from "luci
 import heroImg from "@/assets/hero-tent.jpg";
 import heroCanopy from "@/assets/hero-canopy.webp";
 import { CATEGORIES, GROUPS } from "@/data/gallery";
+import { QuickLeadForm } from "@/components/QuickLeadForm";
 
 const HERO_IMAGES = [
   { src: heroImg, alt: "Cirkustält upplyst i rött med scenljus och rök" },
