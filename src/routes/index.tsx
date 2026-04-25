@@ -108,7 +108,7 @@ function Index() {
             {Array.from({ length: 2 }).map((_, i) => (
               <div key={i} className="flex gap-12 shrink-0">
                 <span>★ Cirkustält</span>
-                <span>★ Scen & podium</span>
+                <span>★ Podium & scen</span>
                 <span>★ Ljus & lasrar</span>
                 <span>★ DJ</span>
                 <span>★ Bröllop</span>
