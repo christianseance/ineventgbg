@@ -55,11 +55,15 @@ function Tjanster() {
               </div>
             </div>
             <div className="lg:col-span-8 grid sm:grid-cols-2 gap-5">
-              {cats.map((c) => (
+              {cats.map((c) => {
+                const isCirkus = c.slug === "cirkustalt";
+                const linkProps = isCirkus
+                  ? ({ to: "/cirkustalt" } as const)
+                  : ({ to: "/kontakt", search: { subject: c.name } } as const);
+                return (
                 <Link
                   key={c.slug}
-                  to="/kontakt"
-                  search={{ subject: c.name }}
+                  {...linkProps}
                   className="group relative aspect-[4/3] overflow-hidden bg-card border border-border"
                 >
                   <img
@@ -74,7 +78,8 @@ function Tjanster() {
                     <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{c.blurb}</p>
                   </div>
                 </Link>
-              ))}
+                );
+              })}
             </div>
           </section>
         );
