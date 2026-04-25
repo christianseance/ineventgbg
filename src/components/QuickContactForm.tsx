@@ -195,6 +195,19 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
       }
       setErrors({});
       setStep(3);
+    } else if (step === 3) {
+      const r = stepThreeSchema.safeParse(data);
+      if (!r.success) {
+        const errs: Record<string, string> = {};
+        r.error.issues.forEach((i) => {
+          errs[String(i.path[0])] = i.message;
+        });
+        setErrors(errs);
+        toast.error("Kolla de markerade fälten och prova igen.");
+        return;
+      }
+      setErrors({});
+      setStep(4);
     }
   };
 
@@ -202,6 +215,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
     setErrors({});
     if (step === 2) setStep(1);
     if (step === 3) setStep(2);
+    if (step === 4) setStep(3);
   };
 
   const onSubmit = async (e: React.FormEvent) => {
