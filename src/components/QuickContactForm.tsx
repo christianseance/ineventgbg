@@ -402,7 +402,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
           <span />
         )}
 
-        {step < 3 ? (
+        {step === 2 && (
           <button
             type="button"
             onClick={goNext}
@@ -410,7 +410,8 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
           >
             Nästa <ArrowRight size={16} />
           </button>
-        ) : (
+        )}
+        {step === 3 && (
           <button
             type="submit"
             disabled={submitting}
@@ -420,6 +421,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
             {submitting ? "Skickar..." : "Skicka förfrågan"}
           </button>
         )}
+        {step === 1 && <span />}
       </div>
     </form>
   );
