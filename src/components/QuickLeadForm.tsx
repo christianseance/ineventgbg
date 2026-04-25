@@ -172,6 +172,18 @@ export function QuickLeadForm() {
                   </div>
                 </div>
 
+                <label className="flex items-start gap-3 cursor-pointer text-xs text-muted-foreground leading-relaxed">
+                  <input
+                    type="checkbox"
+                    checked={newsletter}
+                    onChange={(e) => setNewsletter(e.target.checked)}
+                    className="mt-0.5 h-4 w-4 accent-primary shrink-0"
+                  />
+                  <span>
+                    Lägg till mig på e-postlistan. Vi mejlar då och då — avregistrera när du vill.
+                  </span>
+                </label>
+
                 <button
                   type="submit"
                   disabled={submitting}
@@ -181,7 +193,7 @@ export function QuickLeadForm() {
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </button>
                 <p className="text-xs text-muted-foreground">
-                  Du får den direkt! Du signar upp dig för våra mejl, som kommer då och då. Avregistrera när du vill.
+                  Guiden levereras direkt vid beställning.
                 </p>
                 <PrivacyDisclosure />
               </form>
