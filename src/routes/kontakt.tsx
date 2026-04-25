@@ -42,12 +42,12 @@ function Kontakt() {
       </header>
 
       {/* Form */}
-      <div className="mt-12">
+      <div className="mt-8 lg:mt-10">
         <QuickContactForm initialSubject={subject} />
       </div>
 
-      {/* Contact info below form */}
-      <section className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {/* Contact info directly below form */}
+      <section className="mt-6 lg:mt-8 grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <div className="flex items-start gap-4">
           <span className="mt-1 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
             <Mail size={16} />
