@@ -312,7 +312,7 @@ function Kontakt() {
               <span className="text-xs uppercase tracking-widest">Snabbt svar</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Vi svarar alltså oftast inom <span className="text-foreground">någon timma</span> på vardagar, och alltid inom 36h.
+              Oftast inom <span className="text-foreground">någon timma</span> på vardagar — annars senast inom 36 timmar.
             </p>
           </div>
         </aside>

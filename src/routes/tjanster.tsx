@@ -172,26 +172,12 @@ function Tjanster() {
             </div>
           </div>
 
-          {/* Social proof */}
+          {/* Citat */}
           <div className="lg:col-span-5">
-            <div className="grid grid-cols-3 gap-px bg-border border border-border">
-              <div className="bg-background p-6 text-center">
-                <div className="text-display text-4xl text-primary">96%</div>
-                <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-2">Nöjda kunder</div>
-              </div>
-              <div className="bg-background p-6 text-center">
-                <div className="text-display text-4xl text-primary">25</div>
-                <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-2">År i branschen</div>
-              </div>
-              <div className="bg-background p-6 text-center">
-                <div className="text-display text-4xl text-primary">100%</div>
-                <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-2">Levererade i tid</div>
-              </div>
-            </div>
-            <blockquote className="mt-5 border-l-2 border-primary pl-5 py-2 text-sm text-muted-foreground italic">
+            <blockquote className="border-l-2 border-primary pl-6 py-4 text-lg text-foreground/90 italic leading-relaxed">
               ”Raka besked, snabb uppställning och ett tält som lyfte hela kvällen.”
-              <footer className="mt-2 not-italic text-xs uppercase tracking-widest text-foreground/60">
-                Tidigare kund, bröllop i Bohuslän
+              <footer className="mt-4 not-italic text-xs uppercase tracking-widest text-muted-foreground">
+                Tidigare kund · Bröllop i Bohuslän
               </footer>
             </blockquote>
           </div>

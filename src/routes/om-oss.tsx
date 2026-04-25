@@ -45,9 +45,7 @@ function OmOss() {
         <div className="lg:col-span-5 space-y-px bg-border">
           {[
             { k: "2001", v: "Året vi startade" },
-            { k: "300+", v: "Genomförda event" },
             { k: "Världen", v: "Geografisk räckvidd" },
-            { k: "24-36h", v: "Svar på offerter" },
             { k: "3", v: "Eventveteraner i coreteamet" },
             { k: "999m²", v: "Lagerareal i Göteborg" },
           ].map((s) => (
