@@ -62,7 +62,17 @@ const formSchema = z.object({
       },
       { message: "Datumet kan inte vara passerat" }
     ),
-  guest_count: z.string().optional().or(z.literal("")),
+  guest_count: z
+    .string()
+    .optional()
+    .refine(
+      (v) => {
+        if (!v) return true;
+        const n = Number(v);
+        return Number.isFinite(n) && Number.isInteger(n) && n >= 0 && n <= 100000;
+      },
+      { message: "Antal gäster måste vara ett positivt heltal" }
+    ),
   location: z.string().trim().max(150).optional().or(z.literal("")),
   message: z
     .string()
