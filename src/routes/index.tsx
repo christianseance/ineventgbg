@@ -304,63 +304,6 @@ function Index() {
         </div>
       </section>
 
-      {/* INLINE CTA + SOCIAL PROOF */}
-      <section className="relative py-20 border-b border-border">
-        <div className="mx-auto max-w-[1400px] px-5 lg:px-10">
-          <div className="grid lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-7">
-              <span className="text-xs uppercase tracking-[0.3em] text-primary">Låter det rätt?</span>
-              <h2 className="text-display text-4xl lg:text-6xl mt-3">
-                Boka en kostnadsfri <span className="text-primary">konsultation.</span>
-              </h2>
-              <p className="mt-5 text-base text-muted-foreground leading-relaxed max-w-xl">
-                Femton minuter där vi lyssnar, ställer rätt frågor och säger ärligt om vi är rätt för
-                ditt event. Inga säljpitchar, inget krångel.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  to="/kontakt"
-                  className="group inline-flex items-center gap-3 bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors shadow-stage"
-                >
-                  Boka konsultation
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <a
-                  href="tel:+46708967690"
-                  className="inline-flex items-center gap-3 border border-foreground/20 px-7 py-4 text-sm font-semibold uppercase tracking-widest text-foreground hover:border-foreground hover:bg-foreground/5 transition-colors"
-                >
-                  Ring oss direkt
-                </a>
-              </div>
-            </div>
-
-            {/* Social proof */}
-            <div className="lg:col-span-5">
-              <div className="grid grid-cols-3 gap-px bg-border border border-border">
-                <div className="bg-background p-6 text-center">
-                  <div className="text-display text-4xl text-primary">96%</div>
-                  <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-2">Nöjda kunder</div>
-                </div>
-                <div className="bg-background p-6 text-center">
-                  <div className="text-display text-4xl text-primary">25</div>
-                  <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-2">År i branschen</div>
-                </div>
-                <div className="bg-background p-6 text-center">
-                  <div className="text-display text-4xl text-primary">100%</div>
-                  <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-2">Levererade i tid</div>
-                </div>
-              </div>
-              <blockquote className="mt-5 border-l-2 border-primary pl-5 py-2 text-sm text-muted-foreground italic">
-                ”Raka besked, snabb uppställning och ett tält som lyfte hela kvällen.”
-                <footer className="mt-2 not-italic text-xs uppercase tracking-widest text-foreground/60">
-                  — Tidigare kund, bröllop i Bohuslän
-                </footer>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* QUICK LEAD: lead magnet — förberedelseguide */}
       <QuickLeadForm />
 
