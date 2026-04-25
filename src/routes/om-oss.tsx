@@ -31,12 +31,12 @@ function OmOss() {
           <div className="mt-10 space-y-6 text-muted-foreground text-lg leading-relaxed max-w-2xl">
             <p>
               Inevent startades 2001 i Göteborg av Mathias, och 2026 fick han sällskap av några eventveteraner till som
-              tröttnat på halvdana produktioner. Idag äger vi en av Sveriges största lager av cirkustält, eventtält,
-              podium, ljus och teknik — och, lika viktigt, ett team som vet exakt hur allt riggas.
+              tröttnat på halvdana produktioner. Sedan i år har vi ett av Sveriges största lager av cirkustält,
+              eventtält, podium, ljus och teknik — och, lika viktigt, ett team som vet exakt hur allt riggas.
             </p>
             <p>
-              Vi tar projekt från en enda dag till veckolånga festivaler. Från ett podium på en gata till en komplett
-              LED-vägg i en konsertarena. Bröllop med 30 gäster eller företagsfest med 3 000.
+              Vi tar projekt från en enda dag till veckolånga festivaler. Från ett podium på en gata, via ett bröllop
+              med 30 gäster till en företagsfest med 500 nöjda deltagare.
             </p>
             <p>Det vi lovar är enkelt: vi svarar snabbt, vi är ärliga med pris, och när dagen kommer fungerar allt.</p>
           </div>
