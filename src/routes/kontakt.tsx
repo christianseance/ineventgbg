@@ -333,6 +333,15 @@ function Field({
         required={required}
         placeholder={placeholder}
         min={min}
+        onInvalid={(e) => {
+          const el = e.currentTarget;
+          if (el.validity.valueMissing) el.setCustomValidity("Vänligen fyll i det här fältet");
+          else if (el.validity.typeMismatch && type === "email") el.setCustomValidity("Ange en giltig e-postadress");
+          else if (el.validity.rangeUnderflow && type === "date") el.setCustomValidity("Datumet kan inte vara passerat");
+          else if (el.validity.badInput && type === "number") el.setCustomValidity("Ange ett giltigt nummer");
+          else el.setCustomValidity("Ogiltigt värde");
+        }}
+        onInput={(e) => e.currentTarget.setCustomValidity("")}
         className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary"
       />
       {error && <p className="mt-1 text-xs text-destructive">{error}</p>}
