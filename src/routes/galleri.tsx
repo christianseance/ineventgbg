@@ -43,11 +43,11 @@ function Galleri() {
   }, [group, category, q]);
 
   const setGroup = (g?: Group) =>
-    navigate({ search: (s) => ({ ...s, group: g, category: undefined }) });
+    navigate({ search: (s: z.infer<typeof searchSchema>) => ({ ...s, group: g, category: undefined }) });
   const setCategory = (slug?: string) =>
-    navigate({ search: (s) => ({ ...s, category: slug }) });
+    navigate({ search: (s: z.infer<typeof searchSchema>) => ({ ...s, category: slug }) });
   const applySearch = () =>
-    navigate({ search: (s) => ({ ...s, q: localQ || undefined }) });
+    navigate({ search: (s: z.infer<typeof searchSchema>) => ({ ...s, q: localQ || undefined }) });
   const clearAll = () => {
     setLocalQ("");
     navigate({ search: {} });
