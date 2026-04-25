@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import { toast } from "sonner";
 import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2, Paperclip, X } from "lucide-react";
 import { submitLead } from "@/server/leads.functions";
+import { PrivacyDisclosure } from "@/components/PrivacyDisclosure";
 
 const searchSchema = z.object({
   subject: z.string().optional(),
@@ -424,6 +425,8 @@ function Kontakt() {
               säsongs-erbjudanden.
             </span>
           </label>
+
+          <PrivacyDisclosure />
 
           <div className="flex flex-wrap items-center justify-end gap-4 pt-4 border-t border-border">
             <button
