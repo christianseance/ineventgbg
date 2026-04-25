@@ -1,14 +1,47 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
 import { zodValidator } from "@tanstack/zod-adapter";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { toast } from "sonner";
-import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2, Paperclip, X } from "lucide-react";
 import { submitLead } from "@/server/leads.functions";
 
 const searchSchema = z.object({
   subject: z.string().optional(),
 });
+
+const BLOCKED_EXTENSIONS = [
+  "exe", "bat", "cmd", "com", "msi", "scr", "pif", "vbs", "vbe", "js", "jse",
+  "wsf", "wsh", "ps1", "psm1", "sh", "bash", "zsh", "app", "dmg", "deb", "rpm",
+  "apk", "jar", "war", "ear", "dll", "so", "dylib", "lnk", "reg", "hta",
+];
+const MAX_FILE_BYTES = 10 * 1024 * 1024; // 10 MB
+
+function hasBlockedExtension(name: string): boolean {
+  const parts = name.toLowerCase().split(".");
+  if (parts.length < 2) return false;
+  return parts.slice(1).some((ext) => BLOCKED_EXTENSIONS.includes(ext));
+}
+
+function fileToBase64(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result as string;
+      // strip "data:...;base64," prefix
+      const idx = result.indexOf(",");
+      resolve(idx >= 0 ? result.slice(idx + 1) : result);
+    };
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(file);
+  });
+}
+
+function formatBytes(bytes: number): string {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+  return `${(bytes / 1024 / 1024).toFixed(1)} MB`;
+}
 
 const formSchema = z.object({
   name: z.string().trim().min(2, "Ange ditt namn").max(100),
@@ -73,6 +106,32 @@ function Kontakt() {
   const [done, setDone] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [optIn, setOptIn] = useState(true);
+  const [file, setFile] = useState<File | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const f = e.target.files?.[0];
+    if (!f) {
+      setFile(null);
+      return;
+    }
+    if (hasBlockedExtension(f.name)) {
+      toast.error("Filtypen är inte tillåten av säkerhetsskäl.");
+      e.target.value = "";
+      return;
+    }
+    if (f.size > MAX_FILE_BYTES) {
+      toast.error("Filen är för stor (max 10 MB).");
+      e.target.value = "";
+      return;
+    }
+    setFile(f);
+  }
+
+  function clearFile() {
+    setFile(null);
+    if (fileInputRef.current) fileInputRef.current.value = "";
+  }
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -104,6 +163,24 @@ function Kontakt() {
     setSubmitting(true);
     try {
       const v = parsed.data;
+
+      let attachment: { name: string; mime: string; size: number; base64: string } | null = null;
+      if (file) {
+        try {
+          const base64 = await fileToBase64(file);
+          attachment = {
+            name: file.name,
+            mime: file.type || "application/octet-stream",
+            size: file.size,
+            base64,
+          };
+        } catch {
+          toast.error("Kunde inte läsa filen. Prova en annan.");
+          setSubmitting(false);
+          return;
+        }
+      }
+
       const result = await submitLead({
         data: {
           name: v.name,
@@ -116,6 +193,7 @@ function Kontakt() {
           message: v.message,
           newsletter_opt_in: v.newsletter_opt_in,
           website: String(fd.get("website") ?? ""),
+          attachment,
         },
       });
 
@@ -280,6 +358,48 @@ function Kontakt() {
               className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary resize-none"
             />
             {errors.message && <p className="mt-1 text-xs text-destructive">{errors.message}</p>}
+          </div>
+
+          <div>
+            <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
+              Bifoga fil (valfritt)
+            </label>
+            {!file ? (
+              <label className="flex items-center justify-center gap-3 border border-dashed border-border bg-input/50 px-4 py-6 cursor-pointer hover:border-primary hover:bg-input transition-colors">
+                <Paperclip size={18} className="text-muted-foreground" />
+                <span className="text-sm text-muted-foreground">
+                  Klicka för att välja en fil <span className="text-xs">(max 10 MB)</span>
+                </span>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  className="sr-only"
+                  onChange={handleFileChange}
+                  accept=".jpg,.jpeg,.png,.webp,.gif,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.zip"
+                />
+              </label>
+            ) : (
+              <div className="flex items-center justify-between gap-3 border border-border bg-input px-4 py-3">
+                <div className="flex items-center gap-3 min-w-0">
+                  <Paperclip size={16} className="text-primary shrink-0" />
+                  <div className="min-w-0">
+                    <div className="text-sm text-foreground truncate">{file.name}</div>
+                    <div className="text-xs text-muted-foreground">{formatBytes(file.size)}</div>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={clearFile}
+                  className="text-muted-foreground hover:text-destructive transition-colors shrink-0"
+                  aria-label="Ta bort fil"
+                >
+                  <X size={18} />
+                </button>
+              </div>
+            )}
+            <p className="mt-2 text-xs text-muted-foreground">
+              Tillåtna: bilder, PDF, Word, Excel, PowerPoint, text, CSV, ZIP. Körbara filer (.exe, .bat m.fl.) blockeras.
+            </p>
           </div>
 
           <label className="flex items-start gap-3 cursor-pointer text-sm text-muted-foreground">
