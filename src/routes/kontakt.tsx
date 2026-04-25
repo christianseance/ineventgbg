@@ -145,7 +145,7 @@ function Kontakt() {
               <span className="text-primary">om ditt event.</span>
             </h1>
             <p className="mt-6 text-muted-foreground">
-              Vi återkommer inom 24-36 timmar med ett personligt svar och tar fram en offert i samråd. Inga förpliktelser.
+              Vi återkommer med en personlig dialog och tar fram en offert i samråd. Inga förpliktelser.
             </p>
           </div>
 
