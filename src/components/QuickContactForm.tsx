@@ -315,7 +315,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
                   key={opt.value}
                   type="button"
                   onClick={() => selectEventType(opt.value)}
-                  className={`group flex flex-col items-center justify-center gap-2 border p-5 transition-all ${
+                  className={`group flex flex-col items-center justify-center gap-2 border p-3 sm:p-5 transition-all ${
                     active
                       ? "border-primary bg-primary/10 text-foreground"
                       : "border-border bg-background hover:border-primary/50 text-foreground/80"
@@ -335,14 +335,14 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
       )}
 
       {step === 2 && (
-        <div className="space-y-5">
+        <div className="space-y-4 sm:space-y-5">
           <div>
             <h3 className="text-display text-xl sm:text-2xl lg:text-3xl mb-1.5 sm:mb-2">När och var?</h3>
             <p className="text-sm text-muted-foreground mb-2">
               Allt här är valfritt — fyll i det du vet.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 gap-5">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
             <div>
               <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
                 Datum (om känt)
@@ -394,7 +394,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
       )}
 
       {step === 3 && (
-        <div className="space-y-5">
+        <div className="space-y-4 sm:space-y-5">
           <div>
             <h3 className="text-display text-xl sm:text-2xl lg:text-3xl mb-1.5 sm:mb-2">Vart får vi höra av oss?</h3>
             <p className="text-sm text-muted-foreground">
@@ -420,7 +420,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
             </select>
             <FieldError id="err-inquiry-type" msg={errors.inquiry_type} />
           </div>
-          <div className="grid sm:grid-cols-2 gap-5">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
             <div>
               <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
                 Namn
@@ -453,7 +453,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               <FieldError id="err-email" msg={errors.email} />
             </div>
           </div>
-          <div className="grid sm:grid-cols-2 gap-5">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
             <div>
               <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
                 Telefon (valfritt)
