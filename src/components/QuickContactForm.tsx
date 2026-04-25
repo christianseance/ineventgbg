@@ -106,6 +106,48 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
     if (errors[k as string]) setErrors((e) => ({ ...e, [k as string]: "" }));
   };
 
+  // Validera ett enskilt fält vid blur så användaren ser fel direkt
+  const validateField = (field: keyof State) => {
+    const schemaMap: Partial<Record<keyof State, z.ZodSchema>> = {
+      event_type: stepOneSchema.shape.event_type,
+      event_date: stepTwoSchema.shape.event_date,
+      guest_count: stepTwoSchema.shape.guest_count,
+      location: stepTwoSchema.shape.location,
+      name: stepThreeSchema.shape.name,
+      email: stepThreeSchema.shape.email,
+      phone: stepThreeSchema.shape.phone,
+      message: stepThreeSchema.shape.message,
+    };
+    const s = schemaMap[field];
+    if (!s) return;
+    const r = s.safeParse(data[field]);
+    setErrors((e) => ({
+      ...e,
+      [field]: r.success ? "" : r.error.issues[0]?.message ?? "Ogiltigt värde",
+    }));
+  };
+
+  // Klassnamn för input — röd kant + ring vid fel
+  const inputClass = (field: keyof State) =>
+    `w-full bg-input border px-3 py-2 text-sm focus:outline-none transition-colors ${
+      errors[field]
+        ? "border-destructive focus:border-destructive ring-1 ring-destructive/40"
+        : "border-border focus:border-primary"
+    }`;
+
+  // Liten inline-felrad med ikon
+  const FieldError = ({ id, msg }: { id: string; msg?: string }) =>
+    msg ? (
+      <p
+        id={id}
+        role="alert"
+        className="mt-1 flex items-center gap-1.5 text-xs text-destructive"
+      >
+        <AlertCircle size={12} className="shrink-0" />
+        <span>{msg}</span>
+      </p>
+    ) : null;
+
   const selectEventType = (value: string) => {
     setData((d) => ({ ...d, event_type: value }));
     setErrors((e) => ({ ...e, event_type: "" }));
