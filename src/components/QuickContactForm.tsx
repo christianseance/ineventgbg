@@ -453,19 +453,35 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               <FieldError id="err-email" msg={errors.email} />
             </div>
           </div>
-          <div>
-            <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
-              Telefon (valfritt)
-            </label>
-            <input
-              type="tel"
-              value={data.phone}
-              onChange={(e) => update("phone", e.target.value)}
-              onBlur={() => validateField("phone")}
-              aria-invalid={!!errors.phone}
-              className={inputClass("phone")}
-            />
-            <FieldError id="err-phone" msg={errors.phone} />
+          <div className="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
+                Telefon (valfritt)
+              </label>
+              <input
+                type="tel"
+                value={data.phone}
+                onChange={(e) => update("phone", e.target.value)}
+                onBlur={() => validateField("phone")}
+                aria-invalid={!!errors.phone}
+                className={inputClass("phone")}
+              />
+              <FieldError id="err-phone" msg={errors.phone} />
+            </div>
+            <div>
+              <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
+                Företag / organisation (valfritt)
+              </label>
+              <input
+                type="text"
+                value={data.company}
+                onChange={(e) => update("company", e.target.value)}
+                onBlur={() => validateField("company")}
+                aria-invalid={!!errors.company}
+                className={inputClass("company")}
+              />
+              <FieldError id="err-company" msg={errors.company} />
+            </div>
           </div>
           <div>
             <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
