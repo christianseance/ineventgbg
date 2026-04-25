@@ -130,6 +130,8 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
       guest_count: stepTwoSchema.shape.guest_count,
       location: stepTwoSchema.shape.location,
       name: stepThreeSchema.shape.name,
+      company: stepThreeSchema.shape.company,
+      inquiry_type: stepThreeSchema.shape.inquiry_type,
       email: stepThreeSchema.shape.email,
       phone: stepThreeSchema.shape.phone,
       message: stepThreeSchema.shape.message,
