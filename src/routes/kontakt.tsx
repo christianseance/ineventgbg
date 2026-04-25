@@ -127,7 +127,7 @@ function Kontakt() {
           <span className="text-primary">Vi hör av oss.</span>
         </h1>
         <p className="mt-6 text-lg text-muted-foreground">
-          Vi har tagit emot din förfrågan och återkommer inom 24-36 timmar med ett konkret förslag.
+          Vi har tagit emot din förfrågan och återkommer inom 24-36 timmar med ett personligt svar och tar fram en offert i samråd.
         </p>
       </div>
     );
@@ -145,7 +145,7 @@ function Kontakt() {
               <span className="text-primary">om ditt event.</span>
             </h1>
             <p className="mt-6 text-muted-foreground">
-              Vi återkommer inom 24-36 timmar med en personlig offert. Inga förpliktelser.
+              Vi återkommer inom 24-36 timmar med ett personligt svar och tar fram en offert i samråd. Inga förpliktelser.
             </p>
           </div>
 
