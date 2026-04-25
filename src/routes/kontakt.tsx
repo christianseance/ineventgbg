@@ -212,6 +212,15 @@ function Kontakt() {
 
         {/* Right — form */}
         <form onSubmit={onSubmit} className="lg:col-span-8 bg-card border border-border p-6 lg:p-10 space-y-5">
+          {/* Honeypot — hidden from users, bots will fill it */}
+          <input
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="absolute left-[-9999px] h-0 w-0 opacity-0"
+          />
           <div className="grid sm:grid-cols-2 gap-5">
             <Field label="Namn *" name="name" error={errors.name} required />
             <Field label="E-post *" name="email" type="email" error={errors.email} required />
