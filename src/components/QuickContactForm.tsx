@@ -201,7 +201,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
   }
 
   return (
-    <form onSubmit={onSubmit} className="bg-card border border-border p-6 lg:p-10">
+    <form onSubmit={onSubmit} className="bg-card border border-border px-6 lg:px-10 py-5 lg:py-7">
       {/* Honeypot */}
       <input
         type="text"
@@ -285,7 +285,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
                 value={data.event_date}
                 min={new Date().toISOString().split("T")[0]}
                 onChange={(e) => update("event_date", e.target.value)}
-                className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary"
+                className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary"
               />
               {errors.event_date && (
                 <p className="mt-1 text-xs text-destructive">{errors.event_date}</p>
@@ -300,7 +300,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
                 min="0"
                 value={data.guest_count}
                 onChange={(e) => update("guest_count", e.target.value)}
-                className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary"
+                className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary"
               />
               {errors.guest_count && (
                 <p className="mt-1 text-xs text-destructive">{errors.guest_count}</p>
@@ -315,7 +315,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               type="text"
               value={data.location}
               onChange={(e) => update("location", e.target.value)}
-              className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary"
+              className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary"
             />
           </div>
         </div>
@@ -338,7 +338,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
                 type="text"
                 value={data.name}
                 onChange={(e) => update("name", e.target.value)}
-                className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary"
+                className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary"
               />
               {errors.name && <p className="mt-1 text-xs text-destructive">{errors.name}</p>}
             </div>
@@ -351,7 +351,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
                 required
                 value={data.email}
                 onChange={(e) => update("email", e.target.value)}
-                className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary"
+                className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary"
               />
               {errors.email && <p className="mt-1 text-xs text-destructive">{errors.email}</p>}
             </div>
@@ -364,7 +364,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               type="tel"
               value={data.phone}
               onChange={(e) => update("phone", e.target.value)}
-              className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary"
+              className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary"
             />
           </div>
           <div>
@@ -376,7 +376,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               value={data.message}
               onChange={(e) => update("message", e.target.value)}
               placeholder="Vision, behov, önskemål..."
-              className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary resize-none"
+              className="w-full bg-input border border-border px-3 py-2 text-sm focus:outline-none focus:border-primary resize-none"
             />
           </div>
           
