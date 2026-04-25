@@ -26,7 +26,7 @@ export function StickyCta() {
         </button>
         <div className="flex items-center gap-2 mb-2">
           <span className="pulse-dot h-2 w-2 rounded-full bg-primary" />
-          <span className="text-xs uppercase tracking-widest text-primary">Bokar nu</span>
+          <span className="text-xs uppercase tracking-widest text-primary">Gör en fri förfrågan nu</span>
         </div>
         <h3 className="text-2xl mb-2">Planerar du ett event?</h3>
         <p className="text-sm text-muted-foreground mb-4">
