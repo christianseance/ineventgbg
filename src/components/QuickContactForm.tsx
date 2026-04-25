@@ -401,6 +401,25 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               Vi återkommer med en personlig dialog — oftast samma dag.
             </p>
           </div>
+          <div>
+            <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
+              Ärendetyp
+            </label>
+            <select
+              value={data.inquiry_type}
+              onChange={(e) => update("inquiry_type", e.target.value)}
+              onBlur={() => validateField("inquiry_type")}
+              aria-invalid={!!errors.inquiry_type}
+              className={inputClass("inquiry_type")}
+            >
+              {INQUIRY_TYPES.map((t) => (
+                <option key={t} value={t}>
+                  {t}
+                </option>
+              ))}
+            </select>
+            <FieldError id="err-inquiry-type" msg={errors.inquiry_type} />
+          </div>
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
               <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
