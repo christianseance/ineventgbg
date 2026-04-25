@@ -332,11 +332,10 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
               <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
-                Namn *
+                Namn
               </label>
               <input
                 type="text"
-                required
                 value={data.name}
                 onChange={(e) => update("name", e.target.value)}
                 className="w-full bg-input border border-border px-3 py-3 text-sm focus:outline-none focus:border-primary"
