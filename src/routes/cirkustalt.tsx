@@ -187,7 +187,7 @@ function Cirkustalt() {
             </h2>
             <p className="mt-5 text-muted-foreground leading-relaxed max-w-xl">
               Skicka in datum, plats och ungefärligt antal gäster så återkommer vi med förslag på
-              storlek, layout och pris inom 24 timmar.
+              storlek, layout och pris.
             </p>
           </div>
           <div className="lg:col-span-5 flex flex-wrap gap-3 lg:justify-end">
