@@ -275,7 +275,7 @@ function Index() {
                 {
                   n: "02",
                   t: "Förslaget",
-                  d: "Inom 24-36h får du en konkret offert med setup, teknik, tider och pris.",
+                  d: "Inom någon minut får du svar, om vi inte är på jobb — annars kan det ta några dagar innan vi i samråd med dig har tagit fram offerten. Vi är få och styr arbetet själva, du talar direkt med oss — ingen säljavdelning emellan!",
                 },
                 {
                   n: "03",
