@@ -9,13 +9,13 @@ export const Route = createFileRoute("/talt")({
       {
         name: "description",
         content:
-          "Hyr tält för alla tillfällen — bastutält, jakt- och fisketält, baslägertält, taktält, nomadtält, yurthor, yoga- och marknadstält. Leverans i hela Sverige.",
+          "Hyr tält för alla tillfällen: bastutält, jakt- och fisketält, baslägertält, taktält, nomadtält, yurthor, yoga- och marknadstält. Leverans i hela Sverige.",
       },
       { property: "og:title", content: "Tält uthyrning · Inevent" },
       {
         property: "og:description",
         content:
-          "Bastutält, baslägertält, taktält, nomadtält, yurthor, yoga- och marknadstält — riggat av proffs.",
+          "Bastutält, baslägertält, taktält, nomadtält, yurthor, yoga- och marknadstält. Riggat av proffs.",
       },
       { property: "og:image", content: cirkustalt1 },
       { name: "twitter:image", content: cirkustalt1 },
@@ -52,7 +52,7 @@ const TENT_TYPES: TentType[] = [
   {
     name: "Taktält",
     blurb:
-      "Inspirerade av militära fältförläggningar — rena linjer, robusta tygdukar och seriös känsla.",
+      "Inspirerade av militära fältförläggningar: rena linjer, robusta tygdukar och seriös känsla.",
     details: ["A-form och pyramidtak", "Naturmaterial och canvas", "För 4–30 personer"],
   },
   {
@@ -70,7 +70,7 @@ const TENT_TYPES: TentType[] = [
   {
     name: "Mindre tält för 4–12 personer",
     blurb:
-      "Intima tält för mindre sällskap — privat middag, retreat, glamping eller pop-up-bar.",
+      "Intima tält för mindre sällskap: privat middag, retreat, glamping eller pop-up-bar.",
     details: ["Pagod, bell tent eller A-form", "4–12 personer", "Plant trägolv som tillval"],
   },
   {
@@ -104,8 +104,8 @@ function TaltPage() {
             Tält<span className="text-primary">.</span>
           </h1>
           <p className="mt-5 text-lg lg:text-xl text-foreground/90 max-w-2xl">
-            Från bastutält vid sjökanten till yurthor på fjället. Vi har tält för varje syfte —
-            riggade, värmda och redo när du är.
+            Från bastutält vid sjökanten till yurthor på fjället. Vi har tält för varje syfte.
+            Riggade, värmda och redo när du är.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -135,7 +135,7 @@ function TaltPage() {
             </h2>
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Vi arbetar med tält av alla skalor och stilar — från privata bastutält till storskaliga
+            Vi arbetar med tält av alla skalor och stilar, från privata bastutält till storskaliga
             marknadstält. Berätta vad du planerar så hjälper vi dig välja rätt typ, storlek och
             tillval.
           </p>
@@ -166,7 +166,7 @@ function TaltPage() {
         <section className="bg-card border border-border p-10 lg:p-16 text-center space-y-6">
           <span className="text-xs uppercase tracking-[0.3em] text-primary">Nästa steg</span>
           <h2 className="text-display text-4xl lg:text-5xl max-w-3xl mx-auto">
-            Berätta om ditt event — vi föreslår rätt tält.
+            Berätta om ditt event, vi föreslår rätt tält.
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Skicka in datum, plats och ungefärligt antal gäster så återkommer vi med förslag på
