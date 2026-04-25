@@ -57,8 +57,11 @@ function Tjanster() {
             <div className="lg:col-span-8 grid sm:grid-cols-2 gap-5">
               {cats.map((c) => {
                 const isCirkus = c.slug === "cirkustalt";
+                const isOvriga = c.slug === "ovriga-talt";
                 const linkProps = isCirkus
                   ? ({ to: "/cirkustalt" } as const)
+                  : isOvriga
+                  ? ({ to: "/talt" } as const)
                   : ({ to: "/kontakt", search: { subject: c.name } } as const);
                 return (
                 <Link

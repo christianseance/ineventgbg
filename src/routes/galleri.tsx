@@ -186,11 +186,22 @@ function Galleri() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {filtered.map((cat, i) => {
             const isCirkus = cat.slug === "cirkustalt";
+            const isOvriga = cat.slug === "ovriga-talt";
             const linkProps = isCirkus
               ? ({ to: "/cirkustalt" } as const)
+              : isOvriga
+              ? ({ to: "/talt" } as const)
               : ({ to: "/kontakt", search: { subject: cat.name } } as const);
-            const ctaLabel = isCirkus ? "Se cirkustälten" : "Få offert på liknande";
-            const ariaLabel = isCirkus ? "Se cirkustälten" : `Få offert för ${cat.name}`;
+            const ctaLabel = isCirkus
+              ? "Se cirkustälten"
+              : isOvriga
+              ? "Se övriga tält"
+              : "Få offert på liknande";
+            const ariaLabel = isCirkus
+              ? "Se cirkustälten"
+              : isOvriga
+              ? "Se övriga tält"
+              : `Få offert för ${cat.name}`;
             return (
               <article
                 key={cat.slug}
