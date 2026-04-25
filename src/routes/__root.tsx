@@ -37,7 +37,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Vi löser allt inom event. Cirkustält, eventtält, podium, belysning och teknik, DJ, bröllop och företagsevent. Utgår från Göteborg.",
+          "Vi löser nästan allt inom event. Cirkustält, eventtält, podium, belysning och teknik, DJ, bröllop och företagsevent. Utgår från Göteborg.",
       },
       { name: "author", content: "Inevent" },
     ],

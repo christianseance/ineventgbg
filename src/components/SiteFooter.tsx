@@ -9,7 +9,7 @@ export function SiteFooter() {
         <div className="lg:col-span-2 space-y-5">
           <Logo />
           <p className="text-muted-foreground text-sm max-w-md">
-            Vi löser allt inom event. Från cirkustält och podium till bröllop, företagsfester och festivaler.
+            Vi löser nästan allt inom event. Från cirkustält och podium till bröllop, företagsfester och festivaler.
             Utgår från Göteborg.
           </p>
         </div>
@@ -88,7 +88,7 @@ export function SiteFooter() {
               <Facebook size={14} />
             </a>
           </div>
-          <span className="order-3 sm:order-3">Vi löser allt inom event.</span>
+          <span className="order-3 sm:order-3">Vi löser nästan allt inom event.</span>
         </div>
       </div>
     </footer>
