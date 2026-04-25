@@ -301,18 +301,19 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
       <div className="mb-5 sm:mb-7 lg:mb-8">
         <div className="flex items-center justify-between mb-3">
           <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-            Steg {step} av 3
+            Steg {step} av 4
           </span>
           <span className="text-xs text-muted-foreground">
             {step === 1 && "Vad gäller det?"}
             {step === 2 && "När och var?"}
             {step === 3 && "Dina uppgifter"}
+            {step === 4 && "Granska & skicka"}
           </span>
         </div>
         <div className="h-1 bg-border overflow-hidden">
           <div
             className="h-full bg-primary transition-all duration-300"
-            style={{ width: `${(step / 3) * 100}%` }}
+            style={{ width: `${(step / 4) * 100}%` }}
           />
         </div>
       </div>
