@@ -1,7 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { ArrowRight, ArrowUpRight, Sparkles, Tent, Music, Lightbulb } from "lucide-react";
 import heroImg from "@/assets/hero-tent.jpg";
+import heroCanopy from "@/assets/hero-canopy.webp";
 import { CATEGORIES, GROUPS } from "@/data/gallery";
+
+const HERO_IMAGES = [
+  { src: heroImg, alt: "Cirkustält upplyst i rött med scenljus och rök" },
+  { src: heroCanopy, alt: "Färgsprakande tygbaldakin i skogen med publik och rök" },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -41,19 +48,32 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const featured = CATEGORIES.slice(0, 6);
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setHeroIndex((i) => (i + 1) % HERO_IMAGES.length);
+    }, 6000);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <>
       {/* HERO — asymmetric */}
       <section className="relative min-h-[92vh] overflow-hidden grain">
         <div className="absolute inset-0">
-          <img
-            src={heroImg}
-            alt="Cirkustält upplyst i rött med scenljus och rök"
-            width={1920}
-            height={1080}
-            className="h-full w-full object-cover opacity-60"
-          />
+          {HERO_IMAGES.map((img, i) => (
+            <img
+              key={img.src}
+              src={img.src}
+              alt={img.alt}
+              width={1920}
+              height={1080}
+              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+                i === heroIndex ? "opacity-60" : "opacity-0"
+              }`}
+            />
+          ))}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/30" />
           <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/30" />
         </div>
