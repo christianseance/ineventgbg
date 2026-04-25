@@ -387,29 +387,31 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
         </div>
       )}
 
-      <div className="mt-8 flex flex-wrap items-center gap-3 pt-5 border-t border-border">
+      <div className="mt-8 flex flex-nowrap items-center gap-2 sm:gap-3 pt-5 border-t border-border">
         {step > 1 && (
           <button
             type="button"
             onClick={goBack}
-            className="inline-flex items-center gap-2 px-4 py-3 text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Tillbaka"
+            className="shrink-0 inline-flex items-center gap-2 px-2 sm:px-4 py-3 text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
           >
-            <ArrowLeft size={14} /> Tillbaka
+            <ArrowLeft size={14} />
+            <span className="hidden sm:inline">Tillbaka</span>
           </button>
         )}
 
         {step === 3 && (
-          <div className="flex-1 min-w-0">
+          <div className="flex-1 min-w-0 overflow-hidden text-xs">
             <PrivacyDisclosure />
           </div>
         )}
 
-        <div className={step === 3 ? "ml-auto" : "ml-auto"}>
+        <div className="ml-auto shrink-0">
           {step === 1 && (
             <button
               type="button"
               onClick={goNext}
-              className="inline-flex items-center gap-3 bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors"
+              className="inline-flex items-center gap-2 sm:gap-3 bg-primary px-5 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors whitespace-nowrap"
             >
               Nästa <ArrowRight size={16} />
             </button>
@@ -418,19 +420,22 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
             <button
               type="button"
               onClick={goNext}
-              className="inline-flex items-center gap-3 bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors"
+              className="inline-flex items-center gap-2 sm:gap-3 bg-primary px-5 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors whitespace-nowrap"
             >
-              Nästa / hoppa över <ArrowRight size={16} />
+              <span className="sm:hidden">Nästa</span>
+              <span className="hidden sm:inline">Nästa / hoppa över</span>
+              <ArrowRight size={16} />
             </button>
           )}
           {step === 3 && (
             <button
               type="submit"
               disabled={submitting}
-              className="inline-flex items-center gap-3 bg-primary px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors disabled:opacity-60 shadow-stage"
+              className="inline-flex items-center gap-2 sm:gap-3 bg-primary px-5 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors disabled:opacity-60 shadow-stage whitespace-nowrap"
             >
               {submitting ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
-              {submitting ? "Skickar..." : "Skicka förfrågan"}
+              <span>{submitting ? "Skickar..." : "Skicka"}</span>
+              <span className="hidden sm:inline">{submitting ? "" : "förfrågan"}</span>
             </button>
           )}
         </div>

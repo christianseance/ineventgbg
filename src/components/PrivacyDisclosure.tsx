@@ -1,9 +1,9 @@
 export function PrivacyDisclosure() {
   return (
     <details className="group text-xs text-muted-foreground">
-      <summary className="cursor-pointer select-none hover:text-foreground transition-colors inline-flex items-center gap-1.5">
-        <span className="underline underline-offset-2 decoration-dotted">Så hanterar vi dina uppgifter</span>
-        <span className="text-[10px] opacity-60 group-open:rotate-180 transition-transform inline-block">▾</span>
+      <summary className="cursor-pointer select-none hover:text-foreground transition-colors flex items-center gap-1.5 min-w-0">
+        <span className="underline underline-offset-2 decoration-dotted truncate">Så hanterar vi dina uppgifter</span>
+        <span className="text-[10px] opacity-60 group-open:rotate-180 transition-transform inline-block shrink-0">▾</span>
       </summary>
       <p className="mt-3 leading-relaxed max-w-prose">
         <strong className="text-foreground/80">Inevent Handelsbolag</strong> (org.nr 969680-9749) behandlar dina
