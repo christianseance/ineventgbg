@@ -47,7 +47,7 @@ function OmOss() {
             { k: "2001", v: "Året vi startade" },
             { k: "300+", v: "Genomförda event" },
             { k: "Norden", v: "Geografisk räckvidd" },
-            { k: "24-48h", v: "Svar på offerter" },
+            { k: "24-36h", v: "Svar på offerter" },
             { k: "3", v: "Människor i coreteamet" },
             { k: "999m²", v: "Lagerareal i Göteborg" },
           ].map((s) => (
