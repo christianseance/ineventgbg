@@ -109,7 +109,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
     setData((d) => ({ ...d, event_type: value }));
     setErrors((e) => ({ ...e, event_type: "" }));
     // Liten fördröjning så användaren ser sitt val markeras innan vi byter steg
-    setTimeout(() => setStep(2), 180);
+    setTimeout(() => setStep(2), 450);
   };
 
   const goNext = () => {
