@@ -37,7 +37,7 @@ function Kontakt() {
           Berätta <span className="text-primary">om ditt event.</span>
         </h1>
         <p className="mt-6 text-muted-foreground max-w-2xl">
-          Tre korta steg — under en minut. Vi återkommer med en personlig dialog och tar fram en offert i samråd. Inga förpliktelser.
+          Tre korta steg — under en minut. Vi återkommer med en dialog och tar fram en offert i samråd. Inga förpliktelser.
         </p>
       </header>
 
