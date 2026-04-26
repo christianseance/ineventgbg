@@ -1,5 +1,28 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
+import logo44Hertz from "@/assets/partners/44hertz.jpg";
+import logoEasyTiger from "@/assets/partners/easytiger.png";
+import logoAfterhour from "@/assets/partners/afterhoursounds.png";
+import logoRebellion from "@/assets/partners/rebellion.jpg";
+import logoAlula from "@/assets/partners/alula.jpg";
+import logoTippingPoint from "@/assets/partners/tippingpoint.png";
+import logoBliss from "@/assets/partners/bliss.png";
+import logoUnderYourSkin from "@/assets/partners/underyourskin.jpg";
+import logoCrimi from "@/assets/partners/crimi.jpg";
+import logoUrsa from "@/assets/partners/ursa.png";
+
+const PARTNERS = [
+  { name: "44 Hertz", url: "https://soundcloud.com/44-hertz", logo: logo44Hertz },
+  { name: "Easy Tiger", url: "https://soundcloud.com/easy-tiger-jena", logo: logoEasyTiger },
+  { name: "Afterhour Sounds", url: "https://afterhour-sounds.com/", logo: logoAfterhour },
+  { name: "Rebellion der Träumer", url: "https://soundcloud.com/rebelliondertraumer", logo: logoRebellion },
+  { name: "Alula Tunes", url: "http://www.alula-tunes.com/", logo: logoAlula },
+  { name: "Tipping Point", url: "https://soundcloud.com/tipping-point-music", logo: logoTippingPoint },
+  { name: "Bliss Recycle", url: "https://www.instagram.com/blissrecycle", logo: logoBliss },
+  { name: "Under Your Skin", url: "https://solo.to/underyourskin", logo: logoUnderYourSkin },
+  { name: "Criminal Bassline", url: "https://soundcloud.com/criminalbassline", logo: logoCrimi },
+  { name: "House of Ursa", url: "https://soundcloud.com/houseofursa", logo: logoUrsa },
+];
 
 export const Route = createFileRoute("/om-oss")({
   head: () => ({
