@@ -243,7 +243,7 @@ function OmOss() {
           </p>
         </div>
         <ul className="flex flex-wrap gap-x-8 gap-y-4 text-display uppercase tracking-wider text-2xl lg:text-3xl">
-          {["The Prodigy", "Europe", "David Bowie", "Spice Girls"].map((name) => (
+          {["The Prodigy", "Europe", "David Bowie", "Spice Girls", "Infected Mushroom", "Damon Jee"].map((name) => (
             <li key={name} className="text-foreground/80 hover:text-primary transition-colors">
               {name}
             </li>
