@@ -87,10 +87,10 @@ function Index() {
                 <span className="h-px w-10 bg-primary" />
                 <span className="text-xs uppercase tracking-[0.3em] text-primary">Eventproduktion sedan 2001</span>
               </div>
-              <h1 className="text-display text-[clamp(3.5rem,11vw,11rem)] text-foreground">
+              <h1 className="text-display text-[clamp(3.5rem,11vw,11rem)] text-foreground uppercase">
                 Vi reser <br />
-                <span className="text-primary">rummet.</span> <br />
-                <span className="text-stroke">Du gör showen.</span>
+                <span className="text-primary">och lyfter</span> <br />
+                <span className="text-stroke">rummet.</span>
               </h1>
               <p className="mt-8 text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
                 Cirkustält, podier, belysning, diverse event-tält, bar/bord-stolar. Nämn det och vi har det själva eller i vårt fantastiska nätverk. Vi
