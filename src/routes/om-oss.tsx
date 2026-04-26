@@ -31,6 +31,11 @@ const PARTNERS: Partner[] = [
   { name: "Fragmentvm", url: "https://www.instagram.com/fragmentvm/" },
   { name: "Secret Island Nation Festival", url: "https://www.instagram.com/secretislandnation/" },
   { name: "YRA | RYA", url: "https://www.instagram.com/yrafestivalrya/" },
+  { name: "Jazzklubben Nefertiti", url: "https://www.nefertiti.se/" },
+  { name: "Party Like Gatsby", url: "https://www.partylikegatsby.com/" },
+  { name: "Trädgår'n", url: "https://www.tradgarn.se/" },
+  { name: "Musikens Hus", url: "https://www.musikenshus.se/" },
+  { name: "Yaki-Da", url: "https://www.yakida.se/" },
 ];
 
 export const Route = createFileRoute("/om-oss")({
