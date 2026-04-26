@@ -199,12 +199,18 @@ function OmOss() {
               title={p.name}
               className="group bg-background aspect-square flex items-center justify-center p-4 lg:p-6 transition-colors hover:bg-muted"
             >
-              <img
-                src={p.logo}
-                alt={p.name}
-                loading="lazy"
-                className="max-h-full max-w-full object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
-              />
+              {p.logo ? (
+                <img
+                  src={p.logo}
+                  alt={p.name}
+                  loading="lazy"
+                  className="max-h-full max-w-full object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+                />
+              ) : (
+                <span className="text-display text-center text-sm sm:text-base leading-tight uppercase tracking-wider text-foreground/70 transition-colors group-hover:text-primary">
+                  {p.name}
+                </span>
+              )}
             </a>
           ))}
         </div>
