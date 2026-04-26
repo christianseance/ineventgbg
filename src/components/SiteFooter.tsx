@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin, Tent, Headphones, Instagram, Facebook } from "luci
 export function SiteFooter() {
   return (
     <footer className="relative border-t border-border bg-card/40 mt-32">
-      <div className="mx-auto max-w-[1400px] px-5 py-16 lg:px-10 grid gap-12 lg:grid-cols-12">
+      <div className="mx-auto max-w-[1400px] px-5 py-16 lg:px-10 grid gap-12 lg:grid-cols-[1fr_auto_1fr]">
         {/* Contact (left) */}
         <div className="lg:col-span-5 space-y-5">
           <h4 className="text-sm tracking-widest text-muted-foreground">Kontakt</h4>
