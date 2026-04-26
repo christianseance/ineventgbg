@@ -134,7 +134,7 @@ export function QuickLeadForm() {
                     >
                       {newsletter && <Check size={11} className="text-primary-foreground" strokeWidth={3} />}
                     </span>
-                    <span className="text-xs uppercase tracking-widest text-muted-foreground">Ja tack — tips & nyheter</span>
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground">Ja tack — guide &amp; nyhetsbrev</span>
                   </label>
 
                   <input
