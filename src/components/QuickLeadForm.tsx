@@ -118,7 +118,7 @@ export function QuickLeadForm() {
                         ? "border-primary/60 bg-primary/5"
                         : "border-border hover:border-primary/40 bg-background"
                     }`}
-                    title="Skicka mig också tips då och då"
+                    title="Ja tack — skicka mig tips, nya tält och säsongs-erbjudanden då och då"
                   >
                     <input
                       type="checkbox"
@@ -134,7 +134,7 @@ export function QuickLeadForm() {
                     >
                       {newsletter && <Check size={11} className="text-primary-foreground" strokeWidth={3} />}
                     </span>
-                    <span className="text-xs uppercase tracking-widest text-muted-foreground py-3">Nyhetsbrev</span>
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground py-3">Ja tack — tips & nyheter</span>
                   </label>
 
                   <input
@@ -143,8 +143,8 @@ export function QuickLeadForm() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="namn@exempel.se"
-                    className="flex-1 min-w-0 bg-background border border-border px-4 py-3 text-base focus:outline-none focus:border-primary transition-colors"
+                    placeholder="din@epost.se"
+                    className="sm:w-56 bg-background border border-border px-4 py-3 text-base focus:outline-none focus:border-primary transition-colors"
                     aria-invalid={!!error}
                     aria-describedby={error ? "guide-email-err" : undefined}
                   />
@@ -154,7 +154,7 @@ export function QuickLeadForm() {
                     disabled={submitting}
                     className="group inline-flex items-center justify-center gap-2 bg-primary px-5 py-3 text-xs font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors disabled:opacity-60 shrink-0"
                   >
-                    {submitting ? "Skickar…" : "Hämta guide"}
+                    {submitting ? "Skickar…" : "Hämta"}
                     <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
