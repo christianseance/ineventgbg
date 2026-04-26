@@ -1,5 +1,28 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
+import logo44Hertz from "@/assets/partners/44hertz.jpg";
+import logoEasyTiger from "@/assets/partners/easytiger.png";
+import logoAfterhour from "@/assets/partners/afterhoursounds.png";
+import logoRebellion from "@/assets/partners/rebellion.jpg";
+import logoAlula from "@/assets/partners/alula.jpg";
+import logoTippingPoint from "@/assets/partners/tippingpoint.png";
+import logoBliss from "@/assets/partners/bliss.png";
+import logoUnderYourSkin from "@/assets/partners/underyourskin.jpg";
+import logoCrimi from "@/assets/partners/crimi.jpg";
+import logoUrsa from "@/assets/partners/ursa.png";
+
+const PARTNERS = [
+  { name: "44 Hertz", url: "https://soundcloud.com/44-hertz", logo: logo44Hertz },
+  { name: "Easy Tiger", url: "https://soundcloud.com/easy-tiger-jena", logo: logoEasyTiger },
+  { name: "Afterhour Sounds", url: "https://afterhour-sounds.com/", logo: logoAfterhour },
+  { name: "Rebellion der Träumer", url: "https://soundcloud.com/rebelliondertraumer", logo: logoRebellion },
+  { name: "Alula Tunes", url: "http://www.alula-tunes.com/", logo: logoAlula },
+  { name: "Tipping Point", url: "https://soundcloud.com/tipping-point-music", logo: logoTippingPoint },
+  { name: "Bliss Recycle", url: "https://www.instagram.com/blissrecycle", logo: logoBliss },
+  { name: "Under Your Skin", url: "https://solo.to/underyourskin", logo: logoUnderYourSkin },
+  { name: "Criminal Bassline", url: "https://soundcloud.com/criminalbassline", logo: logoCrimi },
+  { name: "House of Ursa", url: "https://soundcloud.com/houseofursa", logo: logoUrsa },
+];
 
 export const Route = createFileRoute("/om-oss")({
   head: () => ({
@@ -145,6 +168,38 @@ function OmOss() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Partners / referenser */}
+      <section className="mt-32 border-t border-border pt-16">
+        <div className="flex items-baseline justify-between flex-wrap gap-4 mb-10">
+          <div>
+            <span className="text-xs uppercase tracking-[0.3em] text-primary">Vänner</span>
+            <h2 className="text-display text-3xl lg:text-4xl mt-2">Partners & referenser</h2>
+          </div>
+          <p className="text-sm text-muted-foreground max-w-sm">
+            Ett urval av kollektiv, kollegor och kunder vi byggt med genom åren.
+          </p>
+        </div>
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-px bg-border border border-border">
+          {PARTNERS.map((p) => (
+            <a
+              key={p.name}
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={p.name}
+              className="group bg-background aspect-square flex items-center justify-center p-4 lg:p-6 transition-colors hover:bg-muted"
+            >
+              <img
+                src={p.logo}
+                alt={p.name}
+                loading="lazy"
+                className="max-h-full max-w-full object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+              />
+            </a>
+          ))}
         </div>
       </section>
 
