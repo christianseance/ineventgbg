@@ -234,7 +234,9 @@ function OmOss() {
         <div className="flex items-baseline justify-between flex-wrap gap-4 mb-10">
           <div>
             <span className="text-xs uppercase tracking-[0.3em] text-primary">Scen & teknik</span>
-            <h2 className="text-display text-3xl lg:text-4xl mt-2">Artister vi riggat för</h2>
+            <h2 className="text-display text-3xl lg:text-4xl mt-2">
+              Artister vi riggat för, spelat på samma scen med, varit turnéledare för, kört, bokat, värmt upp för
+            </h2>
           </div>
           <p className="text-sm text-muted-foreground max-w-md">
             Ett axplock av namn vars scener, ljus eller teknik vi varit med och byggt genom åren.
