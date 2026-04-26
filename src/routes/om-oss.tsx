@@ -195,7 +195,7 @@ function OmOss() {
             <h2 className="text-display text-3xl lg:text-4xl mt-2">Partners & referenser</h2>
           </div>
           <p className="text-sm text-muted-foreground max-w-md">
-            Ett urval av kollektiv, kollegor och kunder vi byggt med genom åren. Av någon anledning är många av dem vänner från Berlin som vi har bjudit upp på disco, men vi är öppna för långt fler sorters genrer och samarbeten!
+            Ett urval av kollektiv, kollegor och kunder vi byggt med genom åren, eller anlitats av / ihop med. Av någon anledning är många av dem vänner från Berlin som vi har bjudit upp på disco, men vi är öppna för långt fler sorters genrer och samarbeten!
           </p>
         </div>
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-px bg-border border border-border">
