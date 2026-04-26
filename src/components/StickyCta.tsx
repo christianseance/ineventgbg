@@ -203,11 +203,28 @@ export function StickyCta() {
                   className="w-full bg-background border border-border px-3 py-2.5 text-sm focus:outline-none focus:border-primary transition-colors"
                   aria-invalid={!!err}
                 />
+                <label
+                  className={`flex items-start gap-2 cursor-pointer border px-3 py-2.5 transition-colors select-none ${
+                    consent
+                      ? "border-primary/60 bg-primary/5"
+                      : "border-border hover:border-primary/40 bg-background"
+                  }`}
+                >
+                  <input
+                    type="checkbox"
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
+                    className="h-4 w-4 mt-0.5 shrink-0 cursor-pointer accent-primary"
+                  />
+                  <span className="text-xs text-muted-foreground leading-snug">
+                    Ja tack — skicka guiden &amp; nyhetsbrev
+                  </span>
+                </label>
                 {err && <p className="text-xs text-destructive">{err}</p>}
                 <button
                   type="submit"
-                  disabled={submitting}
-                  className="inline-flex items-center gap-2 bg-primary px-4 py-2.5 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors w-full justify-center disabled:opacity-60"
+                  disabled={submitting || !consent}
+                  className="inline-flex items-center gap-2 bg-primary px-4 py-2.5 text-sm font-semibold uppercase tracking-widest text-primary-foreground hover:bg-crimson-glow transition-colors w-full justify-center disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {submitting ? "Skickar…" : (<><Download size={14} /> Hämta guiden</>)}
                 </button>
