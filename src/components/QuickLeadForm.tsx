@@ -76,7 +76,7 @@ export function QuickLeadForm() {
               Spara <span className="text-primary">tid &amp; pengar</span> — innan du bokar.
             </h2>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-              5 sidor med <span className="text-foreground font-medium">checklista, brief-mall, väderstrategi</span> och <span className="text-foreground font-medium">riktpriser 2026</span>. Bara mejlen, sen är guiden din.
+              Guide med <span className="text-foreground font-medium">checklista, mall, väderstrategi</span> och <span className="text-foreground font-medium">riktpriser</span>. Ge mejlen, sen är den din.
             </p>
           </div>
 
