@@ -4,12 +4,12 @@ import { Menu, X } from "lucide-react";
 import { LogoHorizontal } from "./LogoHorizontal";
 
 const NAV = [
-  { to: "/", label: "Start" },
+  { to: "/", label: "Hem" },
   { to: "/galleri", label: "Galleri" },
   { to: "/talt", label: "Tält" },
   { to: "/interior", label: "Interiör" },
   { to: "/tjanster", label: "Tjänster" },
-  { to: "/om-oss", label: "Om oss" },
+  { to: "/om-oss", label: "Om" },
   { to: "/kontakt", label: "Kontakt" },
 ] as const;
 
