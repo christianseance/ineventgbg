@@ -69,9 +69,9 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-border">
-        <div className="mx-auto max-w-[1400px] px-5 py-5 lg:px-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground uppercase tracking-widest">
-          <span className="order-1 sm:order-1">© {new Date().getFullYear()} Inevent</span>
-          <div className="order-2 sm:order-2 flex items-center gap-2">
+        <div className="mx-auto max-w-[1400px] px-5 py-5 lg:px-10 flex flex-col gap-4 sm:grid sm:grid-cols-[1fr_auto_1fr] sm:items-center sm:gap-12 text-xs text-muted-foreground uppercase tracking-widest">
+          <span className="order-1 sm:order-1 sm:justify-self-start">© {new Date().getFullYear()} Inevent</span>
+          <div className="order-2 sm:order-2 flex items-center gap-2 sm:justify-self-center">
             <a
               href="https://paralello.se"
               target="_blank"
@@ -113,7 +113,7 @@ export function SiteFooter() {
               <Facebook size={14} />
             </a>
           </div>
-          <span className="order-3 sm:order-3">Vi löser nästan allt inom event.</span>
+          <span className="order-3 sm:order-3 sm:justify-self-end sm:text-right">Vi löser nästan allt inom event.</span>
         </div>
       </div>
     </footer>
