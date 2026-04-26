@@ -107,6 +107,10 @@ export function StickyCta() {
       setErr("Ange en giltig e-post");
       return;
     }
+    if (!consent) {
+      setErr("Bekräfta att du vill ha guiden");
+      return;
+    }
     setErr(undefined);
     setSubmitting(true);
     try {
@@ -115,7 +119,7 @@ export function StickyCta() {
           name: "Guide-nedladdning",
           email: parsed.data,
           message: "Laddade ner förberedelseguiden via sticky CTA.",
-          newsletter_opt_in: true,
+          newsletter_opt_in: consent,
           website,
           phone: "",
           event_type: "guide_download",
