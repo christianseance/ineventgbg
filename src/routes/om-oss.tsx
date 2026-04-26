@@ -229,6 +229,26 @@ function OmOss() {
         </div>
       </section>
 
+      {/* Artister vi riggat för */}
+      <section className="mt-24 border-t border-border pt-16">
+        <div className="flex items-baseline justify-between flex-wrap gap-4 mb-10">
+          <div>
+            <span className="text-xs uppercase tracking-[0.3em] text-primary">Scen & teknik</span>
+            <h2 className="text-display text-3xl lg:text-4xl mt-2">Artister vi riggat för</h2>
+          </div>
+          <p className="text-sm text-muted-foreground max-w-md">
+            Ett axplock av namn vars scener, ljus eller teknik vi varit med och byggt genom åren.
+          </p>
+        </div>
+        <ul className="flex flex-wrap gap-x-8 gap-y-4 text-display uppercase tracking-wider text-2xl lg:text-3xl">
+          {["The Prodigy", "Europe", "David Bowie", "Spice Girls"].map((name) => (
+            <li key={name} className="text-foreground/80 hover:text-primary transition-colors">
+              {name}
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section className="mt-32 border-t border-border pt-16 text-center max-w-3xl mx-auto">
         <h2 className="text-display text-5xl lg:text-7xl">
           Låt oss <span className="text-primary">bygga</span> nåt ihop.
