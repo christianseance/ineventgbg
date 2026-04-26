@@ -58,7 +58,7 @@ export function SiteFooter() {
             <Logo />
           </div>
           <p className="text-sm text-muted-foreground max-w-sm lg:ml-auto">
-            Vi löser nästan allt inom event — från cirkustält och scen till bröllop, företagsfester och festivaler.
+            Vi löser allt ifrån cirkustält och scen till bröllop, företagsfester och festivaler.
           </p>
           <div className="inline-flex items-center gap-2 border border-border px-3 py-2 lg:self-end">
             <span className="pulse-dot h-2 w-2 rounded-full bg-primary" />
