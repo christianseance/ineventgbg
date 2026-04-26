@@ -162,21 +162,25 @@ export const submitLead = createServerFn({ method: "POST" })
       attachmentMime = a.mime;
     }
 
-    const { error } = await supabaseAdmin.from("leads").insert({
-      name: data.name,
-      email: data.email,
-      phone: data.phone || null,
-      event_type: data.event_type || null,
-      event_date: data.event_date || null,
-      guest_count: data.guest_count ? Number(data.guest_count) : null,
-      location: data.location || null,
-      message: data.message,
-      newsletter_opt_in: data.newsletter_opt_in,
-      attachment_path: attachmentPath,
-      attachment_name: attachmentName,
-      attachment_size: attachmentSize,
-      attachment_mime: attachmentMime,
-    });
+    const { data: insertedLead, error } = await supabaseAdmin
+      .from("leads")
+      .insert({
+        name: data.name,
+        email: data.email,
+        phone: data.phone || null,
+        event_type: data.event_type || null,
+        event_date: data.event_date || null,
+        guest_count: data.guest_count ? Number(data.guest_count) : null,
+        location: data.location || null,
+        message: data.message,
+        newsletter_opt_in: data.newsletter_opt_in,
+        attachment_path: attachmentPath,
+        attachment_name: attachmentName,
+        attachment_size: attachmentSize,
+        attachment_mime: attachmentMime,
+      })
+      .select("id, created_at")
+      .single();
 
     if (error) {
       console.error("submitLead insert error:", error);
@@ -197,6 +201,15 @@ export const submitLead = createServerFn({ method: "POST" })
       }
     }
 
+    const leadId = insertedLead?.id;
+    const submittedAt = insertedLead?.created_at ?? new Date().toISOString();
+
+    // Build a link to the lead. We don't have an admin UI yet, so link to the
+    // Lovable Cloud table view as a useful fallback for the team.
+    const leadUrl = leadId
+      ? `https://supabase.com/dashboard/project/${process.env.VITE_SUPABASE_PROJECT_ID ?? ""}/editor?schema=public&table=leads&filter=id%3Deq%3A${leadId}`
+      : undefined;
+
     // Best-effort customer confirmation email — never block the success response
     try {
       await enqueueTransactionalEmail({
@@ -213,6 +226,35 @@ export const submitLead = createServerFn({ method: "POST" })
       });
     } catch (emailErr) {
       console.error("lead-confirmation email error:", emailErr);
+    }
+
+    // Best-effort internal notification email to the team
+    try {
+      await enqueueTransactionalEmail({
+        templateName: "lead-internal-notification",
+        // The template has a fixed `to` recipient; this value is required by
+        // the helper but will be overridden server-side by the template's `to`.
+        recipientEmail: "seance@inevent.se",
+        idempotencyKey: `lead-internal-${leadId ?? data.email}-${Date.now()}`,
+        templateData: {
+          lead_id: leadId,
+          name: data.name,
+          email: data.email,
+          phone: data.phone || undefined,
+          event_type: data.event_type || undefined,
+          event_date: data.event_date || undefined,
+          guest_count: data.guest_count || undefined,
+          location: data.location || undefined,
+          message: data.message,
+          newsletter_opt_in: data.newsletter_opt_in,
+          attachment_name: attachmentName || undefined,
+          attachment_size: attachmentSize || undefined,
+          lead_url: leadUrl,
+          submitted_at: submittedAt,
+        },
+      });
+    } catch (emailErr) {
+      console.error("lead-internal-notification email error:", emailErr);
     }
 
     return { ok: true as const };
