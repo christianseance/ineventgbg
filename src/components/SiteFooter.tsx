@@ -55,9 +55,6 @@ export function SiteFooter() {
 
         {/* Brand (right) */}
         <div className="space-y-5 lg:text-right lg:items-end flex flex-col">
-          <div className="lg:self-end">
-            <Logo />
-          </div>
           <div className="inline-flex items-center gap-2 border border-border px-3 py-2 lg:self-end">
             <span className="pulse-dot h-2 w-2 rounded-full bg-primary" />
             <span className="text-[11px] uppercase tracking-widest text-muted-foreground">
@@ -67,6 +64,9 @@ export function SiteFooter() {
           <p className="text-sm text-muted-foreground max-w-sm lg:ml-auto">
             Vi löser allt ifrån cirkustält och scen<br />till bröllop, företagsfester och festivaler.
           </p>
+          <div className="lg:self-end">
+            <Logo />
+          </div>
         </div>
       </div>
       <div className="border-t border-border">
