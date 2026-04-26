@@ -275,7 +275,7 @@ function Index() {
       <section className="relative py-24 border-t border-border bg-gradient-to-b from-background to-card/50">
         <div className="mx-auto max-w-4xl px-5 lg:px-10 text-center">
           <h2 className="text-display text-5xl lg:text-8xl">
-            Redo att <span className="text-primary">bygga</span> ditt event?
+            Redo att börja <span className="text-primary">bygga</span> ditt event?
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
             Berätta om visionen. Vi återkommer med första steget till en plan snarast!
