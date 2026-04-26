@@ -29,6 +29,8 @@ const PARTNERS: Partner[] = [
   { name: "Chihuahua Dockside", url: "https://www.instagram.com/chihuahuadockside/" },
   { name: "When Disco Goes Wrong", url: "https://www.instagram.com/whendiscogoeswrong/" },
   { name: "Fragmentvm", url: "https://www.instagram.com/fragmentvm/" },
+  { name: "Secret Island Nation Festival", url: "https://www.instagram.com/secretislandnation/" },
+  { name: "YRA | RYA", url: "https://www.instagram.com/yrafestivalrya/" },
 ];
 
 export const Route = createFileRoute("/om-oss")({
