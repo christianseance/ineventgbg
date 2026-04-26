@@ -171,6 +171,38 @@ function OmOss() {
         </div>
       </section>
 
+      {/* Partners / referenser */}
+      <section className="mt-32 border-t border-border pt-16">
+        <div className="flex items-baseline justify-between flex-wrap gap-4 mb-10">
+          <div>
+            <span className="text-xs uppercase tracking-[0.3em] text-primary">Vänner</span>
+            <h2 className="text-display text-3xl lg:text-4xl mt-2">Partners & referenser</h2>
+          </div>
+          <p className="text-sm text-muted-foreground max-w-sm">
+            Ett urval av kollektiv, kollegor och kunder vi byggt med genom åren.
+          </p>
+        </div>
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-px bg-border border border-border">
+          {PARTNERS.map((p) => (
+            <a
+              key={p.name}
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={p.name}
+              className="group bg-background aspect-square flex items-center justify-center p-4 lg:p-6 transition-colors hover:bg-muted"
+            >
+              <img
+                src={p.logo}
+                alt={p.name}
+                loading="lazy"
+                className="max-h-full max-w-full object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+              />
+            </a>
+          ))}
+        </div>
+      </section>
+
       <section className="mt-32 border-t border-border pt-16 text-center max-w-3xl mx-auto">
         <h2 className="text-display text-5xl lg:text-7xl">
           Låt oss <span className="text-primary">bygga</span> nåt ihop.
