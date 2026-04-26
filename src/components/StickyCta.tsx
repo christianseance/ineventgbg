@@ -1,8 +1,13 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ArrowRight, X } from "lucide-react";
+import { ArrowRight, Download, X } from "lucide-react";
+import { toast } from "sonner";
+import { z } from "zod";
+import { submitLead } from "@/server/leads.functions";
 
 const STORAGE_KEY = "inevent_cta_dismissed_at";
+const GUIDE_URL = "/inevent-guide.pdf";
+const emailSchema = z.string().trim().toLowerCase().email().max(255);
 const CAP_DAYS = 11;
 const CAP_MS = CAP_DAYS * 24 * 60 * 60 * 1000;
 
