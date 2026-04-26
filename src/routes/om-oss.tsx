@@ -10,6 +10,10 @@ import logoBliss from "@/assets/partners/bliss.png";
 import logoUnderYourSkin from "@/assets/partners/underyourskin.jpg";
 import logoCrimi from "@/assets/partners/crimi.jpg";
 import logoUrsa from "@/assets/partners/ursa.png";
+import logoNefertiti from "@/assets/partners/nefertiti.png";
+import logoMusikensHus from "@/assets/partners/musikenshus.png";
+import logoTradgarn from "@/assets/partners/tradgarn.svg";
+import logoYakida from "@/assets/partners/yakida.jpg";
 
 type Partner = { name: string; url: string; logo?: string };
 
