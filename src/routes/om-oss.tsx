@@ -15,7 +15,7 @@ import logoMusikensHus from "@/assets/partners/musikenshus.png";
 import logoTradgarn from "@/assets/partners/tradgarn.svg";
 import logoYakida from "@/assets/partners/yakida.jpg";
 
-type Partner = { name: string; url: string; logo?: string };
+type Partner = { name: string; url: string; logo?: string; invert?: boolean };
 
 const PARTNERS: Partner[] = [
   { name: "44 Hertz", url: "https://soundcloud.com/44-hertz", logo: logo44Hertz },
