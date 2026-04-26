@@ -74,11 +74,12 @@ export async function enqueueTransactionalEmail({
   // Get-or-create unsubscribe token (one per email)
   let unsubscribeToken: string
 
-  const { data: existingToken } = await supabaseAdmin
+  const { data: existingTokenRaw } = await supabaseAdmin
     .from('email_unsubscribe_tokens' as any)
     .select('token, used_at')
     .eq('email', normalizedEmail)
     .maybeSingle()
+  const existingToken = existingTokenRaw as { token: string; used_at: string | null } | null
 
   if (existingToken && !existingToken.used_at) {
     unsubscribeToken = existingToken.token
@@ -94,11 +95,12 @@ export async function enqueueTransactionalEmail({
       console.error('Failed to create unsubscribe token', { error: tokenError })
       return { ok: false, reason: 'token_create_failed' }
     }
-    const { data: stored } = await supabaseAdmin
+    const { data: storedRaw } = await supabaseAdmin
       .from('email_unsubscribe_tokens' as any)
       .select('token')
       .eq('email', normalizedEmail)
       .maybeSingle()
+    const stored = storedRaw as { token: string } | null
     if (!stored) {
       return { ok: false, reason: 'token_lookup_failed' }
     }
