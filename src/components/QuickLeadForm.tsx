@@ -113,7 +113,7 @@ export function QuickLeadForm() {
 
                 <div className="flex flex-col sm:flex-row gap-2">
                   <label
-                    className={`flex items-center gap-2 cursor-pointer border px-3 transition-all shrink-0 ${
+                    className={`flex items-center gap-2 cursor-pointer border px-3 py-3 transition-all shrink-0 select-none ${
                       newsletter
                         ? "border-primary/60 bg-primary/5"
                         : "border-border hover:border-primary/40 bg-background"
@@ -134,7 +134,7 @@ export function QuickLeadForm() {
                     >
                       {newsletter && <Check size={11} className="text-primary-foreground" strokeWidth={3} />}
                     </span>
-                    <span className="text-xs uppercase tracking-widest text-muted-foreground py-3">Ja tack — tips & nyheter</span>
+                    <span className="text-xs uppercase tracking-widest text-muted-foreground">Ja tack — tips & nyheter</span>
                   </label>
 
                   <input
