@@ -75,9 +75,6 @@ export function QuickLeadForm() {
             <h2 className="text-display text-3xl lg:text-5xl mt-3">
               Spara <span className="text-primary">tid &amp; pengar</span> — innan du bokar.
             </h2>
-            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-              Guide med <span className="text-foreground font-medium">checklista, mall, väderstrategi</span> och <span className="text-foreground font-medium">riktpriser</span>. Ge mejlen, sen är den din.
-            </p>
           </div>
 
           <div className="lg:col-span-7">
@@ -154,7 +151,14 @@ export function QuickLeadForm() {
                 {error && (
                   <p id="guide-email-err" className="text-xs text-destructive">{error}</p>
                 )}
-                <PrivacyDisclosure />
+                <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-6">
+                  <div className="sm:flex-1 min-w-0">
+                    <PrivacyDisclosure />
+                  </div>
+                  <p className="sm:flex-1 text-xs text-muted-foreground leading-relaxed">
+                    Guide med <span className="text-foreground font-medium">checklista, mall, väderstrategi</span> och <span className="text-foreground font-medium">riktpriser</span>. Ge mejlen, sen är den din.
+                  </p>
+                </div>
               </form>
             )}
           </div>
