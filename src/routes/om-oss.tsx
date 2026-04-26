@@ -217,7 +217,7 @@ function OmOss() {
                   src={p.logo}
                   alt={p.name}
                   loading="lazy"
-                  className="max-h-full max-w-full object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+                  className={`max-h-full max-w-full object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 ${p.invert ? "invert" : ""}`}
                 />
               ) : (
                 <span className="text-display text-center text-sm sm:text-base leading-tight uppercase tracking-wider text-foreground/70 transition-colors group-hover:text-primary">
