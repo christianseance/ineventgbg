@@ -93,7 +93,7 @@ function Index() {
                 <span className="text-stroke">rummet.</span>
               </h1>
               <p className="mt-8 text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                Cirkustält, podier, belysning, diverse event-tält, bar/bord-stolar. Nämn det och vi har det själva eller i vårt fantastiska nätverk. Vi
+                Cirkustält, podier, belysning, diverse event-tält, bar/bord-stolar. Nämn det vi <em className="not-italic text-foreground font-medium">inte</em> har själva eller i vårt fantastiska nätverk. Vi
                 utgår från Göteborg, men dyker upp där vi behövs.
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
