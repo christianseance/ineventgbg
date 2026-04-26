@@ -6,34 +6,7 @@ export function SiteFooter() {
   return (
     <footer className="relative border-t border-border bg-card/40 mt-32">
       <div className="mx-auto max-w-[1400px] px-5 py-16 lg:px-10 grid gap-12 lg:grid-cols-12">
-        {/* Brand */}
-        <div className="lg:col-span-4 space-y-5">
-          <Logo />
-          <p className="text-sm text-muted-foreground max-w-sm">
-            Vi löser nästan allt inom event — från cirkustält och scen till bröllop, företagsfester och festivaler.
-          </p>
-          <div className="inline-flex items-center gap-2 border border-border px-3 py-2">
-            <span className="pulse-dot h-2 w-2 rounded-full bg-primary" />
-            <span className="text-[11px] uppercase tracking-widest text-muted-foreground">
-              Svar oftast inom <span className="text-foreground">någon timma</span>
-            </span>
-          </div>
-        </div>
-
-        {/* Navigate */}
-        <div className="lg:col-span-3 space-y-3">
-          <h4 className="text-sm tracking-widest text-muted-foreground">Navigera</h4>
-          <ul className="space-y-2 text-sm">
-            <li><Link to="/" className="hover:text-primary">Start</Link></li>
-            <li><Link to="/galleri" className="hover:text-primary">Galleri</Link></li>
-            <li><Link to="/talt" className="hover:text-primary">Tält</Link></li>
-            <li><Link to="/tjanster" className="hover:text-primary">Tjänster</Link></li>
-            <li><Link to="/om-oss" className="hover:text-primary">Om oss</Link></li>
-            <li><Link to="/kontakt" className="hover:text-primary">Kontakt</Link></li>
-          </ul>
-        </div>
-
-        {/* Contact */}
+        {/* Contact (left) */}
         <div className="lg:col-span-5 space-y-5">
           <h4 className="text-sm tracking-widest text-muted-foreground">Kontakt</h4>
 
@@ -63,6 +36,35 @@ export function SiteFooter() {
                 <div>Göteborg — vi tar oss dit vi behövs.</div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Navigate (middle) */}
+        <div className="lg:col-span-3 space-y-3">
+          <h4 className="text-sm tracking-widest text-muted-foreground">Navigera</h4>
+          <ul className="space-y-2 text-sm">
+            <li><Link to="/" className="hover:text-primary">Start</Link></li>
+            <li><Link to="/galleri" className="hover:text-primary">Galleri</Link></li>
+            <li><Link to="/talt" className="hover:text-primary">Tält</Link></li>
+            <li><Link to="/tjanster" className="hover:text-primary">Tjänster</Link></li>
+            <li><Link to="/om-oss" className="hover:text-primary">Om oss</Link></li>
+            <li><Link to="/kontakt" className="hover:text-primary">Kontakt</Link></li>
+          </ul>
+        </div>
+
+        {/* Brand (right) */}
+        <div className="lg:col-span-4 space-y-5 lg:text-right lg:items-end flex flex-col">
+          <div className="lg:self-end">
+            <Logo />
+          </div>
+          <p className="text-sm text-muted-foreground max-w-sm lg:ml-auto">
+            Vi löser nästan allt inom event — från cirkustält och scen till bröllop, företagsfester och festivaler.
+          </p>
+          <div className="inline-flex items-center gap-2 border border-border px-3 py-2 lg:self-end">
+            <span className="pulse-dot h-2 w-2 rounded-full bg-primary" />
+            <span className="text-[11px] uppercase tracking-widest text-muted-foreground">
+              Svar oftast inom <span className="text-foreground">någon timma</span>
+            </span>
           </div>
         </div>
       </div>
