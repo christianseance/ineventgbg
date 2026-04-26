@@ -7,9 +7,27 @@ import {
   Head,
   Heading,
   Html,
+  Img,
   Preview,
+  Section,
   Text,
 } from '@react-email/components'
+
+import {
+  LOGO_URL,
+  body,
+  button,
+  container,
+  divider,
+  eyebrow,
+  footer,
+  footerStrong,
+  h1,
+  header,
+  logo,
+  main,
+  text,
+} from './_shared'
 
 interface MagicLinkEmailProps {
   siteName: string
@@ -20,49 +38,33 @@ export const MagicLinkEmail = ({
   siteName,
   confirmationUrl,
 }: MagicLinkEmailProps) => (
-  <Html lang="en" dir="ltr">
+  <Html lang="sv" dir="ltr">
     <Head />
-    <Preview>Your login link for {siteName}</Preview>
+    <Preview>Din inloggningslänk för {siteName}</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Heading style={h1}>Your login link</Heading>
-        <Text style={text}>
-          Click the button below to log in to {siteName}. This link will expire
-          shortly.
-        </Text>
-        <Button style={button} href={confirmationUrl}>
-          Log In
-        </Button>
-        <Text style={footer}>
-          If you didn't request this link, you can safely ignore this email.
-        </Text>
+        <Section style={header}>
+          <Img src={LOGO_URL} alt="Inevent" style={logo} />
+        </Section>
+        <Section style={body}>
+          <Text style={eyebrow}>Inloggning</Text>
+          <Heading style={h1}>Logga in på {siteName}</Heading>
+          <Text style={text}>
+            Klicka på knappen nedan för att logga in. Länken är giltig en kort
+            stund och kan endast användas en gång.
+          </Text>
+          <Button style={button} href={confirmationUrl}>
+            Logga in
+          </Button>
+          <div style={divider} />
+          <Text style={footerStrong}>Inevent</Text>
+          <Text style={footer}>
+            Om du inte begärde denna länk kan du ignorera detta mail.
+          </Text>
+        </Section>
       </Container>
     </Body>
   </Html>
 )
 
 export default MagicLinkEmail
-
-const main = { backgroundColor: '#ffffff', fontFamily: 'Arial, sans-serif' }
-const container = { padding: '20px 25px' }
-const h1 = {
-  fontSize: '22px',
-  fontWeight: 'bold' as const,
-  color: '#000000',
-  margin: '0 0 20px',
-}
-const text = {
-  fontSize: '14px',
-  color: '#55575d',
-  lineHeight: '1.5',
-  margin: '0 0 25px',
-}
-const button = {
-  backgroundColor: '#000000',
-  color: '#ffffff',
-  fontSize: '14px',
-  borderRadius: '8px',
-  padding: '12px 20px',
-  textDecoration: 'none',
-}
-const footer = { fontSize: '12px', color: '#999999', margin: '30px 0 0' }
