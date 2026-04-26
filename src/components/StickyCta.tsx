@@ -91,6 +91,16 @@ export function StickyCta() {
 
   const handleGuideSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Honeypot: om botar fyller i "website" (osynligt fält) — fejka success
+    // utan att skicka något. Användarflödet ser konsekvent ut, men ingen lead
+    // skapas och ingen guide laddas ner.
+    if (website.trim() !== "") {
+      setDone(true);
+      markDismissed();
+      return;
+    }
+
     const parsed = emailSchema.safeParse(email);
     if (!parsed.success) {
       setErr("Ange en giltig e-post");
