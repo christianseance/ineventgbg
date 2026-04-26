@@ -264,6 +264,6 @@ function Galleri() {
         </div>
       )}
     </div>
-    </div>
+    </>
   );
 }
