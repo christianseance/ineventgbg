@@ -43,6 +43,7 @@ export function StickyCta() {
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [err, setErr] = useState<string | undefined>();
+  const [consent, setConsent] = useState(false);
 
   useEffect(() => {
     if (isCapped()) return;
