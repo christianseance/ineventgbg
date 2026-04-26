@@ -197,5 +197,23 @@ export const submitLead = createServerFn({ method: "POST" })
       }
     }
 
+    // Best-effort customer confirmation email — never block the success response
+    try {
+      await enqueueTransactionalEmail({
+        templateName: "lead-confirmation",
+        recipientEmail: data.email,
+        idempotencyKey: `lead-confirm-${data.email}-${Date.now()}`,
+        templateData: {
+          name: data.name,
+          event_type: data.event_type || undefined,
+          event_date: data.event_date || undefined,
+          guest_count: data.guest_count || undefined,
+          location: data.location || undefined,
+        },
+      });
+    } catch (emailErr) {
+      console.error("lead-confirmation email error:", emailErr);
+    }
+
     return { ok: true as const };
   });
