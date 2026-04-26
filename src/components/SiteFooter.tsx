@@ -43,12 +43,12 @@ export function SiteFooter() {
         <div className="space-y-3">
           <h4 className="text-sm tracking-widest text-muted-foreground">Navigera</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/" className="hover:text-primary">Start</Link></li>
+            <li><Link to="/" className="hover:text-primary">Hem</Link></li>
             <li><Link to="/galleri" className="hover:text-primary">Galleri</Link></li>
             <li><Link to="/talt" className="hover:text-primary">Tält</Link></li>
             <li><Link to="/interior" className="hover:text-primary">Interiör</Link></li>
             <li><Link to="/tjanster" className="hover:text-primary">Tjänster</Link></li>
-            <li><Link to="/om-oss" className="hover:text-primary">Om oss</Link></li>
+            <li><Link to="/om-oss" className="hover:text-primary">Om</Link></li>
             <li><Link to="/kontakt" className="hover:text-primary">Kontakt</Link></li>
           </ul>
         </div>
