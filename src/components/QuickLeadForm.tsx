@@ -70,13 +70,13 @@ export function QuickLeadForm() {
         <div className="grid lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-5">
             <span className="text-xs uppercase tracking-[0.3em] text-primary inline-flex items-center gap-2">
-              <FileText size={12} /> Guide
+              <FileText size={12} /> Gratis · 25 års erfarenhet
             </span>
             <h2 className="text-display text-3xl lg:text-5xl mt-3">
-              Förberedelse­guide — <span className="text-primary">5 sidor</span>, raka tips.
+              Spara <span className="text-primary">tid &amp; pengar</span> — innan du bokar.
             </h2>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-              Tidslinje, checklista, brief-mall, väderstrategi och riktpriser 2026.
+              5 sidor med <span className="text-foreground font-medium">checklista, brief-mall, väderstrategi</span> och <span className="text-foreground font-medium">riktpriser 2026</span>. Ingen registrering, inget skräp — bara mejlen, sen är guiden din.
             </p>
           </div>
 
