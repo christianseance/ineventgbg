@@ -10,8 +10,12 @@ import logoBliss from "@/assets/partners/bliss.png";
 import logoUnderYourSkin from "@/assets/partners/underyourskin.jpg";
 import logoCrimi from "@/assets/partners/crimi.jpg";
 import logoUrsa from "@/assets/partners/ursa.png";
+import logoNefertiti from "@/assets/partners/nefertiti.png";
+import logoMusikensHus from "@/assets/partners/musikenshus.png";
+import logoTradgarn from "@/assets/partners/tradgarn.svg";
+import logoYakida from "@/assets/partners/yakida.jpg";
 
-type Partner = { name: string; url: string; logo?: string };
+type Partner = { name: string; url: string; logo?: string; invert?: boolean };
 
 const PARTNERS: Partner[] = [
   { name: "44 Hertz", url: "https://soundcloud.com/44-hertz", logo: logo44Hertz },
@@ -31,11 +35,11 @@ const PARTNERS: Partner[] = [
   { name: "Fragmentvm", url: "https://www.instagram.com/fragmentvm/" },
   { name: "Secret Island Nation Festival", url: "https://www.instagram.com/secretislandnation/" },
   { name: "YRA | RYA", url: "https://www.instagram.com/yrafestivalrya/" },
-  { name: "Jazzklubben Nefertiti", url: "https://www.nefertiti.se/" },
+  { name: "Jazzklubben Nefertiti", url: "https://www.nefertiti.se/", logo: logoNefertiti },
   { name: "Party Like Gatsby", url: "https://www.partylikegatsby.com/" },
-  { name: "Trädgår'n", url: "https://www.tradgarn.se/" },
-  { name: "Musikens Hus", url: "https://www.musikenshus.se/" },
-  { name: "Yaki-Da", url: "https://www.yakida.se/" },
+  { name: "Trädgår'n", url: "https://www.tradgarn.se/", logo: logoTradgarn, invert: true },
+  { name: "Musikens Hus", url: "https://www.musikenshus.se/", logo: logoMusikensHus },
+  { name: "Yaki-Da", url: "https://www.yakida.se/", logo: logoYakida },
   { name: "Operaen i Christiania", url: "https://www.operaen.dk/" },
   { name: "Kater Blau", url: "https://katerblau.de/" },
 ];
@@ -213,7 +217,7 @@ function OmOss() {
                   src={p.logo}
                   alt={p.name}
                   loading="lazy"
-                  className="max-h-full max-w-full object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+                  className={`max-h-full max-w-full object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 ${p.invert ? "invert" : ""}`}
                 />
               ) : (
                 <span className="text-display text-center text-sm sm:text-base leading-tight uppercase tracking-wider text-foreground/70 transition-colors group-hover:text-primary">
