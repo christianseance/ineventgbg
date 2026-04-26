@@ -5,6 +5,7 @@ import { useMemo, useRef, useState } from "react";
 import { ArrowUpRight, Search, X } from "lucide-react";
 import { CATEGORIES, GROUPS, type Group } from "@/data/gallery";
 import circustaltBeach from "@/assets/cat-circustalt-beach.jpg";
+import galleriHero from "@/assets/cat-galleri.jpg";
 
 const searchSchema = z.object({
   group: z.enum(["uthyrning", "event", "funktioner"]).optional(),
@@ -23,6 +24,8 @@ export const Route = createFileRoute("/galleri")({
       },
       { property: "og:title", content: "Galleri · Inevent" },
       { property: "og:description", content: "Filtrera, sök och utforska allt vi hyr ut och producerar." },
+      { property: "og:image", content: galleriHero },
+      { name: "twitter:image", content: galleriHero },
     ],
   }),
   validateSearch: zodValidator(searchSchema),
@@ -74,16 +77,28 @@ function Galleri() {
   const visibleCategories = group ? CATEGORIES.filter((c) => c.group === group) : CATEGORIES;
 
   return (
-    <div className="mx-auto max-w-[1400px] px-5 lg:px-10 py-12 lg:py-20">
-      {/* Header */}
-      <div className="grid lg:grid-cols-12 gap-8 mb-12">
-        <div className="lg:col-span-7">
+    <div>
+      {/* HERO */}
+      <section className="relative h-[50vh] min-h-[400px] overflow-hidden">
+        <img
+          src={galleriHero}
+          alt="Inevent galleri — tält, scen, ljus och inredning"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background" />
+        <div className="relative h-full mx-auto max-w-[1400px] px-5 lg:px-10 flex flex-col justify-end pb-12 lg:pb-16">
           <span className="text-xs uppercase tracking-[0.3em] text-primary">Galleri</span>
           <h1 className="text-display text-6xl lg:text-8xl mt-3">
             Allt vi <span className="text-primary">hyr</span> & <br />
             allt vi <span className="text-stroke">bygger</span>.
           </h1>
         </div>
+      </section>
+
+    <div className="mx-auto max-w-[1400px] px-5 lg:px-10 py-12 lg:py-20">
+      {/* Intro */}
+      <div className="grid lg:grid-cols-12 gap-8 mb-12">
+        <div className="lg:col-span-7" />
         <div className="lg:col-span-5 lg:self-end">
           <p className="text-muted-foreground">
             Filtrera per grupp, kategori eller sök fritt. Klicka på en kategori för att se mer, eller hoppa direkt till
@@ -248,6 +263,7 @@ function Galleri() {
           })}
         </div>
       )}
+    </div>
     </div>
   );
 }
