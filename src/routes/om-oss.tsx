@@ -42,6 +42,8 @@ const PARTNERS: Partner[] = [
   { name: "Yaki-Da", url: "https://www.yakida.se/", logo: logoYakida },
   { name: "Operaen i Christiania", url: "https://www.operaen.dk/" },
   { name: "Kater Blau", url: "https://katerblau.de/" },
+  { name: "Locus Soundsystem", url: "https://www.instagram.com/locussoundsystem/" },
+  { name: "Tillvaron Experience", url: "https://www.instagram.com/tillvaronexperience/" },
 ];
 
 export const Route = createFileRoute("/om-oss")({
