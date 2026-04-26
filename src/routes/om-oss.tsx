@@ -11,7 +11,9 @@ import logoUnderYourSkin from "@/assets/partners/underyourskin.jpg";
 import logoCrimi from "@/assets/partners/crimi.jpg";
 import logoUrsa from "@/assets/partners/ursa.png";
 
-const PARTNERS = [
+type Partner = { name: string; url: string; logo?: string };
+
+const PARTNERS: Partner[] = [
   { name: "44 Hertz", url: "https://soundcloud.com/44-hertz", logo: logo44Hertz },
   { name: "Easy Tiger", url: "https://soundcloud.com/easy-tiger-jena", logo: logoEasyTiger },
   { name: "Afterhour Sounds", url: "https://afterhour-sounds.com/", logo: logoAfterhour },
@@ -22,6 +24,11 @@ const PARTNERS = [
   { name: "Under Your Skin", url: "https://solo.to/underyourskin", logo: logoUnderYourSkin },
   { name: "Criminal Bassline", url: "https://soundcloud.com/criminalbassline", logo: logoCrimi },
   { name: "House of Ursa", url: "https://soundcloud.com/houseofursa", logo: logoUrsa },
+  { name: "Ringö Arena", url: "https://www.instagram.com/ringoarena/" },
+  { name: "Cafe Fluss", url: "https://www.instagram.com/cafefluss/" },
+  { name: "Chihuahua Dockside", url: "https://www.instagram.com/chihuahuadockside/" },
+  { name: "When Disco Goes Wrong", url: "https://www.instagram.com/whendiscogoeswrong/" },
+  { name: "Fragmentvm", url: "https://www.instagram.com/fragmentvm/" },
 ];
 
 export const Route = createFileRoute("/om-oss")({
@@ -192,12 +199,18 @@ function OmOss() {
               title={p.name}
               className="group bg-background aspect-square flex items-center justify-center p-4 lg:p-6 transition-colors hover:bg-muted"
             >
-              <img
-                src={p.logo}
-                alt={p.name}
-                loading="lazy"
-                className="max-h-full max-w-full object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
-              />
+              {p.logo ? (
+                <img
+                  src={p.logo}
+                  alt={p.name}
+                  loading="lazy"
+                  className="max-h-full max-w-full object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+                />
+              ) : (
+                <span className="text-display text-center text-sm sm:text-base leading-tight uppercase tracking-wider text-foreground/70 transition-colors group-hover:text-primary">
+                  {p.name}
+                </span>
+              )}
             </a>
           ))}
         </div>
