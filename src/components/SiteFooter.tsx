@@ -5,9 +5,9 @@ import { Mail, Phone, MapPin, Tent, Headphones, Instagram, Facebook } from "luci
 export function SiteFooter() {
   return (
     <footer className="relative border-t border-border bg-card/40 mt-32">
-      <div className="mx-auto max-w-[1400px] px-5 py-16 lg:px-10 grid gap-12 lg:grid-cols-12">
+      <div className="mx-auto max-w-[1400px] px-5 py-16 lg:px-10 grid gap-12 lg:grid-cols-[1fr_auto_1fr]">
         {/* Contact (left) */}
-        <div className="lg:col-span-5 space-y-5">
+        <div className="space-y-5">
           <h4 className="text-sm tracking-widest text-muted-foreground">Kontakt</h4>
 
           <div className="grid sm:grid-cols-2 gap-5 text-sm">
@@ -40,7 +40,7 @@ export function SiteFooter() {
         </div>
 
         {/* Navigate (middle) */}
-        <div className="lg:col-span-3 space-y-3">
+        <div className="space-y-3">
           <h4 className="text-sm tracking-widest text-muted-foreground">Navigera</h4>
           <ul className="space-y-2 text-sm">
             <li><Link to="/" className="hover:text-primary">Start</Link></li>
@@ -53,7 +53,7 @@ export function SiteFooter() {
         </div>
 
         {/* Brand (right) */}
-        <div className="lg:col-span-4 space-y-5 lg:text-right lg:items-end flex flex-col">
+        <div className="space-y-5 lg:text-right lg:items-end flex flex-col">
           <div className="lg:self-end">
             <Logo />
           </div>
