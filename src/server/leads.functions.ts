@@ -2,6 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { getRequestHeader, getRequestIP } from "@tanstack/react-start/server";
 import { z } from "zod";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
+import { enqueueTransactionalEmail } from "@/server/email";
 
 // Blocked file extensions — executables, scripts, installers
 const BLOCKED_EXTENSIONS = [
@@ -194,6 +195,24 @@ export const submitLead = createServerFn({ method: "POST" })
       if (nlErr && !/duplicate|unique/i.test(nlErr.message)) {
         console.warn("newsletter insert warning:", nlErr.message);
       }
+    }
+
+    // Best-effort customer confirmation email — never block the success response
+    try {
+      await enqueueTransactionalEmail({
+        templateName: "lead-confirmation",
+        recipientEmail: data.email,
+        idempotencyKey: `lead-confirm-${data.email}-${Date.now()}`,
+        templateData: {
+          name: data.name,
+          event_type: data.event_type || undefined,
+          event_date: data.event_date || undefined,
+          guest_count: data.guest_count || undefined,
+          location: data.location || undefined,
+        },
+      });
+    } catch (emailErr) {
+      console.error("lead-confirmation email error:", emailErr);
     }
 
     return { ok: true as const };
