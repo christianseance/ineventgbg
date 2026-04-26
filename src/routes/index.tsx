@@ -48,7 +48,17 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const featured = CATEGORIES.slice(0, 6);
+  const featuredSlugs = [
+    "cirkustalt",
+    "teknik",
+    "brollop",
+    "foretagsevent",
+    "eventarkitekt",
+    "dj",
+  ];
+  const featured = featuredSlugs
+    .map((slug) => CATEGORIES.find((c) => c.slug === slug)!)
+    .filter(Boolean);
   const [heroIndex, setHeroIndex] = useState(0);
 
   useEffect(() => {
