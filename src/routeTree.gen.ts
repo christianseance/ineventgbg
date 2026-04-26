@@ -14,6 +14,7 @@ import { Route as TjansterRouteImport } from './routes/tjanster'
 import { Route as TaltRouteImport } from './routes/talt'
 import { Route as OmOssRouteImport } from './routes/om-oss'
 import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as InteriorRouteImport } from './routes/interior'
 import { Route as GalleriRouteImport } from './routes/galleri'
 import { Route as CirkustaltRouteImport } from './routes/cirkustalt'
 import { Route as IndexRouteImport } from './routes/index'
@@ -48,6 +49,11 @@ const OmOssRoute = OmOssRouteImport.update({
 const KontaktRoute = KontaktRouteImport.update({
   id: '/kontakt',
   path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InteriorRoute = InteriorRouteImport.update({
+  id: '/interior',
+  path: '/interior',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GalleriRoute = GalleriRouteImport.update({
@@ -108,6 +114,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cirkustalt': typeof CirkustaltRoute
   '/galleri': typeof GalleriRoute
+  '/interior': typeof InteriorRoute
   '/kontakt': typeof KontaktRoute
   '/om-oss': typeof OmOssRoute
   '/talt': typeof TaltRoute
@@ -125,6 +132,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cirkustalt': typeof CirkustaltRoute
   '/galleri': typeof GalleriRoute
+  '/interior': typeof InteriorRoute
   '/kontakt': typeof KontaktRoute
   '/om-oss': typeof OmOssRoute
   '/talt': typeof TaltRoute
@@ -143,6 +151,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/cirkustalt': typeof CirkustaltRoute
   '/galleri': typeof GalleriRoute
+  '/interior': typeof InteriorRoute
   '/kontakt': typeof KontaktRoute
   '/om-oss': typeof OmOssRoute
   '/talt': typeof TaltRoute
@@ -162,6 +171,7 @@ export interface FileRouteTypes {
     | '/'
     | '/cirkustalt'
     | '/galleri'
+    | '/interior'
     | '/kontakt'
     | '/om-oss'
     | '/talt'
@@ -179,6 +189,7 @@ export interface FileRouteTypes {
     | '/'
     | '/cirkustalt'
     | '/galleri'
+    | '/interior'
     | '/kontakt'
     | '/om-oss'
     | '/talt'
@@ -196,6 +207,7 @@ export interface FileRouteTypes {
     | '/'
     | '/cirkustalt'
     | '/galleri'
+    | '/interior'
     | '/kontakt'
     | '/om-oss'
     | '/talt'
@@ -214,6 +226,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CirkustaltRoute: typeof CirkustaltRoute
   GalleriRoute: typeof GalleriRoute
+  InteriorRoute: typeof InteriorRoute
   KontaktRoute: typeof KontaktRoute
   OmOssRoute: typeof OmOssRoute
   TaltRoute: typeof TaltRoute
@@ -263,6 +276,13 @@ declare module '@tanstack/react-router' {
       path: '/kontakt'
       fullPath: '/kontakt'
       preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interior': {
+      id: '/interior'
+      path: '/interior'
+      fullPath: '/interior'
+      preLoaderRoute: typeof InteriorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/galleri': {
@@ -342,6 +362,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CirkustaltRoute: CirkustaltRoute,
   GalleriRoute: GalleriRoute,
+  InteriorRoute: InteriorRoute,
   KontaktRoute: KontaktRoute,
   OmOssRoute: OmOssRoute,
   TaltRoute: TaltRoute,
