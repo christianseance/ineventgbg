@@ -124,17 +124,9 @@ export function QuickLeadForm() {
                       type="checkbox"
                       checked={newsletter}
                       onChange={(e) => setNewsletter(e.target.checked)}
-                      className="sr-only"
+                      className="h-4 w-4 shrink-0 cursor-pointer accent-primary"
                     />
-                    <span
-                      className={`h-4 w-4 shrink-0 rounded-sm border flex items-center justify-center transition-colors ${
-                        newsletter ? "bg-primary border-primary" : "border-muted-foreground/40 bg-background"
-                      }`}
-                      aria-hidden="true"
-                    >
-                      {newsletter && <Check size={11} className="text-primary-foreground" strokeWidth={3} />}
-                    </span>
-                    <span className="text-xs uppercase tracking-widest text-muted-foreground">Ja tack — guide &amp; nyhetsbrev</span>
+                    <span className="text-sm text-muted-foreground">Ja tack — guide &amp; nyhetsbrev</span>
                   </label>
 
                   <input
