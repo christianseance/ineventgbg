@@ -90,7 +90,7 @@ function Index() {
               <h1 className="text-display text-[clamp(3.5rem,11vw,11rem)] text-foreground uppercase">
                 Vi reser <br />
                 <span className="text-primary">och lyfter</span> <br />
-                <span className="text-stroke">rummet..?</span>
+                <span className="text-stroke">rummet</span>
               </h1>
               <p className="mt-8 text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
                 Cirkustält, podier, belysning, diverse eventtält, bar/bord-stolar och mattor. Nämn det vi <em className="italic text-foreground">inte</em> har själva eller i vårt fantastiska nätverk. Vi
