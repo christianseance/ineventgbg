@@ -36,6 +36,7 @@ const PARTNERS: Partner[] = [
   { name: "Trädgår'n", url: "https://www.tradgarn.se/" },
   { name: "Musikens Hus", url: "https://www.musikenshus.se/" },
   { name: "Yaki-Da", url: "https://www.yakida.se/" },
+  { name: "Operaen i Christiania", url: "https://www.operaen.dk/" },
 ];
 
 export const Route = createFileRoute("/om-oss")({
