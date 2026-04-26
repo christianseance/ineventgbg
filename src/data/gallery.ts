@@ -72,7 +72,7 @@ export const CATEGORIES: Category[] = [
     name: "Belysning och teknik",
     group: "uthyrning",
     cover: teknik,
-    blurb: "Moving heads m.m, rökmaskiner och PA, riggat och kört av proffs.",
+    blurb: "Moving heads, lasrar m.m,  och PA, riggat och kört av proffs.",
   },
   {
     slug: "installation-konst",
