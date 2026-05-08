@@ -178,7 +178,55 @@ function Cirkustalt() {
           </div>
         </section>
 
+        {/* RIGG TIMELINE */}
+        <section>
+          <div className="grid lg:grid-cols-12 gap-10 mb-10 items-end">
+            <div className="lg:col-span-7">
+              <span className="text-xs uppercase tracking-[0.3em] text-primary">Process</span>
+              <h2 className="text-display text-4xl lg:text-6xl mt-3">
+                Från fält till <span className="text-primary">katedral.</span>
+              </h2>
+            </div>
+            <p className="lg:col-span-5 text-muted-foreground leading-relaxed">
+              Ett cirkustält reser sig inte av sig självt. Här är koreografin — från tom äng i
+              gryningen till spänd duk mot blå himmel. Timmar av precision, komprimerade till tio bilder.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
+            {RIGG_STEPS.map((step, i) => {
+              const isWide = i === 0 || i === RIGG_STEPS.length - 1;
+              return (
+                <figure
+                  key={step.src}
+                  className={`group relative overflow-hidden bg-card border border-border ${
+                    isWide ? "col-span-2" : ""
+                  }`}
+                >
+                  <img
+                    src={step.src}
+                    alt={step.alt}
+                    loading="lazy"
+                    className={`h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 ${
+                      isWide ? "aspect-[21/9]" : "aspect-[4/5]"
+                    }`}
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent p-3 lg:p-4 flex items-end justify-between gap-3">
+                    <span className="text-xs uppercase tracking-[0.25em] text-foreground/90">
+                      {step.caption}
+                    </span>
+                    <span className="text-display text-2xl lg:text-3xl text-primary leading-none">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                </figure>
+              );
+            })}
+          </div>
+        </section>
+
         {/* USE CASES */}
+
         <section className="grid lg:grid-cols-3 gap-px bg-border border border-border">
           {[
             {
