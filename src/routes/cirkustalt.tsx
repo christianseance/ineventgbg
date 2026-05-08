@@ -6,6 +6,29 @@ import cirkustalt3 from "@/assets/cirkustalt-3.jpg";
 import cirkustalt4 from "@/assets/cirkustalt-4.jpg";
 import cirkustalt5 from "@/assets/cirkustalt-5.jpg";
 import cirkustalt6 from "@/assets/cirkustalt-6.jpg";
+import rigg01 from "@/assets/cirkustalt-rigg-01-falt.jpg";
+import rigg02 from "@/assets/cirkustalt-rigg-02-master-upp.jpg";
+import rigg03 from "@/assets/cirkustalt-rigg-03-master-himmel.jpg";
+import rigg04 from "@/assets/cirkustalt-rigg-04-duk-lyfts.jpg";
+import rigg05 from "@/assets/cirkustalt-rigg-05-duk-spanns.jpg";
+import rigg06 from "@/assets/cirkustalt-rigg-06-team.jpg";
+import rigg07 from "@/assets/cirkustalt-rigg-07-stomme.jpg";
+import rigg08 from "@/assets/cirkustalt-rigg-08-vaggar.jpg";
+import rigg09 from "@/assets/cirkustalt-rigg-09-spand.jpg";
+import rigg10 from "@/assets/cirkustalt-rigg-10-fardig.jpg";
+
+const RIGG_STEPS: { src: string; alt: string; caption: string }[] = [
+  { src: rigg01, alt: "Tomt fält i morgonljus innan riggen börjar", caption: "Tomt fält. Soluppgång." },
+  { src: rigg02, alt: "Master-stänger reses på fältet med lådor och fordon", caption: "Master på plats." },
+  { src: rigg03, alt: "Master-stänger pekar mot blå himmel med duk på marken", caption: "Sex master mot himlen." },
+  { src: rigg04, alt: "Duken börjar lyftas över de första två masterna", caption: "Första lyftet." },
+  { src: rigg05, alt: "Alla master uppe och duken spänns ut", caption: "Duken vecklas ut." },
+  { src: rigg06, alt: "Team i gula västar arbetar med att fästa duken", caption: "Hands on." },
+  { src: rigg07, alt: "Stommen reses med fyrhjuling och team i förgrunden", caption: "Stommen reses." },
+  { src: rigg08, alt: "Väggar börjar sättas på plats runt tältet", caption: "Väggar på." },
+  { src: rigg09, alt: "Mörkblå vägg spänd och färdig runt tältet", caption: "Spänt och tätt." },
+  { src: rigg10, alt: "Det färdigresta blå cirkustältet i full prakt", caption: "Katedralen står." },
+];
 
 export const Route = createFileRoute("/cirkustalt")({
   head: () => ({
