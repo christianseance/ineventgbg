@@ -115,46 +115,40 @@ function Cirkustalt() {
             </div>
           </div>
 
+          <p className="text-muted-foreground max-w-2xl mb-8 leading-relaxed">
+            Från tom äng till färdig cirkusarena. En bildberättelse i tio steg.
+          </p>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+            <figure className="relative overflow-hidden bg-card border border-border sm:col-span-2 lg:col-span-3">
+              <img src={cirkustalt1} alt="Färdigt cirkustält i blått på fält" loading="lazy" className="h-full w-full object-cover aspect-[21/9]" />
+            </figure>
+            <figure className="relative overflow-hidden bg-card border border-border">
+              <img src={cirkustalt2} alt="Tom plats med himmel innan tältresningen börjar" loading="lazy" className="h-full w-full object-cover aspect-[4/3]" />
+            </figure>
+            <figure className="relative overflow-hidden bg-card border border-border">
+              <img src={cirkustalt3} alt="Master och rigg sätts upp på fältet" loading="lazy" className="h-full w-full object-cover aspect-[4/3]" />
+            </figure>
+            <figure className="relative overflow-hidden bg-card border border-border">
+              <img src={cirkustalt4} alt="Master reser sig mot himlen" loading="lazy" className="h-full w-full object-cover aspect-[4/3]" />
+            </figure>
             <figure className="relative overflow-hidden bg-card border border-border lg:row-span-2 lg:col-span-2">
-              <img
-                src={cirkustalt2}
-                alt="Cirkustält från ovan med kö av besökare"
-                loading="lazy"
-                className="h-full w-full object-cover aspect-[4/5] lg:aspect-auto"
-              />
+              <img src={cirkustalt5} alt="Tältduken börjar resas mellan masterna" loading="lazy" className="h-full w-full object-cover aspect-[4/5] lg:aspect-auto" />
             </figure>
             <figure className="relative overflow-hidden bg-card border border-border">
-              <img
-                src={cirkustalt4}
-                alt="Cirkustält vid stranden"
-                loading="lazy"
-                className="h-full w-full object-cover aspect-[4/3]"
-              />
+              <img src={cirkustalt6} alt="Sex master står med tältduken utbredd nedanför" loading="lazy" className="h-full w-full object-cover aspect-[4/3]" />
             </figure>
             <figure className="relative overflow-hidden bg-card border border-border">
-              <img
-                src={cirkustalt3}
-                alt="Cirkustält med folksamling utanför"
-                loading="lazy"
-                className="h-full w-full object-cover aspect-[4/3]"
-              />
+              <img src={cirkustalt7} alt="Crew arbetar med duken framför masterna" loading="lazy" className="h-full w-full object-cover aspect-[4/3]" />
+            </figure>
+            <figure className="relative overflow-hidden bg-card border border-border">
+              <img src={cirkustalt8} alt="Tältet börjar ta form med crew runt om" loading="lazy" className="h-full w-full object-cover aspect-[4/3]" />
+            </figure>
+            <figure className="relative overflow-hidden bg-card border border-border">
+              <img src={cirkustalt9} alt="Sidoduken reses och spänns upp" loading="lazy" className="h-full w-full object-cover aspect-[4/3]" />
             </figure>
             <figure className="relative overflow-hidden bg-card border border-border sm:col-span-2 lg:col-span-3">
-              <img
-                src={cirkustalt6}
-                alt="Cirkustält uppställt på torg i stadsmiljö"
-                loading="lazy"
-                className="h-full w-full object-cover aspect-[21/9]"
-              />
-            </figure>
-            <figure className="relative overflow-hidden bg-card border border-border sm:col-span-2 lg:col-span-3">
-              <img
-                src={cirkustalt5}
-                alt="Insidan av ett cirkustält med rigg och belysning"
-                loading="lazy"
-                className="h-full w-full object-cover aspect-[21/9]"
-              />
+              <img src={cirkustalt10} alt="Cirkustältet på plats med stolpar och spänd duk" loading="lazy" className="h-full w-full object-cover aspect-[21/9]" />
             </figure>
           </div>
         </section>
