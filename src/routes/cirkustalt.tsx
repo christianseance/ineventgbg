@@ -6,6 +6,10 @@ import cirkustalt3 from "@/assets/cirkustalt-3.jpg";
 import cirkustalt4 from "@/assets/cirkustalt-4.jpg";
 import cirkustalt5 from "@/assets/cirkustalt-5.jpg";
 import cirkustalt6 from "@/assets/cirkustalt-6.jpg";
+import cirkustalt7 from "@/assets/cirkustalt-7.jpg";
+import cirkustalt8 from "@/assets/cirkustalt-8.jpg";
+import cirkustalt9 from "@/assets/cirkustalt-9.jpg";
+import cirkustalt10 from "@/assets/cirkustalt-10.jpg";
 
 export const Route = createFileRoute("/cirkustalt")({
   head: () => ({
