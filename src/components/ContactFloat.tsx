@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { MessageCircle, Phone, MessageSquare, X } from "lucide-react";
 
-const PHONE_DISPLAY = "+46 70 896 76 90";
+const PHONE_DISPLAY = "0708-96 76 90";
 const PHONE_TEL = "+46708967690";
 // WhatsApp uses the international number without the leading +
 const WHATSAPP_NUMBER = "46708967690";
