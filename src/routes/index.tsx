@@ -248,11 +248,14 @@ function Index() {
                 "col-span-6 lg:col-span-4 lg:row-span-1",
                 "col-span-12 lg:col-span-4 lg:row-span-1",
               ];
+              const isCirkus = cat.slug === "cirkustalt";
+              const linkProps = isCirkus
+                ? ({ to: "/cirkustalt" } as const)
+                : ({ to: "/galleri", search: { group: cat.group, category: cat.slug } } as const);
               return (
                 <Link
                   key={cat.slug}
-                  to="/galleri"
-                  search={{ group: cat.group, category: cat.slug }}
+                  {...linkProps}
                   className={`group relative overflow-hidden bg-card ${layouts[i]}`}
                 >
                   <img
