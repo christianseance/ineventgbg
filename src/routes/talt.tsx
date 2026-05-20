@@ -123,7 +123,7 @@ function TaltPage() {
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
-              href="tel:+46708837997"
+              href="tel:+46769023027"
               className="inline-flex items-center gap-3 border border-foreground/30 backdrop-blur-sm bg-background/30 px-7 py-4 text-sm font-semibold uppercase tracking-widest text-foreground hover:border-foreground hover:bg-background/50 transition-colors"
             >
               Ring 0708-83 79 97
