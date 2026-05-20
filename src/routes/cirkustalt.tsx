@@ -93,7 +93,7 @@ function Cirkustalt() {
               href="tel:+46769023027"
               className="inline-flex items-center gap-3 border border-foreground/30 backdrop-blur-sm bg-background/30 px-7 py-4 text-sm font-semibold uppercase tracking-widest text-foreground hover:border-foreground hover:bg-background/50 transition-colors"
             >
-              Ring 0708-83 79 97
+              Ring 0769-02 30 27
             </a>
           </div>
         </div>
