@@ -24,7 +24,7 @@ export function SiteFooter() {
               <Phone size={14} className="mt-1 text-primary shrink-0" />
               <div className="space-y-1">
                 <div className="text-[11px] uppercase tracking-widest text-muted-foreground">Telefon</div>
-                <a href="tel:+46708837997" className="block hover:text-primary">+46 708 83 79 97</a>
+                <a href="tel:+46769023027" className="block hover:text-primary">+46 76 902 30 27</a>
                 <a href="tel:+46708967690" className="block hover:text-primary">+46 708 96 76 90</a>
               </div>
             </div>
