@@ -23,6 +23,7 @@ import logoCafeFluss from "@/assets/partners/cafefluss.png";
 import logoWhenDisco from "@/assets/partners/whendiscogoeswrong.png";
 import logoFragmentvm from "@/assets/partners/fragmentvm.png";
 import logoIvans from "@/assets/partners/ivans.webp";
+import logoLocus from "@/assets/partners/locus.png";
 
 type Partner = { name: string; url: string; logo?: string; invert?: boolean };
 
