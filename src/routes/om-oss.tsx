@@ -82,8 +82,7 @@ function OmOss() {
               eventtält, podium, ljus och teknik. Och, lika viktigt, ett team som vet exakt hur allt riggas.
             </p>
             <p>
-              Vi tar projekt från en enda dag till veckolånga festivaler. Från ett podium på en gata, via ett bröllop
-              med 30 gäster till en företagsfest med 500 nöjda deltagare.
+              Enorma produktioner som kräver väldigt mycket egen personal. Vi är en liten verksamhet i kärnan som kan pussla ihop helheten i vårat grymma nätverk!
             </p>
             <p>Det vi lovar är enkelt: vi svarar noggrant, vi är ärliga med pris, och när dagen kommer fungerar allt.</p>
           </div>
