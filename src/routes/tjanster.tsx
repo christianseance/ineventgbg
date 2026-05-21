@@ -14,6 +14,7 @@ export const Route = createFileRoute("/tjanster")({
       { property: "og:title", content: "Tjänster · Inevent" },
       { property: "og:description", content: "Tre sätt att jobba med oss: uthyrning, event och funktioner." },
     ],
+    links: [{ rel: "canonical", href: "https://ineventgbg.lovable.app/tjanster" }],
   }),
   component: Tjanster,
 });
