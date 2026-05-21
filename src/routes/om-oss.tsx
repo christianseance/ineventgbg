@@ -22,6 +22,7 @@ import logoTillvaron from "@/assets/partners/tillvaron.png";
 import logoCafeFluss from "@/assets/partners/cafefluss.png";
 import logoWhenDisco from "@/assets/partners/whendiscogoeswrong.png";
 import logoFragmentvm from "@/assets/partners/fragmentvm.png";
+import logoIvans from "@/assets/partners/ivans.webp";
 
 type Partner = { name: string; url: string; logo?: string; invert?: boolean };
 
@@ -52,7 +53,7 @@ const PARTNERS: Partner[] = [
   { name: "Kater Blau", url: "https://katerblau.de/", logo: logoKaterBlau },
   { name: "Locus Soundsystem", url: "https://www.instagram.com/locussoundsystem/" },
   { name: "Tillvaron Experience", url: "https://www.instagram.com/tillvaronexperience/", logo: logoTillvaron },
-  { name: "Ivans Pilsnerbar", url: "https://www.instagram.com/ivanspilsnerbar/" },
+  { name: "Ivans Pilsnerbar", url: "https://www.instagram.com/ivanspilsnerbar/", logo: logoIvans, invert: true },
 ];
 
 export const Route = createFileRoute("/om-oss")({
