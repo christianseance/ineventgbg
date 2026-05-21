@@ -31,7 +31,7 @@ const PARTNERS: Partner[] = [
   { name: "Under Your Skin", url: "https://solo.to/underyourskin", logo: logoUnderYourSkin },
   { name: "Criminal Bassline", url: "https://soundcloud.com/criminalbassline", logo: logoCrimi },
   { name: "House of Ursa", url: "https://soundcloud.com/houseofursa", logo: logoUrsa },
-  { name: "Ringö Arena", url: "https://www.instagram.com/ringoarena/" },
+  { name: "Ringö Arena", url: "https://ringoarena.se", logo: logoRingoArena },
   { name: "Cafe Fluss", url: "https://www.instagram.com/cafefluss/" },
   { name: "Chihuahua Dockside", url: "https://www.instagram.com/chihuahuadockside/" },
   { name: "When Disco Goes Wrong", url: "https://www.instagram.com/whendiscogoeswrong/" },
