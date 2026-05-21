@@ -21,6 +21,7 @@ import logoChihuahua from "@/assets/partners/chihuahua.jpg";
 import logoTillvaron from "@/assets/partners/tillvaron.png";
 import logoCafeFluss from "@/assets/partners/cafefluss.png";
 import logoWhenDisco from "@/assets/partners/whendiscogoeswrong.png";
+import logoFragmentvm from "@/assets/partners/fragmentvm.png";
 
 type Partner = { name: string; url: string; logo?: string; invert?: boolean };
 
