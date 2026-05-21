@@ -16,6 +16,7 @@ import logoTradgarn from "@/assets/partners/tradgarn.svg";
 import logoYakida from "@/assets/partners/yakida.jpg";
 import logoSecretIsland from "@/assets/partners/secretisland.webp";
 import logoKaterBlau from "@/assets/partners/katerblau.jpg";
+import logoRingoArena from "@/assets/partners/ringoarena.webp";
 
 type Partner = { name: string; url: string; logo?: string; invert?: boolean };
 
