@@ -116,7 +116,7 @@ function Tjanster() {
               {
                 n: "02",
                 t: "Förslaget",
-                d: "Inom någon minut får du svar, om vi inte är på jobb. Annars kan det ta några dagar innan vi i samråd med dig har tagit fram offerten. Vi är få och styr arbetet själva, du talar direkt med oss. Ingen säljavdelning emellan!",
+                d: "VI LÖSER DET MESTA INOM EVENT.",
               },
               {
                 n: "03",
