@@ -14,14 +14,14 @@ const HERO_IMAGES = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Inevent · Cirkustält, podium, ljus & komplett eventproduktion" },
+      { title: "Inevent · Cirkustält, podium, ljus & eventproduktion" },
       {
         name: "description",
         content:
           "Cirkustält, podium, ljus, DJ och allt event-pyssel. Vi gör hela ditt event. Utgår från Göteborg, finns där du behöver oss.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://inevent.se/" },
+      { property: "og:url", content: "https://ineventgbg.lovable.app/" },
       { property: "og:site_name", content: "Inevent" },
       { property: "og:locale", content: "sv_SE" },
       { property: "og:title", content: "Inevent · Vi löser nästan allt inom event" },
@@ -29,8 +29,8 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Cirkustält, podium, ljus, DJ, bröllop, företagsfest. Begär offert idag.",
       },
-      { property: "og:image", content: "https://inevent.se/og-hero.jpg" },
-      { property: "og:image:secure_url", content: "https://inevent.se/og-hero.jpg" },
+      { property: "og:image", content: "https://ineventgbg.lovable.app/og-hero.jpg" },
+      { property: "og:image:secure_url", content: "https://ineventgbg.lovable.app/og-hero.jpg" },
       { property: "og:image:type", content: "image/jpeg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
@@ -41,8 +41,9 @@ export const Route = createFileRoute("/")({
         name: "twitter:description",
         content: "Cirkustält, podium, ljus, DJ, bröllop, företagsfest. Begär offert idag.",
       },
-      { name: "twitter:image", content: "https://inevent.se/og-hero.jpg" },
+      { name: "twitter:image", content: "https://ineventgbg.lovable.app/og-hero.jpg" },
     ],
+    links: [{ rel: "canonical", href: "https://ineventgbg.lovable.app/" }],
   }),
   component: Index,
 });
