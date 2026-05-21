@@ -19,6 +19,7 @@ import logoKaterBlau from "@/assets/partners/katerblau.jpg";
 import logoRingoArena from "@/assets/partners/ringoarena.webp";
 import logoChihuahua from "@/assets/partners/chihuahua.jpg";
 import logoTillvaron from "@/assets/partners/tillvaron.png";
+import logoCafeFluss from "@/assets/partners/cafefluss.png";
 
 type Partner = { name: string; url: string; logo?: string; invert?: boolean };
 
