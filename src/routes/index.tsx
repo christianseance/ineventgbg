@@ -186,7 +186,7 @@ function Index() {
             <div className="lg:col-span-7 lg:col-start-6 self-end">
               <p className="text-lg text-muted-foreground">
                 Hyr direkt från lagret, boka komplett mindre/mellanstort event eller lägg till en av våra experter i ditt team. Allt
-                skalbart, från ett ensamt podium via en mindre festivalproduktion till ett enormt cirkustält!
+                skalbart, från ett ensam scen via en festivalproduktion till ett enormt cirkustält!
               </p>
             </div>
           </div>
