@@ -20,6 +20,27 @@ export const Route = createFileRoute("/talt")({
       { property: "og:image", content: taltHero },
       { name: "twitter:image", content: taltHero },
     ],
+    links: [{ rel: "canonical", href: "https://ineventgbg.lovable.app/talt" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Tält uthyrning",
+          description:
+            "Bastutält, jakt- och fisketält, baslägertält, taktält, nomadtält, yurthor, yoga- och marknadstält till uthyrning. Leverans och rigg i hela Sverige.",
+          brand: { "@type": "Brand", name: "Inevent" },
+          category: "Tent rental",
+          offers: {
+            "@type": "Offer",
+            availability: "https://schema.org/InStock",
+            priceCurrency: "SEK",
+            url: "https://ineventgbg.lovable.app/talt",
+          },
+        }),
+      },
+    ],
   }),
   component: TaltPage,
 });

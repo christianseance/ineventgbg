@@ -34,13 +34,10 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Inevent · Eventproduktion & uthyrning av tält m.m." },
-      {
-        name: "description",
-        content:
-          "Vi löser nästan allt inom event. Cirkustält, eventtält, podium, belysning och teknik, DJ, bröllop och företagsevent. Utgår från Göteborg.",
-      },
       { name: "author", content: "Inevent" },
+      { property: "og:site_name", content: "Inevent" },
+      { property: "og:locale", content: "sv_SE" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -49,6 +46,38 @@ export const Route = createRootRoute({
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;900&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://ineventgbg.lovable.app/#organization",
+              name: "Inevent",
+              url: "https://ineventgbg.lovable.app/",
+              logo: "https://ineventgbg.lovable.app/og-hero.jpg",
+              foundingDate: "2001",
+              areaServed: "SE",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Göteborg",
+                addressCountry: "SE",
+              },
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://ineventgbg.lovable.app/#website",
+              url: "https://ineventgbg.lovable.app/",
+              name: "Inevent",
+              publisher: { "@id": "https://ineventgbg.lovable.app/#organization" },
+              inLanguage: "sv-SE",
+            },
+          ],
+        }),
       },
     ],
   }),

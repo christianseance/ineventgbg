@@ -19,6 +19,7 @@ export const Route = createFileRoute("/kontakt")({
       { property: "og:title", content: "Kontakta Inevent · Begär offert" },
       { property: "og:description", content: "Vi svarar inom 24-36 timmar med en personlig offert." },
     ],
+    links: [{ rel: "canonical", href: "https://ineventgbg.lovable.app/kontakt" }],
   }),
   validateSearch: zodValidator(searchSchema),
   component: Kontakt,

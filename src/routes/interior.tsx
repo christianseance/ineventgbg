@@ -28,6 +28,7 @@ export const Route = createFileRoute("/interior")({
       { property: "og:image", content: interiorHero },
       { name: "twitter:image", content: interiorHero },
     ],
+    links: [{ rel: "canonical", href: "https://ineventgbg.lovable.app/interior" }],
   }),
   component: InteriorPage,
 });

@@ -59,6 +59,7 @@ export const Route = createFileRoute("/om-oss")({
       { property: "og:title", content: "Om Inevent" },
       { property: "og:description", content: "Människorna bakom tälten. Inevent sedan 2001." },
     ],
+    links: [{ rel: "canonical", href: "https://ineventgbg.lovable.app/om-oss" }],
   }),
   component: OmOss,
 });
