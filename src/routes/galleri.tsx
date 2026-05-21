@@ -23,9 +23,27 @@ export const Route = createFileRoute("/galleri")({
           "Bläddra bland våra kategorier: cirkustält, eventtält, podium, belysning, bar-bord/stolar, bröllop, företagsevent, konferenser, sport, DJs och mer.",
       },
       { property: "og:title", content: "Galleri · Inevent" },
-      { property: "og:description", content: "Filtrera, sök och utforska allt vi hyr ut och producerar." },
+      {
+        property: "og:description",
+        content:
+          "Filtrera, sök och utforska allt vi hyr ut och producerar — tält, podium, ljus, ljud, inredning, bröllop, företagsevent, konferenser, sport och DJs.",
+      },
       { property: "og:image", content: galleriHero },
       { name: "twitter:image", content: galleriHero },
+    ],
+    links: [{ rel: "canonical", href: "https://ineventgbg.lovable.app/galleri" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Galleri",
+          description:
+            "Sökbart galleri över Inevents kategorier inom uthyrning, eventproduktion och funktioner.",
+          url: "https://ineventgbg.lovable.app/galleri",
+        }),
+      },
     ],
   }),
   validateSearch: zodValidator(searchSchema),
