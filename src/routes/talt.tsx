@@ -106,6 +106,12 @@ const TENT_TYPES: TentType[] = [
       "Klassiska marknads- och torgtält för pop-ups, food trucks, julmarknader och festivaler.",
     details: ["3x3, 4x4, 5x5 m moduler", "Sidoväggar och disk", "Brandgodkänt material"],
   },
+  {
+    name: "Uppblåsbara hubtält",
+    blurb:
+      "Lättuppsatta hubar för expeditioner, crew-baser och snabba pop-ups på event. Uppe på minuter, inga stänger att jonglera.",
+    details: ["Uppblåst på 5–15 minuter", "Crew-, medical- eller info-hub", "Packas litet, reser lätt"],
+  },
 ];
 
 function TaltPage() {
@@ -159,7 +165,7 @@ function TaltPage() {
           <div>
             <span className="text-xs uppercase tracking-[0.3em] text-primary">Vårt utbud</span>
             <h2 className="text-display text-4xl lg:text-6xl mt-3">
-              Tio tälttyper. <span className="text-primary">Ett team.</span>
+              Tio tälttyper + hubs. <span className="text-primary">Ett team.</span>
             </h2>
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed">
