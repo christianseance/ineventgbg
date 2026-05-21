@@ -12,7 +12,18 @@ export const Route = createFileRoute("/unsubscribe")({
   component: UnsubscribePage,
   head: () => ({
     meta: [
-      { title: "Avregistrera · Inevent" },
+      { title: "Avregistrera nyhetsbrev · Inevent" },
+      {
+        name: "description",
+        content:
+          "Avregistrera din e-postadress från Inevents utskick. Bekräfta avregistreringen här så slutar vi mejla dig.",
+      },
+      { property: "og:title", content: "Avregistrera nyhetsbrev · Inevent" },
+      {
+        property: "og:description",
+        content:
+          "Avregistrera din e-postadress från Inevents utskick. Bekräfta avregistreringen här så slutar vi mejla dig.",
+      },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),
