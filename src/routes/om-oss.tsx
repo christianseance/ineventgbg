@@ -19,6 +19,7 @@ import logoKaterBlau from "@/assets/partners/katerblau.jpg";
 import logoRingoArena from "@/assets/partners/ringoarena.webp";
 import logoChihuahua from "@/assets/partners/chihuahua.jpg";
 import logoTillvaron from "@/assets/partners/tillvaron.png";
+import logoCafeFluss from "@/assets/partners/cafefluss.png";
 
 type Partner = { name: string; url: string; logo?: string; invert?: boolean };
 
@@ -34,7 +35,7 @@ const PARTNERS: Partner[] = [
   { name: "Criminal Bassline", url: "https://soundcloud.com/criminalbassline", logo: logoCrimi },
   { name: "House of Ursa", url: "https://soundcloud.com/houseofursa", logo: logoUrsa },
   { name: "Ringö Arena", url: "https://ringoarena.se", logo: logoRingoArena },
-  { name: "Cafe Fluss", url: "https://www.instagram.com/cafefluss/" },
+  { name: "Cafe Fluss", url: "https://www.instagram.com/cafefluss/", logo: logoCafeFluss },
   { name: "Chihuahua Dockside", url: "https://www.instagram.com/chihuahuadockside/", logo: logoChihuahua },
   { name: "When Disco Goes Wrong", url: "https://www.instagram.com/whendiscogoeswrong/" },
   { name: "Fragmentvm", url: "https://www.instagram.com/fragmentvm/" },
