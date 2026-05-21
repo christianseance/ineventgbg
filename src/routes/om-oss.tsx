@@ -18,6 +18,7 @@ import logoSecretIsland from "@/assets/partners/secretisland.webp";
 import logoKaterBlau from "@/assets/partners/katerblau.jpg";
 import logoRingoArena from "@/assets/partners/ringoarena.webp";
 import logoChihuahua from "@/assets/partners/chihuahua.jpg";
+import logoTillvaron from "@/assets/partners/tillvaron.png";
 
 type Partner = { name: string; url: string; logo?: string; invert?: boolean };
 
@@ -47,7 +48,7 @@ const PARTNERS: Partner[] = [
   { name: "Operaen i Christiania", url: "https://www.operaen.dk/" },
   { name: "Kater Blau", url: "https://katerblau.de/", logo: logoKaterBlau },
   { name: "Locus Soundsystem", url: "https://www.instagram.com/locussoundsystem/" },
-  { name: "Tillvaron Experience", url: "https://www.instagram.com/tillvaronexperience/" },
+  { name: "Tillvaron Experience", url: "https://www.instagram.com/tillvaronexperience/", logo: logoTillvaron },
   { name: "Ivans Pilsnerbar", url: "https://www.instagram.com/ivanspilsnerbar/" },
 ];
 
