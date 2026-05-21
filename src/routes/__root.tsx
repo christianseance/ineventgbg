@@ -38,6 +38,7 @@ export const Route = createRootRoute({
       { property: "og:site_name", content: "Inevent" },
       { property: "og:locale", content: "sv_SE" },
       { property: "og:type", content: "website" },
+      { name: "google-site-verification", content: "zlrq6HFe6QMZDW87s_eurESOr1ulk2ntFzT_a2yYsdo" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
