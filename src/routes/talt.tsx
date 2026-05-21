@@ -165,7 +165,7 @@ function TaltPage() {
           <div>
             <span className="text-xs uppercase tracking-[0.3em] text-primary">Vårt utbud</span>
             <h2 className="text-display text-4xl lg:text-6xl mt-3">
-              Tio tälttyper. <span className="text-primary">Ett team.</span>
+              Tio tälttyper + hubs. <span className="text-primary">Ett team.</span>
             </h2>
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed">
