@@ -37,7 +37,7 @@ const PARTNERS: Partner[] = [
   { name: "YRA | RYA", url: "https://www.instagram.com/yrafestivalrya/" },
   { name: "Jazzklubben Nefertiti", url: "https://www.nefertiti.se/", logo: logoNefertiti },
   { name: "Party Like Gatsby", url: "https://www.partylikegatsby.com/" },
-  { name: "Trädgår'n", url: "https://www.tradgarn.se/", logo: logoTradgarn, invert: true },
+  { name: "Trädgår'n", url: "https://www.tradgarn.se/", logo: logoTradgarn },
   { name: "Musikens Hus", url: "https://www.musikenshus.se/", logo: logoMusikensHus },
   { name: "Yaki-Da", url: "https://www.yakida.se/", logo: logoYakida },
   { name: "Operaen i Christiania", url: "https://www.operaen.dk/" },
