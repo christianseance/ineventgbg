@@ -40,7 +40,7 @@ const PARTNERS: Partner[] = [
   { name: "Cafe Fluss", url: "https://www.instagram.com/cafefluss/", logo: logoCafeFluss },
   { name: "Chihuahua Dockside", url: "https://www.instagram.com/chihuahuadockside/", logo: logoChihuahua },
   { name: "When Disco Goes Wrong", url: "https://www.instagram.com/whendiscogoeswrong/", logo: logoWhenDisco },
-  { name: "Fragmentvm", url: "https://www.instagram.com/fragmentvm/" },
+  { name: "Fragmentvm", url: "https://www.instagram.com/fragmentvm/", logo: logoFragmentvm },
   { name: "Secret Island Nation Festival", url: "https://www.secret-island.eu/", logo: logoSecretIsland },
   { name: "YRA | RYA", url: "https://www.instagram.com/yrafestivalrya/" },
   { name: "Jazzklubben Nefertiti", url: "https://www.nefertiti.se/", logo: logoNefertiti },
