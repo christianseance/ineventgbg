@@ -53,7 +53,7 @@ const PARTNERS: Partner[] = [
   { name: "Kater Blau", url: "https://katerblau.de/", logo: logoKaterBlau },
   { name: "Locus Soundsystem", url: "https://www.instagram.com/locussoundsystem/" },
   { name: "Tillvaron Experience", url: "https://www.instagram.com/tillvaronexperience/", logo: logoTillvaron },
-  { name: "Ivans Pilsnerbar", url: "https://www.instagram.com/ivanspilsnerbar/", logo: logoIvans, invert: true },
+  { name: "Ivans Pilsnerbar", url: "https://www.instagram.com/ivanspilsnerbar/", logo: logoIvans },
 ];
 
 export const Route = createFileRoute("/om-oss")({
