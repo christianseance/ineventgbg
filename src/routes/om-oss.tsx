@@ -33,7 +33,7 @@ const PARTNERS: Partner[] = [
   { name: "Chihuahua Dockside", url: "https://www.instagram.com/chihuahuadockside/" },
   { name: "When Disco Goes Wrong", url: "https://www.instagram.com/whendiscogoeswrong/" },
   { name: "Fragmentvm", url: "https://www.instagram.com/fragmentvm/" },
-  { name: "Secret Island Nation Festival", url: "https://www.instagram.com/secretislandnation/" },
+  { name: "Secret Island Nation Festival", url: "https://www.secret-island.eu/", logo: logoSecretIsland },
   { name: "YRA | RYA", url: "https://www.instagram.com/yrafestivalrya/" },
   { name: "Jazzklubben Nefertiti", url: "https://www.nefertiti.se/", logo: logoNefertiti },
   { name: "Party Like Gatsby", url: "https://www.partylikegatsby.com/" },
