@@ -106,6 +106,12 @@ const TENT_TYPES: TentType[] = [
       "Klassiska marknads- och torgtält för pop-ups, food trucks, julmarknader och festivaler.",
     details: ["3x3, 4x4, 5x5 m moduler", "Sidoväggar och disk", "Brandgodkänt material"],
   },
+  {
+    name: "Uppblåsbara hubtält",
+    blurb:
+      "Lättuppsatta hubar för expeditioner, crew-baser och snabba pop-ups på event. Uppe på minuter, inga stänger att jonglera.",
+    details: ["Uppblåst på 5–15 minuter", "Crew-, medical- eller info-hub", "Packas litet, reser lätt"],
+  },
 ];
 
 function TaltPage() {
