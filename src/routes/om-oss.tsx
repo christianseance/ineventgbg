@@ -15,6 +15,7 @@ import logoMusikensHus from "@/assets/partners/musikenshus.png";
 import logoTradgarn from "@/assets/partners/tradgarn.svg";
 import logoYakida from "@/assets/partners/yakida.jpg";
 import logoSecretIsland from "@/assets/partners/secretisland.webp";
+import logoKaterBlau from "@/assets/partners/katerblau.jpg";
 
 type Partner = { name: string; url: string; logo?: string; invert?: boolean };
 
@@ -42,7 +43,7 @@ const PARTNERS: Partner[] = [
   { name: "Musikens Hus", url: "https://www.musikenshus.se/", logo: logoMusikensHus },
   { name: "Yaki-Da", url: "https://www.yakida.se/", logo: logoYakida },
   { name: "Operaen i Christiania", url: "https://www.operaen.dk/" },
-  { name: "Kater Blau", url: "https://katerblau.de/" },
+  { name: "Kater Blau", url: "https://katerblau.de/", logo: logoKaterBlau },
   { name: "Locus Soundsystem", url: "https://www.instagram.com/locussoundsystem/" },
   { name: "Tillvaron Experience", url: "https://www.instagram.com/tillvaronexperience/" },
   { name: "Ivans Pilsnerbar", url: "https://www.instagram.com/ivanspilsnerbar/" },
