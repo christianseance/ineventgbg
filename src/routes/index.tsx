@@ -104,7 +104,7 @@ function Index() {
                 <span className="text-stroke">rummet</span>
               </h1>
               <p className="mt-8 text-lg lg:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                Cirkustält, event-tält, beduintält, glamping, interiör, belysning, teknik och scenbyggen. Musik, mat, med mera. Nämn det vi <em className="italic text-foreground">inte</em> har själva i tältväg eller inom event i vårt fantastiska nätverk..? Berätta visionen för oss, så ger vi dig förutsättningarna. Vi utgår från Göteborg, men dyker upp där vi behövs!
+                Cirkustält, eventtält, beduintält, glamping, interiör, belysning, teknik och scenbyggen. Musik, mat, med mera. Nämn det vi <em className="italic text-foreground">inte</em> har själva i tältväg eller inom event i vårt fantastiska nätverk..? Berätta visionen för oss, så ger vi dig förutsättningarna. Vi utgår från Göteborg, men dyker upp där vi behövs!
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link
