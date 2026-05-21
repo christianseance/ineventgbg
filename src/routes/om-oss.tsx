@@ -44,7 +44,7 @@ const PARTNERS: Partner[] = [
   { name: "Secret Island Nation Festival", url: "https://www.secret-island.eu/", logo: logoSecretIsland },
   { name: "YRA | RYA", url: "https://www.instagram.com/yrafestivalrya/" },
   { name: "Jazzklubben Nefertiti", url: "https://www.nefertiti.se/", logo: logoNefertiti },
-  { name: "Party Like Gatsby", url: "https://www.partylikegatsby.com/" },
+  { name: "Party Like Gatsby", url: "https://www.partylikegatsby.eu/" },
   { name: "Trädgår'n", url: "https://www.tradgarn.se/", logo: logoTradgarn },
   { name: "Musikens Hus", url: "https://www.musikenshus.se/", logo: logoMusikensHus },
   { name: "Yaki-Da", url: "https://www.yakida.se/", logo: logoYakida },
