@@ -47,6 +47,27 @@ export const Route = createFileRoute("/cirkustalt")({
       { property: "og:image", content: cirkustalt1 },
       { name: "twitter:image", content: cirkustalt1 },
     ],
+    links: [{ rel: "canonical", href: "https://ineventgbg.lovable.app/cirkustalt" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Cirkustält uthyrning",
+          description:
+            "Cirkustält / big tops i storlekar från 200 till 1500+ kvm för festivaler, släpp, pop-ups och stadsfester. Inkluderar professionell rigg och leverans i hela Sverige.",
+          brand: { "@type": "Brand", name: "Inevent" },
+          category: "Circus tent rental",
+          offers: {
+            "@type": "Offer",
+            availability: "https://schema.org/InStock",
+            priceCurrency: "SEK",
+            url: "https://ineventgbg.lovable.app/cirkustalt",
+          },
+        }),
+      },
+    ],
   }),
   component: Cirkustalt,
 });
