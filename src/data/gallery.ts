@@ -29,7 +29,7 @@ export const GROUPS: Record<Group, { label: string; description: string }> = {
   },
   event: {
     label: "Event",
-    description: "Kompletta produktioner från idé till genomförande.",
+    description: "Kompletta produktioner från idé till genomförande. Berätta din vision så tar vi hand om allt runt omkring, så du kan fokusera på din viktiga händelse.",
   },
   funktioner: {
     label: "Funktioner",
