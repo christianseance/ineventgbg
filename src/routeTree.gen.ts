@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as UnsubscribeRouteImport } from './routes/unsubscribe'
 import { Route as TjansterRouteImport } from './routes/tjanster'
 import { Route as TaltRouteImport } from './routes/talt'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as OmOssRouteImport } from './routes/om-oss'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as InteriorRouteImport } from './routes/interior'
@@ -39,6 +40,11 @@ const TjansterRoute = TjansterRouteImport.update({
 const TaltRoute = TaltRouteImport.update({
   id: '/talt',
   path: '/talt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OmOssRoute = OmOssRouteImport.update({
@@ -117,6 +123,7 @@ export interface FileRoutesByFullPath {
   '/interior': typeof InteriorRoute
   '/kontakt': typeof KontaktRoute
   '/om-oss': typeof OmOssRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/talt': typeof TaltRoute
   '/tjanster': typeof TjansterRoute
   '/unsubscribe': typeof UnsubscribeRoute
@@ -135,6 +142,7 @@ export interface FileRoutesByTo {
   '/interior': typeof InteriorRoute
   '/kontakt': typeof KontaktRoute
   '/om-oss': typeof OmOssRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/talt': typeof TaltRoute
   '/tjanster': typeof TjansterRoute
   '/unsubscribe': typeof UnsubscribeRoute
@@ -154,6 +162,7 @@ export interface FileRoutesById {
   '/interior': typeof InteriorRoute
   '/kontakt': typeof KontaktRoute
   '/om-oss': typeof OmOssRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/talt': typeof TaltRoute
   '/tjanster': typeof TjansterRoute
   '/unsubscribe': typeof UnsubscribeRoute
@@ -174,6 +183,7 @@ export interface FileRouteTypes {
     | '/interior'
     | '/kontakt'
     | '/om-oss'
+    | '/sitemap.xml'
     | '/talt'
     | '/tjanster'
     | '/unsubscribe'
@@ -192,6 +202,7 @@ export interface FileRouteTypes {
     | '/interior'
     | '/kontakt'
     | '/om-oss'
+    | '/sitemap.xml'
     | '/talt'
     | '/tjanster'
     | '/unsubscribe'
@@ -210,6 +221,7 @@ export interface FileRouteTypes {
     | '/interior'
     | '/kontakt'
     | '/om-oss'
+    | '/sitemap.xml'
     | '/talt'
     | '/tjanster'
     | '/unsubscribe'
@@ -229,6 +241,7 @@ export interface RootRouteChildren {
   InteriorRoute: typeof InteriorRoute
   KontaktRoute: typeof KontaktRoute
   OmOssRoute: typeof OmOssRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TaltRoute: typeof TaltRoute
   TjansterRoute: typeof TjansterRoute
   UnsubscribeRoute: typeof UnsubscribeRoute
@@ -262,6 +275,13 @@ declare module '@tanstack/react-router' {
       path: '/talt'
       fullPath: '/talt'
       preLoaderRoute: typeof TaltRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/om-oss': {
@@ -365,6 +385,7 @@ const rootRouteChildren: RootRouteChildren = {
   InteriorRoute: InteriorRoute,
   KontaktRoute: KontaktRoute,
   OmOssRoute: OmOssRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TaltRoute: TaltRoute,
   TjansterRoute: TjansterRoute,
   UnsubscribeRoute: UnsubscribeRoute,
@@ -379,3 +400,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
