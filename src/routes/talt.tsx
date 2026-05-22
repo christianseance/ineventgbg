@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import taltHero from "@/assets/talt-hero-yurt.webp";
+import hubTalt from "@/assets/talt-hub-inflatable.jpg";
 
 export const Route = createFileRoute("/talt")({
   head: () => ({
@@ -49,6 +50,7 @@ type TentType = {
   name: string;
   blurb: string;
   details: string[];
+  image?: string;
 };
 
 const TENT_TYPES: TentType[] = [
@@ -111,6 +113,7 @@ const TENT_TYPES: TentType[] = [
     blurb:
       "Lättuppsatta hubar för expeditioner, crew-baser och snabba pop-ups på event. Uppe på minuter, inga stänger att jonglera.",
     details: ["Uppblåst på 5–15 minuter", "Crew-, medical- eller info-hub", "Packas litet, reser lätt"],
+    image: hubTalt,
   },
 ];
 
@@ -182,6 +185,18 @@ function TaltPage() {
               key={t.name}
               className="bg-background p-8 lg:p-10 flex flex-col gap-5 hover:bg-card transition-colors"
             >
+              {t.image && (
+                <div className="relative -mx-8 lg:-mx-10 -mt-8 lg:-mt-10 mb-2 aspect-[16/10] overflow-hidden">
+                  <img
+                    src={t.image}
+                    alt={t.name}
+                    loading="lazy"
+                    width={1024}
+                    height={640}
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                </div>
+              )}
               <h3 className="text-display text-2xl lg:text-3xl">{t.name}</h3>
               <p className="text-muted-foreground leading-relaxed">{t.blurb}</p>
               <ul className="space-y-1.5 text-sm text-foreground/80 mt-auto pt-4 border-t border-border">
