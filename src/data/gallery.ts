@@ -1,6 +1,7 @@
 import circustalt from "@/assets/cat-circustalt.jpg";
 import eventtalt from "@/assets/cat-eventtalt.jpg";
 import ovrigaTalt from "@/assets/talt-hero-yurt.webp";
+import hubTalt from "@/assets/talt-hub-inflatable.jpg";
 import scen from "@/assets/cat-scen.jpg";
 import teknik from "@/assets/cat-teknik.jpg";
 import brollop from "@/assets/cat-brollop.jpg";
@@ -59,6 +60,13 @@ export const CATEGORIES: Category[] = [
     group: "uthyrning",
     cover: ovrigaTalt,
     blurb: "Bastutält, taktält, nomadtält, yurthor, marknadstält och fler. Utforska hela utbudet.",
+  },
+  {
+    slug: "uppblasbara-hubtalt",
+    name: "Uppblåsbara hubtält",
+    group: "uthyrning",
+    cover: hubTalt,
+    blurb: "Lättuppsatta hubar för expeditioner, crew-baser och snabba pop-ups. Uppe på minuter.",
   },
   {
     slug: "scen-podium",
