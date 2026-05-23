@@ -114,7 +114,7 @@ export function SiteFooter() {
               <Facebook size={14} />
             </a>
           </div>
-          <span className="order-3 sm:order-3 sm:justify-self-end sm:text-right">Vi löser nästan allt inom event.</span>
+          <span className="order-3 sm:order-3 sm:justify-self-end sm:text-right">VI GÖR ALLT FÖR DITT EVENT.</span>
         </div>
       </div>
     </footer>
