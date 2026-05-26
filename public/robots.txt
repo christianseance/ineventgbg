@@ -5,4 +5,4 @@ Disallow: /unsubscribe
 Disallow: /api/
 Disallow: /lovable/
 
-Sitemap: https://ineventgbg.lovable.app/sitemap.xml
+Sitemap: https://www.inevent.se/sitemap.xml
