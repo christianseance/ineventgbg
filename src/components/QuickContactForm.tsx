@@ -43,7 +43,7 @@ const stepTwoSchema = z.object({
         const d = new Date(v);
         return !isNaN(d.getTime()) && d >= today;
       },
-      { message: "Datumet kan inte vara passerat" }
+      { message: "Datumet kan inte vara passerat" },
     ),
   guest_count: z
     .string()
@@ -54,7 +54,7 @@ const stepTwoSchema = z.object({
         const n = Number(v);
         return Number.isFinite(n) && Number.isInteger(n) && n >= 0 && n <= 100000;
       },
-      { message: "Ange ett positivt heltal" }
+      { message: "Ange ett positivt heltal" },
     ),
   location: z.string().trim().max(150).optional().or(z.literal("")),
 });
@@ -108,9 +108,10 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
   const [data, setData] = useState<State>({
     ...INITIAL,
     event_type: initialSubject && EVENT_OPTIONS.some((o) => o.value === initialSubject) ? initialSubject : "",
-    message: initialSubject && !EVENT_OPTIONS.some((o) => o.value === initialSubject)
-      ? `Jag är intresserad av: ${initialSubject}`
-      : "",
+    message:
+      initialSubject && !EVENT_OPTIONS.some((o) => o.value === initialSubject)
+        ? `Jag är intresserad av: ${initialSubject}`
+        : "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [website, setWebsite] = useState(""); // honeypot
@@ -141,7 +142,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
     const r = s.safeParse(data[field]);
     setErrors((e) => ({
       ...e,
-      [field]: r.success ? "" : r.error.issues[0]?.message ?? "Ogiltigt värde",
+      [field]: r.success ? "" : (r.error.issues[0]?.message ?? "Ogiltigt värde"),
     }));
   };
 
@@ -156,11 +157,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
   // Liten inline-felrad med ikon
   const FieldError = ({ id, msg }: { id: string; msg?: string }) =>
     msg ? (
-      <p
-        id={id}
-        role="alert"
-        className="mt-1 flex items-center gap-1.5 text-xs text-destructive"
-      >
+      <p id={id} role="alert" className="mt-1 flex items-center gap-1.5 text-xs text-destructive">
         <AlertCircle size={12} className="shrink-0" />
         <span>{msg}</span>
       </p>
@@ -275,10 +272,10 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
     return (
       <div className="bg-card border border-border p-8 lg:p-12 text-center">
         <CheckCircle2 size={56} className="mx-auto text-primary mb-5" />
-        <h3 className="text-display text-3xl lg:text-4xl">Tack{data.name.trim() ? ` ${data.name.split(" ")[0]}` : ""}!</h3>
-        <p className="mt-4 text-muted-foreground">
-          Vi har tagit emot din förfrågan och hör av oss inom kort — oftast samma dag på vardagar.
-        </p>
+        <h3 className="text-display text-3xl lg:text-4xl">
+          Tack{data.name.trim() ? ` ${data.name.split(" ")[0]}` : ""}!
+        </h3>
+        <p className="mt-4 text-muted-foreground">Vi har tagit emot din förfrågan och hör av oss inom kort.</p>
       </div>
     );
   }
@@ -300,9 +297,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
       {/* Progress */}
       <div className="mb-5 sm:mb-7 lg:mb-8">
         <div className="flex items-center justify-between mb-3">
-          <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-            Steg {step} av 4
-          </span>
+          <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Steg {step} av 4</span>
           <span className="text-xs text-muted-foreground">
             {step === 1 && "Vad gäller det?"}
             {step === 2 && "När och var?"}
@@ -311,10 +306,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
           </span>
         </div>
         <div className="h-1 bg-border overflow-hidden">
-          <div
-            className="h-full bg-primary transition-all duration-300"
-            style={{ width: `${(step / 4) * 100}%` }}
-          />
+          <div className="h-full bg-primary transition-all duration-300" style={{ width: `${(step / 4) * 100}%` }} />
         </div>
       </div>
 
@@ -353,9 +345,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
         <div className="space-y-4 sm:space-y-5">
           <div>
             <h3 className="text-display text-xl sm:text-2xl lg:text-3xl mb-1.5 sm:mb-2">När och var?</h3>
-            <p className="text-sm text-muted-foreground mb-2">
-              Allt här är valfritt — fyll i det du vet.
-            </p>
+            <p className="text-sm text-muted-foreground mb-2">Allt här är valfritt — fyll i det du vet.</p>
           </div>
           <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
             <div>
@@ -375,9 +365,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               <FieldError id="err-event-date" msg={errors.event_date} />
             </div>
             <div>
-              <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
-                Antal gäster
-              </label>
+              <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">Antal gäster</label>
               <input
                 type="number"
                 min="0"
@@ -392,9 +380,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
             </div>
           </div>
           <div>
-            <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
-              Plats / stad
-            </label>
+            <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">Plats / stad</label>
             <input
               type="text"
               value={data.location}
@@ -412,14 +398,10 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
         <div className="space-y-4 sm:space-y-5">
           <div>
             <h3 className="text-display text-xl sm:text-2xl lg:text-3xl mb-1.5 sm:mb-2">Vart får vi höra av oss?</h3>
-            <p className="text-sm text-muted-foreground">
-              Vi återkommer med en personlig dialog — oftast samma dag.
-            </p>
+            <p className="text-sm text-muted-foreground">Vi återkommer med en personlig dialog — oftast samma dag.</p>
           </div>
           <div>
-            <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
-              Ärendetyp
-            </label>
+            <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">Ärendetyp</label>
             <select
               value={data.inquiry_type}
               onChange={(e) => update("inquiry_type", e.target.value)}
@@ -437,9 +419,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
           </div>
           <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
             <div>
-              <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
-                Namn
-              </label>
+              <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">Namn</label>
               <input
                 type="text"
                 value={data.name}
@@ -452,9 +432,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
               <FieldError id="err-name" msg={errors.name} />
             </div>
             <div>
-              <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
-                E-post *
-              </label>
+              <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">E-post *</label>
               <input
                 type="email"
                 required
@@ -516,12 +494,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
         </div>
       )}
 
-      {step === 4 && (
-        <ReviewStep
-          data={data}
-          onEdit={(target) => setStep(target)}
-        />
-      )}
+      {step === 4 && <ReviewStep data={data} onEdit={(target) => setStep(target)} />}
 
       <div className="mt-6 sm:mt-8 flex flex-nowrap items-center gap-2 sm:gap-3 pt-4 sm:pt-5 border-t border-border">
         {step > 1 && (
@@ -598,13 +571,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
 }
 
 // Granskningssteg — visar all inmatad data och låter användaren hoppa tillbaka för att redigera
-function ReviewStep({
-  data,
-  onEdit,
-}: {
-  data: State;
-  onEdit: (target: 1 | 2 | 3) => void;
-}) {
+function ReviewStep({ data, onEdit }: { data: State; onEdit: (target: 1 | 2 | 3) => void }) {
   const sections: {
     title: string;
     step: 1 | 2 | 3;
@@ -636,11 +603,10 @@ function ReviewStep({
   return (
     <div className="space-y-4 sm:space-y-5">
       <div>
-        <h3 className="text-display text-xl sm:text-2xl lg:text-3xl mb-1.5 sm:mb-2">
-          Granska din förfrågan
-        </h3>
+        <h3 className="text-display text-xl sm:text-2xl lg:text-3xl mb-1.5 sm:mb-2">Granska din förfrågan</h3>
         <p className="text-sm text-muted-foreground">
-          Ser allt rätt ut? Tryck <span className="text-foreground">Bekräfta &amp; skicka</span> nedan — eller redigera valfri sektion.
+          Ser allt rätt ut? Tryck <span className="text-foreground">Bekräfta &amp; skicka</span> nedan — eller redigera
+          valfri sektion.
         </p>
       </div>
 
@@ -648,9 +614,7 @@ function ReviewStep({
         {sections.map((section) => (
           <div key={section.title} className="border border-border bg-background/40">
             <div className="flex items-center justify-between gap-3 px-4 sm:px-5 py-2.5 sm:py-3 border-b border-border">
-              <span className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-                {section.title}
-              </span>
+              <span className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">{section.title}</span>
               <button
                 type="button"
                 onClick={() => onEdit(section.step)}
@@ -670,11 +634,7 @@ function ReviewStep({
                     <dt className="text-[11px] uppercase tracking-widest text-muted-foreground sm:w-44 shrink-0">
                       {item.label}
                     </dt>
-                    <dd
-                      className={`text-sm break-words ${
-                        empty ? "text-muted-foreground italic" : "text-foreground"
-                      }`}
-                    >
+                    <dd className={`text-sm break-words ${empty ? "text-muted-foreground italic" : "text-foreground"}`}>
                       {item.value}
                     </dd>
                   </div>
@@ -687,20 +647,12 @@ function ReviewStep({
         {data.message?.trim() && (
           <div className="border border-border bg-background/40">
             <div className="flex items-center justify-between gap-3 px-4 sm:px-5 py-2.5 sm:py-3 border-b border-border">
-              <span className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-                Meddelande
-              </span>
-              <button
-                type="button"
-                onClick={() => onEdit(3)}
-                className="text-xs text-primary hover:underline"
-              >
+              <span className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">Meddelande</span>
+              <button type="button" onClick={() => onEdit(3)} className="text-xs text-primary hover:underline">
                 Redigera
               </button>
             </div>
-            <p className="px-4 sm:px-5 py-3 text-sm whitespace-pre-wrap text-foreground">
-              {data.message.trim()}
-            </p>
+            <p className="px-4 sm:px-5 py-3 text-sm whitespace-pre-wrap text-foreground">{data.message.trim()}</p>
           </div>
         )}
       </div>
