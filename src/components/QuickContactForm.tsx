@@ -398,7 +398,7 @@ export function QuickContactForm({ initialSubject }: { initialSubject?: string }
         <div className="space-y-4 sm:space-y-5">
           <div>
             <h3 className="text-display text-xl sm:text-2xl lg:text-3xl mb-1.5 sm:mb-2">Vart får vi höra av oss?</h3>
-            <p className="text-sm text-muted-foreground">Vi återkommer med en personlig dialog — oftast samma dag.</p>
+            <p className="text-sm text-muted-foreground">Vi återkommer med en personlig dialog.</p>
           </div>
           <div>
             <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">Ärendetyp</label>
