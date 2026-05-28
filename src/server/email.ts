@@ -5,7 +5,7 @@ import { supabaseAdmin } from "@/integrations/supabase/client.server";
 
 const SITE_NAME = "Inevent";
 const SENDER_DOMAIN = "notify.inevent.se";
-const FROM_DOMAIN = "www.inevent.se";
+const FROM_DOMAIN = "inevent.se";
 
 function generateToken(): string {
   const bytes = new Uint8Array(32);

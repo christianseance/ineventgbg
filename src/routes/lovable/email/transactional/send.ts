@@ -11,7 +11,7 @@ const SITE_NAME = "inevent.se";
 const SENDER_DOMAIN = "notify.inevent.se";
 // FROM_DOMAIN is the domain shown in the From: header (e.g., "example.com").
 // Can be the root domain when display_from_root is enabled — this is cosmetic only.
-const FROM_DOMAIN = "www.inevent.se";
+const FROM_DOMAIN = "inevent.se";
 
 function redactEmail(email: string | null | undefined): string {
   if (!email) return "***";
